@@ -4,6 +4,9 @@ import compression from 'compression';
 import { json } from 'body-parser';
 import cors from 'cors';
 import { config } from 'dotenv';
+import appRouter from './src/router/index.router';
+import { connectDB } from './src/database/mongodb/connect.mongo';
+import Logger from './src/lib/logger';
 
 config();
 // * innitialization
@@ -17,13 +20,13 @@ app.use(compression());
 app.use(json());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-  })
-);
+// * Connect to database
+connectDB()
+  .then((_) => console.log(_))
+  .catch((err) => console.log(err));
 
 // * api version
+app.use(api_version, appRouter);
 const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
