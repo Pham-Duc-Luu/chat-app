@@ -13,3 +13,4 @@ export const connectDB = async () => {
     return 'Error while try to connect to Mongo';
   }
 };
+
