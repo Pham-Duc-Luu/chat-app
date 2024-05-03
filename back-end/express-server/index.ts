@@ -7,7 +7,7 @@ import { config } from 'dotenv';
 import appRouter from './src/router/index.router';
 import { connectDB } from './src/database/mongodb/connect.mongo';
 import Logger from './src/lib/logger';
-import  authController  from "./src/controller/auth.controller";
+import authController from './src/controller/auth.controller';
 config();
 // * innitialization
 const app: Application = express();
@@ -35,4 +35,3 @@ process.on('unhandledRejection', (error, promise) => {
   console.log(`Logged Error: ${error}`);
   server.close(() => process.exit(1));
 });
-

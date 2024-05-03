@@ -3,7 +3,8 @@ import { config } from 'dotenv';
 import mongoose from 'mongoose';
 
 config();
-const MONGODB_URI = process.env.MONGODB_URI || '';
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/software-project';
 
 export const connectDB = async () => {
   try {
@@ -13,4 +14,3 @@ export const connectDB = async () => {
     return 'Error while try to connect to Mongo';
   }
 };
-
