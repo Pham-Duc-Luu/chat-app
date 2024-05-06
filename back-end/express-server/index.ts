@@ -11,7 +11,7 @@ import Logger from './src/lib/logger';
 config();
 // * innitialization
 const app: Application = express();
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5050;
 const api_version = process.env.API_VERSION || '/api/v1';
 
 // * middleware
@@ -27,7 +27,8 @@ connectDB()
 
 // * api version
 app.use(api_version, appRouter);
-const server = app.listen(PORT, () => {
+
+const server = app.listen(PORT, 'authentication', () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
