@@ -1,0 +1,1 @@
+class MissingParameter extends Error {}
