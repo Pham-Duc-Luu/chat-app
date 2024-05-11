@@ -6,6 +6,9 @@ interface IAppConfig {
     app: {
         baseUrl: string;
         port: number;
+        apiKey?: {
+            userService: string;
+        };
     };
     mongodb: IMongoDBConfig;
 }
@@ -15,7 +18,10 @@ const env = process.env.NODE_ENV;
 const dev_config: IAppConfig = {
     app: {
         baseUrl: process.env.DEV_BASE_URL || "/authentication/api/v1",
-        port: Number(process.env.DEV_PORT) || 1111,
+        port: Number(process.env.DEV_PORT) || 5001,
+        apiKey: {
+            userService: process.env.DEV_API_KEY_USER_SERVICE || "userService",
+        },
     },
     mongodb: db_config,
 };

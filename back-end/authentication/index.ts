@@ -26,6 +26,7 @@ connectDB()
 
 // * api version
 app.use(app_config.app.baseUrl, appRouter);
+
 const server = app.listen(app_config.app.port, () => {
     console.log(
         `authentication server is running on port ${app_config.app.port}`
