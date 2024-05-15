@@ -22,23 +22,23 @@ app.use(express.urlencoded({ extended: true })); // support encoded bodies
 app.use(app_config.app.baseUrl, appRouter);
 
 app.get("/", (_, res) => {
-    res.send("Welcome to user service");
+  res.send("Welcome to user service");
 });
 
 AppDataSource.initialize()
-    .then(() => {
-        console.log("postgres connection");
-        const server = app.listen(app_config.app.port, () => {
-            console.log(
-                `user server is running on port ${app_config.app.port}`
-            );
-        });
-
-        process.on("unhandledRejection", (error, promise) => {
-            console.log(`Logged Error: ${error}`);
-            server.close(() => process.exit(1));
-        });
-    })
-    .catch(() => {
-        Logger.warn("postgres connection failed");
+  .then(() => {
+    console.log("postgres connection");
+    const server = app.listen(app_config.app.port, () => {
+      console.log(`user server is running on port ${app_config.app.port}`);
     });
+
+    process.on("unhandledRejection", (error, promise) => {
+      console.log(`Logged Error: ${error}`);
+      server.close(() => process.exit(1));
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+
+    Logger.warn("postgres connection failed");
+  });

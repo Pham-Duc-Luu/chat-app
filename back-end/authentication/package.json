@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.14.0",
     "@sequelize/core": "^7.0.0-alpha.39",
     "@types/bcrypt": "^5.0.2",
     "@types/pg": "^8.11.4",
@@ -59,6 +60,7 @@
     "@types/passport-google-oauth20": "^2.0.14",
     "@types/validator": "^13.11.9",
     "nodemon": "^2.0.15",
+    "prisma": "^5.14.0",
     "ts-node": "^10.6.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.3"
