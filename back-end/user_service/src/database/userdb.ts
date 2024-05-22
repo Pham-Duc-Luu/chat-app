@@ -1,9 +1,11 @@
-import { User } from "../entity/User";
-import AppDataSource from "./postgresql/connect.postgresql";
+import { prisma } from "./postgresql/connect.postgresql";
+
 
 // * Find user in DB by email return true with no record
 export async function CheckUniqueEmail(email: string): Promise<Boolean> {
-  const user = await AppDataSource.getRepository(User).findOneBy({ email });
+  const user = await prisma.user.findFirst({
+    where :{email},
+  })
 
   console.log(user);
 
@@ -19,12 +21,12 @@ export async function createUserDB(
   username: string,
   password: string
 ): Promise<Number> {
-  const userRepository = AppDataSource.getRepository(User);
-  const user = new User();
-  user.username = username;
-  user.email = email;
-  user.password = password;
-  
-  await userRepository.save(user);
+const user = await prisma.user.create({
+    data: {
+    email,
+    username,
+    password,
+  },
+});
   return user.id;
 }

@@ -22,9 +22,9 @@ export default function ApiKey(
     }
     next();
   } catch (error: any) {
-    console.log(error);
+    console.log(error.stack);
     return res.json({
-        message: error.message
-    })
+      message: error.message,
+    });
   }
 }

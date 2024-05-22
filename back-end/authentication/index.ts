@@ -3,50 +3,37 @@ import helmet from "helmet";
 import compression from "compression";
 import { json } from "body-parser";
 import cors from "cors";
-import { config as dotenvConfig } from "dotenv";
+import { config } from "dotenv";
 import appRouter from "./src/router/index.router";
+import { connectDB } from "./src/database/mongodb/connect.mongo";
 import Logger from "./src/lib/logger";
-import appConfig from "./src/config/app.config";
-import { Client } from "pg";
-import { error } from "console";
+import app_config from "./src/config/app.config";
 
-// Load environment variables
-dotenvConfig();
-
-// * Initialization
+config();
+// * innitialization
 const app: Application = express();
 
-// * Middleware
+// * middleware
 app.use(helmet());
 app.use(compression());
 app.use(json());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
-app.use(cors());
 
 // * Connect to database
-const client = new Client({
-  connectionString: appConfig.postgresql.datebaseUrl,
-});
+connectDB()
+    .then((_) => console.log(_))
+    .catch((err) => console.log(err));
 
-client
-  .connect()
-  .then(() => {
-    Logger.info("Connected to the database");
-  })
-  .catch((err) => {
-    console.log(err);
-    Logger.error("Database connection error", err.stack);
-    process.exit(1);
-  });
+// * api version
+app.use(app_config.app.baseUrl, appRouter);
 
-// * API version
-app.use(appConfig.app.baseUrl, appRouter);
-
-const server = app.listen(appConfig.app.port, () => {
-  Logger.info(`Authentication server is running on port ${appConfig.app.port}`);
+const server = app.listen(app_config.app.port, () => {
+    console.log(
+        `authentication server is running on port ${app_config.app.port}`
+    );
 });
 
 process.on("unhandledRejection", (error, promise) => {
-  Logger.error(`Logged Error: ${error}`);
-  server.close(() => process.exit(1));
+    console.log(`Logged Error: ${error}`);
+    server.close(() => process.exit(1));
 });

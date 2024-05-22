@@ -5,3 +5,4 @@ export class Created extends HttpSuccessResponse {
     super(message, 201);
   }
 }
+   

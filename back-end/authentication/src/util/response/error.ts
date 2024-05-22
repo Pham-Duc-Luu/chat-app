@@ -1,27 +1,26 @@
-export class ErrorResponse extends Error {
-  statusCode: number;
-  constructor(message: string, statusCode: number) {
-    super(message);
-    this.message = message;
-    this.statusCode = statusCode;
-  }
+export class HttpErrorResponse extends Error {
+    statuCode: number;
+    constructor(message: string = "Error", statuCode: number = 400) {
+        super();
+        this.message = message;
+        this.statuCode = statuCode;
+    }
 }
 
-export interface IErrorResponse {
-  message: string;
-  statusCode: number;
+export class MissingParameter extends HttpErrorResponse {
+    constructor(message: string = "Missing parameter") {
+        super(message, 400);
+    }
 }
 
-export class BadRequest extends ErrorResponse {
-  constructor(message: string = "Bad request", statusCode: number = 400) {
-    // viet loi vao mot file log nao do
-
-    super(message, statusCode);
-  }
+export class Unauthorized extends HttpErrorResponse {
+    constructor(message: string = "Unauthorized") {
+        super(message, 401);
+    }
 }
 
-export class Unauthorized extends ErrorResponse {
-  constructor(message: string = "Unauthorized", statusCode: number = 401) {
-    super(message, statusCode);
-  }
+export class Forbidden extends HttpErrorResponse {
+    constructor(message: string = "Forbidden") {
+        super(message, 403);
+    }
 }

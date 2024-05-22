@@ -5,7 +5,6 @@ import ApiKey from "../middleware/apikey.middleware";
 const appRouter = Router();
 
 // * router
-
 appRouter.get("/", (_, res) => {
   res.send("use");
 });

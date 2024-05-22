@@ -1,14 +1,31 @@
-import tokenSchema from "../models/token.model";
+import { config } from "dotenv";
 
+const jwt = require("jsonwebtoken");
 class TokenService {
-  async createToken(email: string, id: string) {
-    const existingToken = await tokenSchema.findOne({ email: email });
+  accessTokenSecret: string;
+  refreshTokenSecret: string;
+  accessTokenExpiry: string;
+  refreshTokenExpiry: string;
+  constructor() {
+    this.accessTokenSecret = process.env.ACCESSTOKENSECRET || "khoimm";
+    this.refreshTokenSecret = process.env.REFRESHTOKENSECRET || "khoimm0811";
+    this.accessTokenExpiry = process.env.ACCESSTOKENEXPIRY || "15m"; 
+    this.refreshTokenExpiry = process.env.REFRESHTOKENEXPIRY || "7h"; 
+  }
 
-    if (!existingToken) {
-      throw new Error();
-    }
+  async createToken(email: string, id: number) {
+    const payload = { email, id };
 
-    return "ok";
+    const accessToken = jwt.sign(payload, this.accessTokenSecret, {
+      expiresIn: this.accessTokenExpiry,
+    });
+
+    const refreshToken = jwt.sign(payload, this.refreshTokenSecret, {
+      expiresIn: this.refreshTokenExpiry,
+    });
+    console.log(accessToken, refreshToken);
+    
+    return { accessToken, refreshToken };
   }
 }
 
