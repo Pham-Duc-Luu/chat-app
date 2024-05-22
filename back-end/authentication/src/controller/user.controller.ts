@@ -14,6 +14,7 @@ class UserController {
                 throw new MissingParameter("Missing email or id");
             }
             const b = tokenService.createToken(email, id);
+            res.json({b});
         } catch (error:any) {
             console.log(error);
             res.status(500).json({ message: error.message });
