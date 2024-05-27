@@ -10,8 +10,7 @@ class UserService {
         email,
       });
       return res.data.id;
-    } catch (error) {
-      console.log("false");
+    } catch (error) {  
       throw error;
     }
   }

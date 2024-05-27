@@ -15,11 +15,11 @@ export default function userApiKeyMiddleware  (
         const apiKey = req.headers["x-api-key"];
 
         if (!apiKey) {
-            throw new Unauthorized();
+            throw new Unauthorized("Unauthorized");
         }
 
         if (apiKey !== app_config.app.apiKey?.userService) {
-            throw new Forbidden();
+            throw new Forbidden("No Permission");
         }
         next();
     } catch (error: any) {

@@ -21,7 +21,12 @@ class UserController {
       }
 
       const {accessToken, refreshToken} = await tokenService.createToken(email, id);
-      await new UserModel({ _id: id, refreshToken: refreshToken }).save();
+      await UserModel.findOneAndUpdate(
+        { _id: id },
+        { email, refreshToken },
+        { new: true, upsert: true }
+      );
+      // await new UserModel({ _id: id, refreshToken: refreshToken }).save();
       res.json({ accessToken });
 
     } catch (error: any) {

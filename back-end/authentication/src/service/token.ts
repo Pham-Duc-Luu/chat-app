@@ -9,7 +9,7 @@ class TokenService {
   constructor() {
     this.accessTokenSecret = process.env.ACCESSTOKENSECRET || "khoimm";
     this.refreshTokenSecret = process.env.REFRESHTOKENSECRET || "khoimm0811";
-    this.accessTokenExpiry = process.env.ACCESSTOKENEXPIRY || "15m"; 
+    this.accessTokenExpiry = process.env.ACCESSTOKENEXPIRY || "1m"; 
     this.refreshTokenExpiry = process.env.REFRESHTOKENEXPIRY || "7h"; 
   }
 

@@ -26,6 +26,8 @@ async function getID(email: string) {
     }
     return id;
   } catch (error) {
+    console.log(error);
+    
     throw new BadRequest("Internal ");
   }
 }   
