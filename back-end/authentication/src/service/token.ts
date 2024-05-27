@@ -23,8 +23,7 @@ class TokenService {
     const refreshToken = jwt.sign(payload, this.refreshTokenSecret, {
       expiresIn: this.refreshTokenExpiry,
     });
-    console.log(accessToken, refreshToken);
-    
+
     return { accessToken, refreshToken };
   }
 }

@@ -20,7 +20,7 @@ const dev_config: IAppConfig = {
         baseUrl: process.env.DEV_BASE_URL || "/authentication/api/v1",
         port: Number(process.env.DEV_PORT) || 5001,
         apiKey: {
-            userService: process.env.DEV_API_KEY_USER_SERVICE || "userService",
+            userService: process.env.DEV_API_KEY_AUTHENTICATION || "authentication",
         },
     },
     mongodb: db_config,

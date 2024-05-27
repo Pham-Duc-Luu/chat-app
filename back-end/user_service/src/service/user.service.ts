@@ -1,4 +1,4 @@
-import { CheckUniqueEmail, createUserDB } from "../database/userdb";
+import { CheckUniqueEmail, createUserDB, getUserID } from "../database/userdb";
 import bcrypt from "bcrypt";
 import { BadRequest } from "../util/response/client_error.response";
 import Logger from "../lib/logger";
@@ -18,4 +18,15 @@ async function createUser(username: string, password: string, email: string) {
     throw new BadRequest("Email already exists");
   }
 }
-export { createUser };
+async function getID(email: string) {
+  try {
+    const id = await getUserID(email);
+    if (!id) {
+      throw new BadRequest("Email don't exsits");
+    }
+    return id;
+  } catch (error) {
+    throw new BadRequest("Internal ");
+  }
+}   
+export { createUser, getID };

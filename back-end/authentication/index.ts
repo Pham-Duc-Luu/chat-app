@@ -21,19 +21,19 @@ app.use(express.urlencoded({ extended: true })); // support encoded bodies
 
 // * Connect to database
 connectDB()
-    .then((_) => console.log(_))
-    .catch((err) => console.log(err));
+  .then((_) => console.log(_))
+  .catch((err) => console.log(err));
 
 // * api version
 app.use(app_config.app.baseUrl, appRouter);
 
 const server = app.listen(app_config.app.port, () => {
-    console.log(
-        `authentication server is running on port ${app_config.app.port}`
-    );
+  console.log(
+    `authentication server is running on port ${app_config.app.port}`
+  );
 });
-
+  
 process.on("unhandledRejection", (error, promise) => {
-    console.log(`Logged Error: ${error}`);
-    server.close(() => process.exit(1));
+  console.log(`Logged Error: ${error}`);
+  server.close(() => process.exit(1));
 });

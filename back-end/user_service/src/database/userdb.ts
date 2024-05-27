@@ -15,6 +15,18 @@ export async function CheckUniqueEmail(email: string): Promise<Boolean> {
   return true;
 }
 
+// * Get user by ID
+export async function getUserID(email: string): Promise<number | null> {
+  const user = await prisma.user.findFirst({
+    where: {
+      email: email,
+    },
+  });
+  if (!user) {
+    return null;
+  }
+  return user.id;
+}
 // * Create a new record
 export async function createUserDB(
   email: string,

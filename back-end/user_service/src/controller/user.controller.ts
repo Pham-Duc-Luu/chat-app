@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createUser } from "../service/user.service";
+import { createUser, getID } from "../service/user.service";
 import {
   BadRequest,
   MissingParameter,
@@ -9,6 +9,9 @@ import valid from "../service/valid.service";
 interface IUser {
   username: string;
   password: string;
+  email: string;
+}
+interface IUserID {
   email: string;
 }
 class Controller {
@@ -34,6 +37,27 @@ class Controller {
       res.status(500).json({ message: error.message });
     }
   };
+
+  getUserID = async(req: Request<any, any, IUserID>, res: Response) => {
+    try {
+      
+      const {email} = req.body;
+      
+      if (!email) {
+        throw new MissingParameter("Missing email");
+      }
+      if (valid.isValidEmail(email)) {
+        const id = await getID(email);
+        res.status(200).json({
+          id: id
+        })
+      }
+    } catch (error) {
+      console.log(error);
+      
+      res.status(500).json({message: "Get id error"})
+    }
+  }
 }
 
 const userController = new Controller();

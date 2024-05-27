@@ -4,6 +4,9 @@ import authRouter from "./auth.route";
 import userController from "../controller/user.controller";
 const appRouter = Router();
 
-appRouter.use("/user/generate-token", userController.createToken);
+/**
+ * Generate a pair token
+ */
+appRouter.post("/generate-token", userController.createToken);
 
 export default appRouter;

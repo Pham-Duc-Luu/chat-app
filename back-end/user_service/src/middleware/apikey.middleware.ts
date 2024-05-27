@@ -16,7 +16,7 @@ export default function ApiKey(
     if (!api_key) {
       throw new BadRequest("Missing x-api-key");
     }
-
+    
     if (api_key !== apikey) {
       throw new Unauthorized("No Access");
     }
