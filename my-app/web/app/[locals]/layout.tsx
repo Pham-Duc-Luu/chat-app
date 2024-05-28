@@ -1,7 +1,12 @@
 import React from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Roboto_Mono } from "next/font/google";
 
+const fontSans = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 export default async function Layout({
   children,
   params: { locale },
@@ -11,8 +16,8 @@ export default async function Layout({
 }) {
   const messages = await getMessages();
   return (
-    <div className=" flex justify-center items-center h-screen w-screen">
+    <NextIntlClientProvider messages={messages}>
       {children}
-    </div>
+    </NextIntlClientProvider>
   );
 }
