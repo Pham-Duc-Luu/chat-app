@@ -6,6 +6,13 @@ import {
     Unauthorized,
 } from "../util/response/error";
 
+/**
+ * Middleware to check for a valid API key in the request headers.
+ * 
+ * This middleware function checks if the request contains a valid API key in the headers.
+ * If the API key is missing or invalid, it throws an appropriate error.
+ * If the API key is valid, it passes control to the next middleware or route handler.
+ */
 export default function userApiKeyMiddleware  (
     req: Request,
     res: Response,

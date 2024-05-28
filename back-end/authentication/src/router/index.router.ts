@@ -7,9 +7,12 @@ import userApiKeyMiddleware from "../middleware/apiKey.middleware";
 const appRouter = Router();
 
 /**
- * Generate a pair token
+ * Middleware to check api-key (permission to use other services)
  */
 appRouter.use(userApiKeyMiddleware);
+/**
+ * Generate a pair token
+ */
 appRouter.post("/generate-token", userController.createToken);
 
 export default appRouter;

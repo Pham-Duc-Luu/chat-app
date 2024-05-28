@@ -5,6 +5,8 @@ import compression from "compression";
 import { json } from "body-parser";
 import appRouter from "./src/router/index";
 import app_config from "./src/config/server.config";
+import { connectDB } from "./src/database/mongo/connect.mongo";
+
 dotenv.config();
 
 const app: Application = express();
@@ -17,6 +19,11 @@ app.use(json());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(app_config.app.baseUrl, appRouter);
+
+// * Connect to DB
+connectDB()
+  .then((_) => console.log(_))
+  .catch((err) => console.log(err));
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to Express & TypeScript Server");
