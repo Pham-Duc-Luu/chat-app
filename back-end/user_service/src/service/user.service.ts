@@ -1,6 +1,6 @@
 import { CheckUniqueEmail, createUserDB, getUserID } from "../database/userdb";
 import bcrypt from "bcrypt";
-import { BadRequest } from "../util/response/client_error.response";
+import { BadRequest } from "../util/response/clientError.response";
 import Logger from "../lib/logger";
 
 async function createUser(username: string, password: string, email: string) {
@@ -27,8 +27,8 @@ async function getID(email: string) {
     return id;
   } catch (error) {
     console.log(error);
-    
+
     throw new BadRequest("Internal ");
   }
-}   
+}
 export { createUser, getID };

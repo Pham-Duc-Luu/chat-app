@@ -32,7 +32,7 @@ const server = app.listen(app_config.app.port, () => {
     `authentication server is running on port ${app_config.app.port}`
   );
 });
-  
+
 process.on("unhandledRejection", (error, promise) => {
   console.log(`Logged Error: ${error}`);
   server.close(() => process.exit(1));

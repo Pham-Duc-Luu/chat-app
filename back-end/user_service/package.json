@@ -17,6 +17,7 @@
   "dependencies": {
     "@prisma/client": "^5.14.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/express-serve-static-core": "^4.19.1",
     "@types/lodash": "^4.17.1",
     "@types/nodemailer": "^6.4.15",
     "@types/pg": "^8.11.4",

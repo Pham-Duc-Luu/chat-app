@@ -10,4 +10,5 @@ appRouter.get("/", (_, res) => {
 });
 
 appRouter.use(ApiKey).use("/users", userRouter);
+
 export default appRouter;

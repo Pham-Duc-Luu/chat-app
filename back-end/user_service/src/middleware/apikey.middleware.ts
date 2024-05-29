@@ -1,30 +1,35 @@
 import { NextFunction, Request, Response } from "express";
-import {
-  BadRequest,
-  Unauthorized,
-} from "../util/response/client_error.response";
+
 import { any } from "zod";
+import Logger from "../lib/logger";
+import { TypedResponse } from "../util/interface/express.interface";
+import {
+  ClientErrorResponse,
+  HttpResponse,
+} from "../util/response/http.response";
+import {
+  BadRequestResponse,
+  UnauthorizedResponse,
+} from "../util/response/clientError.response";
 
 export default function ApiKey(
   req: Request,
-  res: Response,
+  res: TypedResponse<ClientErrorResponse>,
   next: NextFunction
 ) {
   try {
     const api_key = req.headers["x-api-key"];
     const apikey = process.env.API_Key || "api-key";
     if (!api_key) {
-      throw new BadRequest("Missing x-api-key");
+      throw new BadRequestResponse("Missing x-api-key");
     }
-    
+
     if (api_key !== apikey) {
-      throw new Unauthorized("No Access");
+      throw new UnauthorizedResponse("No Access");
     }
     next();
   } catch (error: any) {
     console.log(error.stack);
-    return res.json({
-      message: error.message,
-    });
+    Logger.error(error.stack);
   }
 }
