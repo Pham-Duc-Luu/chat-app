@@ -1,0 +1,74 @@
+{
+  "authentication": {
+    "sign_up": {
+      "title": "Sign up",
+
+      "switch": "Already have an account?",
+      "form": {
+        "email": {
+          "lable": "Email",
+          "placeholder": "example@gmail.com",
+          "error": {}
+        },
+        "username": {
+          "lable": "Username"
+        },
+        "password": {
+          "lable": "Password"
+        },
+        "repassword": {
+          "lable": "Re-type password"
+        },
+
+        "remeber_me_button": "Remember me",
+        "forgot_password": "forgot password",
+        "continue": "or continue with"
+      }
+    },
+    "sign_in": {
+      "title": "Sign in",
+      "switch": "Doesn't have a account yet ?{",
+      "form": {
+        "email": {
+          "lable": "Email",
+          "placeholder": "example@gmail.com",
+          "error": {}
+        },
+        "password": {
+          "lable": "Password"
+        },
+
+        "remeber_me_button": "Remember me",
+        "forgot_password": "forgot password",
+        "continue": "or continue with"
+      }
+    }
+  },
+  "home": {
+    "sideBar": {
+      "logo": "",
+      "element": {
+        "up": [
+          {
+            "title": "Home"
+          },
+          {
+            "title": "Search"
+          },
+          {
+            "title": "For you"
+          },
+          {
+            "title": "Explore"
+          },
+          {
+            "title": "Notifications"
+          },
+          {
+            "title": "Create"
+          }
+        ]
+      }
+    }
+  }
+}
