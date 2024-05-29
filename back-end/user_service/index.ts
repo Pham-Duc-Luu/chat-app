@@ -28,25 +28,25 @@ app.use(express.urlencoded({ extended: true })); // support encoded bodies
 app.use(app_config.app.baseUrl, appRouter);
 
 app.get("/", (_, res) => {
-    res.send("Welcome to user service");
+  res.send("Welcome to user service");
 });
 
 async function main() {
-    const server = app.listen(app_config.app.port, () => {
-        console.log(`user server is running on port ${app_config.app.port}`);
-    });
-    process.on("unhandledRejection", (error, promise) => {
-        console.log(`Logged Error: ${error}`);
-        server.close(() => process.exit(1));
-    });
-    // ... you will write your Prisma Client queries here
+  const server = app.listen(app_config.app.port, () => {
+    console.log(`user server is running on port ${app_config.app.port}`);
+  });
+  process.on("unhandledRejection", (error, promise) => {
+    console.log(`Logged Error: ${error}`);
+    server.close(() => process.exit(1));
+  });
+  // ... you will write your Prisma Client queries here
 }
 main()
-    .then(async () => {
-        await prisma.$disconnect();
-    })
-    .catch(async (e) => {
-        console.error(e);
-        await prisma.$disconnect();
-        process.exit(1);
-    });
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);   
+  });

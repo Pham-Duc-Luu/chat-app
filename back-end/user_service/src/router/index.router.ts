@@ -1,7 +1,13 @@
 import { Request, Response, Router } from "express";
 import { config } from "dotenv";
-import forgotPasswordRouter from "./forgotpassword.router";
+import userRouter from "./user.router";
+import ApiKey from "../middleware/apikey.middleware";
 const appRouter = Router();
 
-appRouter.use(forgotPasswordRouter);
+// * router
+appRouter.get("/", (_, res) => {
+  res.send("use");
+});
+
+appRouter.use(ApiKey).use("/users", userRouter);
 export default appRouter;
