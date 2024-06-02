@@ -1,11 +1,18 @@
 import React from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className=" dark:bg-zinc-900 h-screen flex justify-center items-center">
-            {children}
-        </div>
-    );
-};
-
-export default layout;
+export default async function Layout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+  return (
+    <div className=" flex justify-center items-center h-screen w-screen">
+      {children}
+    </div>
+  );
+}

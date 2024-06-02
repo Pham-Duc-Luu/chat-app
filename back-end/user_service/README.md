@@ -1,15 +1,9 @@
-Mai Linh
+## set type for expess
 
-Sign-up
+# 1. Typed Express Request and Response with TypeScript
 
-sign up api
+https://plainenglish.io/blog/typed-express-request-and-response-with-typescript#demo-source-code
 
-Truong Loc
-Dat mua san pham
-Cap nhap thong tin nguoi dung
+# 2. Sharing Types Between Your Frontend and Backend Applications
 
-Khanh Linh
-Quan li thong tin san
-
-Luu
-danh gia san pham
+https://bit.dev/blog/sharing-types-between-your-frontend-and-backend-applications-l5qih48g/

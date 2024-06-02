@@ -1,10 +1,10 @@
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, Roboto_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import React from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-const fontSans = FontSans({
+const fontSans = Roboto_Mono({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

@@ -1,10 +1,15 @@
 import { Request, Response } from "express";
 import { createUser, getID } from "../service/user.service";
-import {
-  BadRequest,
-  MissingParameter,
-} from "../util/response/client_error.response";
+
 import valid from "../service/valid.service";
+import { BadRequestResponse } from "../util/response/clientError.response";
+import { TypedResponse } from "../util/interface/express.interface";
+import {
+  ClientErrorResponse,
+  HttpResponse,
+  SuccessResponse,
+} from "../util/response/http.response";
+import { OkResponse } from "../util/response/successful.response";
 
 interface IUser {
   username: string;
@@ -20,17 +25,23 @@ class Controller {
       const { username, password, email } = req.body;
       // * Missing parameter
       if (!username || !password || !email) {
-        throw new MissingParameter("Missing Username or Password or Email");
+        throw new BadRequestResponse("Missing Username or Password or Email");
       }
-      // * check form of email and password and username return true if correct form 
-      if (valid.isValidEmail(email) && valid.isValidPassword(password) && valid.isValidUserName(username)) {
+      // * check form of email and password and username return true if correct form
+      if (
+        valid.isValidEmail(email) &&
+        valid.isValidPassword(password) &&
+        valid.isValidUserName(username)
+      ) {
         const b = await createUser(username, password, email);
         res.status(200).json({
           message: "User created successfully.",
           id: b,
         });
       } else {
-        throw new BadRequest("Email or password or username is not valid");
+        throw new BadRequestResponse(
+          "Email or password or username is not valid"
+        );
       }
     } catch (error: any) {
       console.error("Error creating user:", error);
@@ -38,26 +49,26 @@ class Controller {
     }
   };
 
-  getUserID = async(req: Request<any, any, IUserID>, res: Response) => {
+  getUserID = async (
+    req: Request<any, any, IUserID>,
+    res: TypedResponse<SuccessResponse<{ id: number } | ClientErrorResponse>>
+  ) => {
     try {
-      
-      const {email} = req.body;
-      
+      const { email } = req.body;
+
       if (!email) {
-        throw new MissingParameter("Missing email");
+        throw new BadRequestResponse("Missing email");
       }
       if (valid.isValidEmail(email)) {
         const id = await getID(email);
-        res.status(200).json({
-          id: id
-        })
+        res.json(new OkResponse({ id }));
       }
     } catch (error) {
       console.log(error);
-      
-      res.status(500).json({message: "Get id error"})
+
+      res.json(new BadRequestResponse());
     }
-  }
+  };
 }
 
 const userController = new Controller();

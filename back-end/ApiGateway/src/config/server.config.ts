@@ -21,7 +21,7 @@ interface IAppConfig {
   };
 }
 
-const dev_config : IAppConfig  = {
+const dev_config: IAppConfig = {
   app: {
     baseUrl: process.env.DEV_BASE_URL || "/apigateway/api/v1",
     port: Number(process.env.DEV_PORT) || 1000,
@@ -40,10 +40,10 @@ const dev_config : IAppConfig  = {
       api_key: process.env.DEV_AUTHENTICATION_API_KEY || "authentication",
     },
   },
-  mongodb: db_config
+  mongodb: db_config,
 };
 
-const pro_config : IAppConfig = {
+const pro_config: IAppConfig = {
   app: {
     baseUrl: process.env.PRO_BASE_URL as string,
     port: Number(process.env.PRO_PORT),
@@ -62,7 +62,7 @@ const pro_config : IAppConfig = {
       api_key: process.env.DEV_AUTHENTICATION_API_KEY || "authentication",
     },
   },
-  mongodb: db_config
+  mongodb: db_config,
 };
 
 const env = process.env.NODE_ENV;
