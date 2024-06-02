@@ -7,6 +7,9 @@ import appRouter from "./src/router/index";
 import app_config from "./src/config/server.config";
 import { connectDB } from "./src/database/mongo/connect.mongo";
 
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+
 dotenv.config();
 
 const app: Application = express();
@@ -15,8 +18,19 @@ const port = app_config.app.port || 8000;
 // * middleware
 app.use(helmet());
 app.use(compression());
-app.use(json());   
+app.use(json());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
+
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['openreplay'],
+    maxAge: 24 * 60 * 60 * 100,
+  }),
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(app_config.app.baseUrl, appRouter);
 

@@ -1,16 +1,21 @@
 import { Document, Schema, model } from 'mongoose';
 import { string } from 'zod';
 import { config } from "dotenv";
+import { triggerAsyncId } from 'async_hooks';
 config();
+
+// add email field
 interface IUser extends Document {
-  _id: Number;
+  _id: string;
+  email: string;
   refreshToken: string;
   createdAt: Date;
 }
 
 // Define the schema for user document
 const UserSchema = new Schema<IUser>({
-  _id: { type: Number, required: true },
+  _id: { type: String, required: true },
+  email: {type: String, required: true},
   refreshToken: { type: String, required: true },
   createdAt: {
     type: Date,

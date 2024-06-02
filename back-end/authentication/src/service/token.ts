@@ -19,7 +19,7 @@ class TokenService {
    * @param id - The id of the user
    * @returns An object containing the access token and refresh token
    */
-  async createToken(email: string, id: number) {
+  async createToken(email: string, id: string) {
     // Define the payload with the user's email and id
     const payload = { email, id };
 

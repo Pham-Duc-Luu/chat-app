@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import RestrictRequestModel from "../model/request.model";
-import { TooManyRerquest } from "../util/response/client_error.response";
+import { TooManyRequestsResponse } from "../util/response/clientError.response";
 
 /**
  * Function to create request limiter middleware
@@ -47,7 +47,7 @@ export default function createRequestLimiter(limit: number, interval: number) {
         // return res.status(429).json({
         //   message: "Too many requests, please try again later.",
         // });
-        throw new TooManyRerquest("Too many request");
+        throw new TooManyRequestsResponse("Too many request");
       }
 
       await Req.save();

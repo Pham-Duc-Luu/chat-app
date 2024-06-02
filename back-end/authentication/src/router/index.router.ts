@@ -14,5 +14,4 @@ appRouter.use(userApiKeyMiddleware);
  * Generate a pair token
  */
 appRouter.post("/generate-token", userController.createToken);
-
 export default appRouter;

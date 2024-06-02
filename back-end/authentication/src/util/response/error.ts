@@ -24,3 +24,4 @@ export class Forbidden extends HttpErrorResponse {
         super(message, 403);
     }
 }
+
