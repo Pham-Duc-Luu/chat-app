@@ -1,11 +1,10 @@
 import { Request, Response, Router } from "express";
 import { config } from "dotenv";
-import userRouter from "./user.router";
 import ApiKey from "../middleware/apikey.middleware";
+import app_config from "../config/app.config";
+import userRouter from "./user/user.route";
+
 const appRouter = Router();
 
-// * router
-
-appRouter.use(ApiKey).use("/users", userRouter);
-
+appRouter.use(userRouter);
 export default appRouter;

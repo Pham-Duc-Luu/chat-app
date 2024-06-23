@@ -14,7 +14,7 @@ export default function Layout({
     <ReduxProvider>
       <div className="flex">
         <Sidebar />
-        <>{children};</>
+        <>{children}</>
       </div>
     </ReduxProvider>
   );

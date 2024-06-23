@@ -5,6 +5,7 @@ config();
 
 interface IAppConfig {
   app: {
+    version?: string;
     baseUrl: string;
     port: number;
   };

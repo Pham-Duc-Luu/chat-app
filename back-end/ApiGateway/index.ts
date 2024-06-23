@@ -6,6 +6,8 @@ import { json } from "body-parser";
 import appRouter from "./src/router/index";
 import app_config from "./src/config/server.config";
 import { connectDB } from "./src/database/mongo/connect.mongo";
+import morganMiddleware from "./src/middleware/morgan.middleware";
+import AppRouter from "./src/router/index";
 
 dotenv.config();
 
@@ -15,10 +17,11 @@ const port = app_config.app.port || 8000;
 // * middleware
 app.use(helmet());
 app.use(compression());
-app.use(json());   
+app.use(json());
+app.use(morganMiddleware);
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 
-app.use(app_config.app.baseUrl, appRouter);
+app.use(appRouter.router());
 
 // * Connect to DB
 connectDB()

@@ -1,6 +1,6 @@
 import { CheckUniqueEmail, createUserDB, getUserID } from "../database/userdb";
 import bcrypt from "bcrypt";
-import { BadRequest } from "../util/response/clientError.response";
+import { BadRequestResponse } from "../util/response/clientError.response";
 import Logger from "../lib/logger";
 
 async function createUser(username: string, password: string, email: string) {
@@ -12,23 +12,23 @@ async function createUser(username: string, password: string, email: string) {
       return await createUserDB(email, username, hashedPassword);
     } catch (error) {
       console.error("Error creating user:", error);
-      throw new BadRequest("Error creating user");
+      throw new BadRequestResponse("Error creating user");
     }
   } else {
-    throw new BadRequest("Email already exists");
+    throw new BadRequestResponse("Email already exists");
   }
 }
 async function getID(email: string) {
   try {
     const id = await getUserID(email);
     if (!id) {
-      throw new BadRequest("Email don't exsits");
+      throw new BadRequestResponse("Email don't exsits");
     }
     return id;
   } catch (error) {
     console.log(error);
 
-    throw new BadRequest("Internal ");
+    throw new BadRequestResponse("Internal ");
   }
 }
 export { createUser, getID };

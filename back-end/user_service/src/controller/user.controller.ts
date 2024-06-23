@@ -8,8 +8,15 @@ import {
   ClientErrorResponse,
   HttpResponse,
   SuccessResponse,
+  TypedRequestBody,
 } from "../util/response/http.response";
 import { OkResponse } from "../util/response/successful.response";
+import { User } from "@prisma/client";
+import { prisma } from "../database/postgresql/connect.postgresql";
+import util from "../util/function";
+import _ from "lodash";
+import Logger from "../lib/logger";
+import { InternalServerErrorResponse } from "../util/response/serverError.response";
 
 interface IUser {
   username: string;
@@ -19,33 +26,62 @@ interface IUser {
 interface IUserID {
   email: string;
 }
+
+type ICreateUser = Pick<User, "email" | "id" | "username">;
 class Controller {
-  createUserService = async (req: Request<any, any, IUser>, res: Response) => {
+  createUserService = async (
+    req: TypedRequestBody<IUser>,
+    res: Response<HttpResponse | SuccessResponse<ICreateUser>>
+  ) => {
     try {
       const { username, password, email } = req.body;
+
       // * Missing parameter
       if (!username || !password || !email) {
-        throw new BadRequestResponse("Missing Username or Password or Email");
+        let _res = new BadRequestResponse();
+        return res
+          .status(_res.statusCode)
+          .json({ ..._res, message: "Missing parameter" });
       }
+
       // * check form of email and password and username return true if correct form
       if (
         valid.isValidEmail(email) &&
         valid.isValidPassword(password) &&
         valid.isValidUserName(username)
       ) {
-        const b = await createUser(username, password, email);
-        res.status(200).json({
-          message: "User created successfully.",
-          id: b,
+        const existUser = await prisma.user.findFirst({
+          where: { email: email },
         });
-      } else {
-        throw new BadRequestResponse(
-          "Email or password or username is not valid"
+        if (!existUser) {
+          let _res = new BadRequestResponse();
+          return res
+            .status(_res.statusCode)
+            .json({ ...res, message: "Email is already in use" });
+        }
+        let newUser = await prisma.user.create({
+          data: {
+            username,
+            email,
+            password,
+          },
+        });
+
+        let _res = new OkResponse<ICreateUser>(
+          util.pick(newUser, ["email", "id", "username"])
         );
+
+        return res.status(_res.statusCode).json(_res);
+      } else {
+        let _res = new BadRequestResponse();
+        return res
+          .status(_res.statusCode)
+          .json({ ..._res, message: "Invalid email or password" });
       }
     } catch (error: any) {
-      console.error("Error creating user:", error);
-      res.status(500).json({ message: error.message });
+      Logger.error(error);
+      let _res = new InternalServerErrorResponse();
+      return res.status(_res.statusCode).json(_res);
     }
   };
 

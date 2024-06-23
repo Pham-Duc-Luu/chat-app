@@ -1,10 +1,27 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-import { authReducer } from "@/lib/features/auth/authSlice";
-import { routerReducer } from "./features/router/routerSlice";
+import { authReducer } from "./store/authSlice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
+
+const authPersistConfig = {
+  key: "auth",
+  storage: storage,
+  whitelist: ["authState"],
+};
+
+const configPersist = {
+  key: "config",
+  storage: storage,
+  whitelist: ["authState"],
+};
+
+const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
+});
 
 export const store = configureStore({
-  reducer: { auth: authReducer, router: routerReducer },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
 });

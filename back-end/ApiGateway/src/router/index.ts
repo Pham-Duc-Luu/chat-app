@@ -1,16 +1,19 @@
 import { Router } from "express";
 import authRouter from "./authentication.router/index";
-import { loginUser } from "../controller/sign_in.controller";
-import createRequestLimiter from "../middleware/limitRequest.middleware";
+import app_config from "../config/server.config";
 
-const appRouter = Router();
-const requestLimiter = createRequestLimiter(100, 3600000);
+export class AppRouter {
+  private baseUrl: string = app_config.app.baseUrl;
+  private _router: Router = Router().use(this.baseUrl);
 
-appRouter.use(requestLimiter);
+  private setAuthRouter = () => {
+    this._router.use(authRouter.router());
+  };
 
-/**
- * TODO: make a third party
- */
-appRouter.post("/login", loginUser);
+  public router = () => {
+    return this._router;
+  };
+}
 
+const appRouter = new AppRouter();
 export default appRouter;

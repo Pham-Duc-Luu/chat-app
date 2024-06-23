@@ -51,7 +51,7 @@ const SignUpSchema = z
     path: ["confirmPassword"], // path of error
   });
 
-export default function Login({ locals }: { locals: string }) {
+export default function Page({ locals }: { locals: string }) {
   // ...
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignUpSchema>>({

@@ -9,10 +9,168 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  username String
-  password String 
-  resetCode String?
-  resetCodeCreatedAt String?
+  id          Int       @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  avatar      String
+  phoneNumber String
+  status      String
+  email       String
+  Followed    Follow[]  @relation("Followed")
+  Following   Follow[]  @relation("Following")
+  Stories     Story[]
+  AdminOf     AdminOfMicroSocial[]
+  Contributor ContributorOfMicroSocial[]
+  MicroSocials MicroSocial[]
+  SavedLists  SavedList[]
+  Reactions   Reaction[]
+  Comments    Comment[]
+  Posts       Post[]
+}
+
+model Follow {
+  follower  Int
+  following Int
+  UserFollower      User @relation("Followed", fields: [following], references: [id])
+  UserFollowing      User @relation("Following", fields: [follower], references: [id])
+
+  @@id([follower, following])
+}
+
+model Story {
+  id       Int    @id @default(autoincrement())
+  mediaType String
+  mediaFile Bytes
+  createBy  Int
+  User      User @relation(fields: [createBy], references: [id])
+}
+
+model AdminOfMicroSocial {
+  admin       Int
+  microSocial Int
+  User        User        @relation(fields: [admin], references: [id])
+  MicroSocial MicroSocial @relation(fields: [microSocial], references: [id])
+
+  @@id([admin, microSocial])
+}
+
+model ContributorOfMicroSocial {
+  contributor Int
+  microSocial Int
+  User        User        @relation(fields: [contributor], references: [id])
+  MicroSocial MicroSocial @relation(fields: [microSocial], references: [id])
+
+  @@id([contributor, microSocial])
+}
+
+model MicroSocial {
+  id          Int                     @id @default(autoincrement())
+  name        String
+  description String
+  thumnail    String
+  createBy    Int
+  createByUser        User                    @relation(fields: [createBy], references: [id])
+  Admins      AdminOfMicroSocial[]
+  Contributors ContributorOfMicroSocial[]
+  Posts       Post[]
+}
+
+model SavedList {
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdAt DateTime  @default(now())
+  belongTo  Int
+  User      User      @relation(fields: [belongTo], references: [id])
+  SavedPosts SavedPost[]
+}
+
+model SavedPost {
+  post Int
+  list Int
+  Post Post  @relation(fields: [post], references: [id])
+  SavedList SavedList @relation(fields: [list], references: [id])
+
+  @@id([post, list])
+}
+
+model Reaction {
+  id        Int    @id @default(autoincrement())
+  reactType String
+  reactFrom Int
+  reactToType reactToType
+  reactToPost   Int?
+  reactToComment Int?
+  User      User  @relation(fields: [reactFrom], references: [id])
+  Post      Post? @relation(fields: [reactToPost], references: [id])
+  Comment   Comment? @relation(fields: [reactToComment], references: [id])
+}
+
+enum reactToType {
+  Post
+  Comment
+}
+
+
+model Comment {
+  id           Int       @id @default(autoincrement())
+  thread       Int
+  commentParent Int?     
+  content      String
+  author       Int
+  User         User      @relation(fields: [author], references: [id])
+  Post         Post      @relation(fields: [thread], references: [id])
+  Parent       Comment?  @relation("CommentParent", fields: [commentParent], references: [id])
+  Replies      Comment[] @relation("CommentParent")
+  Reactions    Reaction[]
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  summary   String
+  content   String
+  isPublic  Boolean
+  post      Int       @unique
+  createAt  DateTime @default(now())
+  updateAt  DateTime @default(now())
+  Post      Post     @relation(fields: [post], references: [id])
+}
+
+model ShortVideo {
+  id          Int      @id @default(autoincrement())
+  description String
+  video       Bytes
+  post        Int     @unique
+  Post        Post     @relation(fields: [post], references: [id])
+}
+
+model Audio {
+  id          Int      @id @default(autoincrement())
+  post        Int       @unique
+  description String
+  audio       Bytes
+  Post        Post    @relation(fields: [post], references: [id])
+}
+
+model Post {
+  id        Int         @id @default(autoincrement())
+  type      String
+  content   Int
+  belongTo  Int
+  authorId Int
+  isPublic  Boolean
+  postType PostType
+  author  User @relation(fields: [authorId], references: [id])
+  MicroSocial MicroSocial @relation(fields: [belongTo], references: [id])
+  Blog      Blog?
+  ShortVideo ShortVideo?
+  Audio     Audio?
+  Comments  Comment[]
+  Reactions Reaction[]
+  saveList SavedPost[]
+}
+
+enum PostType {
+  BLOG
+  AUDIO
+  SHORTVIDEO
 }

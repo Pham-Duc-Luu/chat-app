@@ -1,4 +1,8 @@
 {
+  "application": {
+    "name": "My Tomo",
+    "icon": "<Atom size={40} strokeWidth={0.5} />"
+  },
   "authentication": {
     "sign_up": {
       "title": "Sign up",
@@ -50,19 +54,29 @@
       "element": {
         "up": [
           {
-            "title": "Home"
+            "title": "World Space",
+            "icon": {
+              "lucid": "earth"
+            }
           },
           {
-            "title": "Search"
+            "title": "Your house space",
+            "icon": {
+              "lucid": "boxes"
+            }
+          },
+
+          {
+            "title": "Explore",
+            "icon": {
+              "lucid": "telescope"
+            }
           },
           {
-            "title": "For you"
-          },
-          {
-            "title": "Explore"
-          },
-          {
-            "title": "Notifications"
+            "title": "Notifications",
+            "icon": {
+              "lucid": "bell-ring"
+            }
           },
           {
             "title": "Create"

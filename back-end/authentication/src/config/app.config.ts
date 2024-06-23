@@ -3,35 +3,45 @@ import db_config, { IMongoDBConfig } from "./mongodb.config";
 
 config();
 interface IAppConfig {
-    app: {
-        baseUrl: string;
-        port: number;
-        apiKey?: {
-            userService: string;
-        };
+  app: {
+    baseUrl: string;
+    port: number;
+    apiKey?: {
+      userService: string;
     };
-    mongodb: IMongoDBConfig;
+  };
+  mongodb: IMongoDBConfig;
+  redis?: {
+    host: string;
+    port: string;
+    name: string;
+  };
 }
 
 const env = process.env.NODE_ENV;
 
 const dev_config: IAppConfig = {
-    app: {
-        baseUrl: process.env.DEV_BASE_URL || "/authentication/api/v1",
-        port: Number(process.env.DEV_PORT) || 5001,
-        apiKey: {
-            userService: process.env.DEV_API_KEY_AUTHENTICATION || "authentication",
-        },
+  app: {
+    baseUrl: process.env.DEV_BASE_URL || "/authentication/api/v1",
+    port: Number(process.env.DEV_PORT) || 5001,
+    apiKey: {
+      userService: process.env.DEV_API_KEY_AUTHENTICATION || "authentication",
     },
-    mongodb: db_config,
+  },
+  mongodb: db_config,
+  redis: {
+    host: process.env.DEV_REDIS_HOST || "localhost",
+    port: process.env.DEV_REDIS_PORT || "6379",
+    name: process.env.DEV_REDIS_NAME || "test",
+  },
 };
 
 const pro_config: IAppConfig = {
-    app: {
-        baseUrl: process.env.PRO_BASE_URL as string,
-        port: Number(process.env.PRO_PORT),
-    },
-    mongodb: db_config,
+  app: {
+    baseUrl: process.env.PRO_BASE_URL as string,
+    port: Number(process.env.PRO_PORT),
+  },
+  mongodb: db_config,
 };
 
 const app_config: IAppConfig = env === "production" ? pro_config : dev_config;

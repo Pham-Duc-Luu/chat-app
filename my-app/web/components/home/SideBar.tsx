@@ -1,64 +1,29 @@
 "use client";
 import {
-  Bird,
-  Book,
-  Bot,
-  Code2,
-  CornerDownLeft,
-  LifeBuoy,
-  Mic,
-  Paperclip,
-  Rabbit,
-  Settings,
-  Settings2,
-  Share,
-  SquareTerminal,
-  SquareUser,
-  Triangle,
-  Origami,
-  Turtle,
   Home,
   Search,
   Sparkles,
   Bell,
   CirclePlus,
+  Origami,
+  Settings,
+  SquareUser,
   LucideProps,
 } from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
 } from "@/components/ui/tooltip";
-import React, { ReactHTMLElement } from "react";
-import react from "react";
-import { AppProps } from "next/app";
+import React from "react";
+import { motion } from "framer-motion";
 
 interface ISideBarElement {
   title: string;
-  icon: react.ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & react.RefAttributes<SVGSVGElement>
+  icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
 }
 
@@ -85,23 +50,46 @@ const SideBarElement: ISideBarElement[] = [
   },
 ];
 
-const SideBar = ({ Component, pageProps }: AppProps) => {
+const SideBar = () => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
   return (
-    <TooltipProvider {...pageProps}>
+    <TooltipProvider>
       <div className="grid h-screen ">
-        <aside className="inset-y fixed  left-0 z-20 flex h-full flex-col border-r">
+        <motion.aside
+          initial={{ width: "auto" }}
+          animate={{ width: isExpanded ? "12rem" : "auto" }}
+          transition={{ duration: 0.3 }}
+          className="inset-y fixed left-0 z-20 flex h-full flex-col border-r"
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+        >
           <div className="border-b p-2">
             <Button variant="outline" size="icon" aria-label="Home">
               <Origami />
             </Button>
           </div>
           <nav className="grid gap-1 p-2">
-            {SideBarElement.map((item) => {
+            {SideBarElement.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Button variant="outline" className="">
-                  <Icon />
-                  <span>Toggle notifications</span>
+                <Button
+                  key={index}
+                  variant="outline"
+                  className="flex justify-start items-center"
+                >
+                  <Icon className="" />
+                  <motion.span
+                    initial={{ opacity: 1, marginLeft: 0 }}
+                    animate={{
+                      width: isExpanded ? "auto" : 0,
+                      marginLeft: isExpanded ? "10px" : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="whitespace-nowrap overflow-hidden"
+                  >
+                    {item.title}
+                  </motion.span>
                 </Button>
               );
             })}
@@ -115,7 +103,7 @@ const SideBar = ({ Component, pageProps }: AppProps) => {
                   className="mt-auto rounded-lg"
                   aria-label="Help"
                 >
-                  <LifeBuoy className="size-10" />
+                  <Settings className="size-10" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="right" sideOffset={5}>
@@ -138,7 +126,7 @@ const SideBar = ({ Component, pageProps }: AppProps) => {
               </TooltipContent>
             </Tooltip>
           </nav>
-        </aside>
+        </motion.aside>
       </div>
     </TooltipProvider>
   );
