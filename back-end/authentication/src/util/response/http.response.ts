@@ -23,8 +23,8 @@ export interface TypedResponse<ResBody> extends Express.Response {
 }
 
 export class HttpResponse<T = undefined> {
-  statusCode: number;
-  message: string;
+  statusCode: number = 0;
+  message: string = "";
   data?: T;
 }
 

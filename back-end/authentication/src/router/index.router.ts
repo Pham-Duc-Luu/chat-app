@@ -20,16 +20,7 @@ appRouter.use(userApiKeyMiddleware);
 /**
  * Generate a pair token
  */
-appRouter.post("/generate-token", userController.createToken);
 
-appRouter.route("/login").post(async (req: Request, res: Response) => {
-  // logic for login method goes here...
-
-  // store the userId and user's email in the session
-  req.session.userId = "123";
-  req.session.email = "email";
-
-  res.send(req.session);
-});
+appRouter.post("/generate-jwt-token", userController.createToken);
 
 export default appRouter;

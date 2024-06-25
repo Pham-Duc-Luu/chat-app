@@ -1,48 +1,31 @@
 import { config } from "dotenv";
 import db_config, { IMongoDBConfig } from "./mongodb.config";
-
+import _ from "lodash";
+import util from "../util/function";
 config();
-interface IAppConfig {
-  app: {
-    baseUrl: string;
-    port: number;
-    apiKey?: {
-      userService: string;
-    };
-  };
-  mongodb: IMongoDBConfig;
-  redis?: {
-    host: string;
-    port: string;
-    name: string;
-  };
-}
 
-const env = process.env.NODE_ENV;
+/**
+ *  TODO : add environment variables here
+ */
 
-const dev_config: IAppConfig = {
-  app: {
-    baseUrl: process.env.DEV_BASE_URL || "/authentication/api/v1",
-    port: Number(process.env.DEV_PORT) || 5001,
-    apiKey: {
-      userService: process.env.DEV_API_KEY_AUTHENTICATION || "authentication",
-    },
-  },
-  mongodb: db_config,
-  redis: {
-    host: process.env.DEV_REDIS_HOST || "localhost",
-    port: process.env.DEV_REDIS_PORT || "6379",
-    name: process.env.DEV_REDIS_NAME || "test",
-  },
-};
+const ENVVARIABLE = [
+  "APP_BASE_URL",
+  "ENV",
+  "APP_PORT",
+  "API_KEY_USER_SERVICE",
+  "REDIS_URL",
+  "SERVER_KEY",
+  "MONGO_URL",
+  "",
+];
+const AppConfigEnv = util.getEnvVariables(ENVVARIABLE);
 
-const pro_config: IAppConfig = {
-  app: {
-    baseUrl: process.env.PRO_BASE_URL as string,
-    port: Number(process.env.PRO_PORT),
-  },
-  mongodb: db_config,
-};
+console.log(AppConfigEnv);
 
-const app_config: IAppConfig = env === "production" ? pro_config : dev_config;
+const keys = util.keys(AppConfigEnv);
+
+keys.forEach((key) => {});
+
+let app_config: any;
+
 export default app_config;

@@ -7,6 +7,7 @@ import { TypedResponse } from "../util/interface/express.interface";
 import {
   ClientErrorResponse,
   HttpResponse,
+  ServerErrorResponse,
   SuccessResponse,
   TypedRequestBody,
 } from "../util/response/http.response";
@@ -28,10 +29,20 @@ interface IUserID {
 }
 
 type ICreateUser = Pick<User, "email" | "id" | "username">;
+
 class Controller {
+  /**
+   * create a new user
+   * @param email
+   * @param username
+   * @param password
+   *
+   */
   createUserService = async (
     req: TypedRequestBody<IUser>,
-    res: Response<HttpResponse | SuccessResponse<ICreateUser>>
+    res: Response<
+      ClientErrorResponse | ServerErrorResponse | SuccessResponse<ICreateUser>
+    >
   ) => {
     try {
       const { username, password, email } = req.body;

@@ -10,12 +10,14 @@ datasource db {
 
 model User {
   id          Int       @id @default(autoincrement())
-  firstName   String
-  lastName    String
-  avatar      String
-  phoneNumber String
-  status      String
+  firstName   String?
+  lastName    String?
+  avatar      String?
+  phoneNumber String?
+  status      String?
   email       String
+  username    String  @unique
+  password    String
   Followed    Follow[]  @relation("Followed")
   Following   Follow[]  @relation("Following")
   Stories     Story[]

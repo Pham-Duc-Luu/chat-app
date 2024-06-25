@@ -10,8 +10,9 @@ import Logger from "./src/lib/logger";
 import app_config from "./src/config/app.config";
 import morganMiddleware from "./src/middleware/morgan.middleware";
 import session from "express-session";
-import RedisStore from "connect-redis";
-import IORedis from "ioredis";
+import swaggerDocs from "./src/util/swagger/swagger";
+import prisma from "./src/lib/prisma";
+import { redisStore } from "./src/database/redis/redis.connect";
 config();
 // * innitialization
 const app: Application = express();
@@ -24,18 +25,10 @@ app.use(morganMiddleware);
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 app.set("trust proxy", 1);
 
-// Initialize client.
-const redisClient = new IORedis(
-  process.env.REDIS_URL || "redis://127.0.0.1:6379"
-);
-
-// Initialize store.
-const redisStore = new RedisStore({ client: redisClient });
-
 app.use(
   session({
     store: redisStore,
-    secret: process.env.SESSION_SECRET || "secret",
+    secret: process.env.AUTHENTICATION_SESSION_SECRET || "secret",
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -45,21 +38,33 @@ app.use(
     },
   })
 );
-// * Connect to database
-connectDB()
-  .then((_) => console.log(_))
-  .catch((err) => console.log(err));
 
 // * api version
 app.use(app_config.app.baseUrl, appRouter);
 
-const server = app.listen(app_config.app.port, () => {
-  console.log(
-    `authentication server is running on port ${app_config.app.port}`
-  );
+app.get("/", (req, res) => {
+  return res.send("Welcome to authetication service");
 });
 
-process.on("unhandledRejection", (error, promise) => {
-  console.log(`Logged Error: ${error}`);
-  server.close(() => process.exit(1));
-});
+async function main() {
+  const server = app.listen(app_config.app.port, () => {
+    console.log(`user server is running on port ${app_config.app.port}`);
+  });
+
+  swaggerDocs(app, app_config.app.port);
+  process.on("unhandledRejection", (error, promise) => {
+    console.log(`Logged Error: ${error}`);
+    server.close(() => process.exit(1));
+  });
+  // ... you will write your Prisma Client queries here
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
