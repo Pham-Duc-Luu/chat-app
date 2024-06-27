@@ -4,7 +4,7 @@ import { Query } from "express-serve-static-core";
 import Express, { Request, Response } from "express";
 
 export interface TypedRequestBody<T> extends Express.Request {
-  body: T;
+  body: Partial<T>;
 }
 
 export interface TypedRequestQueryBody<T extends Query>

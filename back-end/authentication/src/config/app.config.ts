@@ -16,16 +16,13 @@ const ENVVARIABLE = [
   "REDIS_URL",
   "SERVER_KEY",
   "MONGO_URL",
-  "",
-];
-const AppConfigEnv = util.getEnvVariables(ENVVARIABLE);
+  "DATABASE_URL",
+] as const;
+
+export type Tenv = (typeof ENVVARIABLE)[number];
+
+const AppConfigEnv = util.getEnvVariables(Array.from(ENVVARIABLE));
 
 console.log(AppConfigEnv);
 
-const keys = util.keys(AppConfigEnv);
-
-keys.forEach((key) => {});
-
-let app_config: any;
-
-export default app_config;
+export default AppConfigEnv;

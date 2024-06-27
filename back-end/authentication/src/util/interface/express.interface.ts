@@ -3,7 +3,7 @@ import { Send } from "express-serve-static-core";
 import { Query } from "express-serve-static-core";
 
 export interface TypedRequestBody<T> extends Express.Request {
-  body: T;
+  body: Partial<T>;
 }
 
 export interface TypedRequestQueryBody<T extends Query>

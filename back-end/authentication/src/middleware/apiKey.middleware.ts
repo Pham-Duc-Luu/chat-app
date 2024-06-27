@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import app_config from "../config/app.config";
 import { BadRequestResponse } from "../util/response/clientError.response";
 import { ClientErrorResponse } from "../util/response/http.response";
+import AppConfigEnv from "../config/app.config";
 
 /**
  * Middleware to check for a valid API key in the request headers.
@@ -22,7 +23,7 @@ export default function userApiKeyMiddleware(
       throw new BadRequestResponse("Unauthorized");
     }
 
-    if (apiKey !== app_config.app.key.apiKey?.userService) {
+    if (apiKey !== AppConfigEnv.API_KEY_USER_SERVICE) {
       throw new BadRequestResponse("No Permission");
     }
     next();

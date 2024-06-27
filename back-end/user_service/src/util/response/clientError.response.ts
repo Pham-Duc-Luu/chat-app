@@ -1,8 +1,15 @@
 import { ClientErrorResponse } from "./http.response";
 
 export class BadRequestResponse<T = undefined> extends ClientErrorResponse<T> {
-  constructor(data?: T) {
-    super("Bad Request", 400, data);
+  constructor(message: string, data?: T);
+  constructor(data?: T);
+
+  constructor(messageOrData?: string | T | undefined, data?: T) {
+    if (typeof messageOrData === "string") {
+      super(messageOrData, 400, data);
+    } else {
+      super("Bad Request", 400, data);
+    }
   }
 }
 

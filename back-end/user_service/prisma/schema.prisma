@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_URL")
 }
 
 model User {
@@ -15,7 +15,7 @@ model User {
   avatar      String?
   phoneNumber String?
   status      String?
-  email       String
+  email       String  @unique
   username    String  @unique
   password    String
   Followed    Follow[]  @relation("Followed")

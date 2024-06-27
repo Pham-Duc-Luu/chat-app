@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { createUser, getID } from "../service/user.service";
-
+import bcrypt from "bcrypt";
 import valid from "../service/valid.service";
 import { BadRequestResponse } from "../util/response/clientError.response";
 import { TypedResponse } from "../util/interface/express.interface";
@@ -13,11 +13,12 @@ import {
 } from "../util/response/http.response";
 import { OkResponse } from "../util/response/successful.response";
 import { User } from "@prisma/client";
-import { prisma } from "../database/postgresql/connect.postgresql";
 import util from "../util/function";
 import _ from "lodash";
 import Logger from "../lib/logger";
 import { InternalServerErrorResponse } from "../util/response/serverError.response";
+import prisma from "../database/postgresql/connect.postgresql";
+import AppConfigEnv from "../config/app.config";
 
 interface IUser {
   username: string;
@@ -40,59 +41,56 @@ class Controller {
    */
   createUserService = async (
     req: TypedRequestBody<IUser>,
-    res: Response<
-      ClientErrorResponse | ServerErrorResponse | SuccessResponse<ICreateUser>
-    >
+    res: TypedResponse<HttpResponse | SuccessResponse<ICreateUser>>
   ) => {
     try {
       const { username, password, email } = req.body;
 
-      // * Missing parameter
       if (!username || !password || !email) {
-        let _res = new BadRequestResponse();
-        return res
-          .status(_res.statusCode)
-          .json({ ..._res, message: "Missing parameter" });
+        return res.json(new BadRequestResponse("Missing Parameters"));
       }
 
-      // * check form of email and password and username return true if correct form
       if (
         valid.isValidEmail(email) &&
         valid.isValidPassword(password) &&
         valid.isValidUserName(username)
       ) {
-        const existUser = await prisma.user.findFirst({
-          where: { email: email },
-        });
-        if (!existUser) {
-          let _res = new BadRequestResponse();
-          return res
-            .status(_res.statusCode)
-            .json({ ...res, message: "Email is already in use" });
-        }
-        let newUser = await prisma.user.create({
-          data: {
-            username,
-            email,
-            password,
-          },
-        });
-
-        let _res = new OkResponse<ICreateUser>(
-          util.pick(newUser, ["email", "id", "username"])
-        );
-
-        return res.status(_res.statusCode).json(_res);
-      } else {
-        let _res = new BadRequestResponse();
-        return res
-          .status(_res.statusCode)
-          .json({ ..._res, message: "Invalid email or password" });
+        return res.json(new BadRequestResponse("Invalid paramters"));
       }
+
+      // * find if user is already existing
+      if (
+        await prisma.user.findFirst({
+          where: {
+            OR: [{ email }, { username }],
+          },
+        })
+      ) {
+        return res.json(
+          new BadRequestResponse("email or username have already exist!")
+        );
+      }
+
+      // * create new user
+      return res.json(
+        new OkResponse(
+          await prisma.user.create({
+            data: {
+              username,
+              email,
+              password: bcrypt.hashSync(password, AppConfigEnv.SALTROUND),
+            },
+            select: {
+              username: true,
+              email: true,
+              id: true,
+            },
+          })
+        )
+      );
     } catch (error: any) {
       Logger.error(error);
-      let _res = new InternalServerErrorResponse();
-      return res.status(_res.statusCode).json(_res);
+      return res.json(new InternalServerErrorResponse());
     }
   };
 

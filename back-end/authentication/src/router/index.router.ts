@@ -1,6 +1,5 @@
 import { Request, Response, Router } from "express";
 import { config } from "dotenv";
-import authRouter from "./auth.route";
 import userController from "../controller/user.controller";
 import userApiKeyMiddleware from "../middleware/apiKey.middleware";
 
@@ -21,6 +20,6 @@ appRouter.use(userApiKeyMiddleware);
  * Generate a pair token
  */
 
-appRouter.post("/generate-jwt-token", userController.createToken);
+appRouter.post("/generate-jwt-token", userController.createRefreshToken);
 
 export default appRouter;

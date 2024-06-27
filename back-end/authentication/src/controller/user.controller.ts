@@ -8,14 +8,21 @@ import {
 } from "../util/interface/express.interface";
 import {
   ClientErrorResponse,
+  HttpResponse,
   ServerErrorResponse,
   SuccessResponse,
 } from "../util/response/http.response";
 import { BadRequestResponse } from "../util/response/clientError.response";
+import prisma from "../lib/prisma";
+import jwt from "jsonwebtoken";
 
 interface ICreateToken {
   email: string;
   id: number;
+  username: string;
+  osName: string;
+  browserName: string;
+  ipAddress: string;
 }
 
 export interface IToken {
@@ -34,17 +41,81 @@ class UserController {
    * @param id
    * @param email
    */
-  createToken = async (
+  createRefreshToken = async (
     req: TypedRequestBody<ICreateToken>,
-    res: Response<
+    res: TypedResponse<
       ClientErrorResponse | ServerErrorResponse | SuccessResponse<IToken>
     >
   ) => {
     try {
-      const { email, id } = req.body;
+      const { email, id, username, osName, browserName, ipAddress } = req.body;
+
+      if (!email || !username || !id) {
+        return res.json(new BadRequestResponse("Missing email or username"));
+      }
+
+      // * check if the user has already exsist
+      let existUser = await prisma.user.findFirst({
+        where: {
+          OR: [
+            {
+              email,
+            },
+            {
+              id,
+            },
+            {
+              username,
+            },
+          ],
+        },
+      });
+      if (!existUser) {
+        existUser = await prisma.user.create({
+          data: {
+            email,
+            id,
+            username,
+          },
+        });
+      }
+
+      const accessToken = jwt.sign(
+        {
+          id: existUser.id,
+          email: existUser.email,
+          username: existUser.username,
+        },
+        existUser.publicKey,
+        { expiresIn: existUser.accessTokenExpIn }
+      );
+
+      const refreshToken = jwt.sign(
+        {
+          id: existUser.id,
+          email: existUser.email,
+          username: existUser.username,
+        },
+        existUser.privateKey,
+        { expiresIn: existUser.refreshTokenExpIn }
+      );
+
+      const newFreshToken = await prisma.user.update({
+        where: {
+          id: existUser.id,
+        },
+        data: {
+          devices: {
+            update: {
+              data: {
+                browserName: "c",
+              },
+            },
+          },
+        },
+      });
     } catch (error: any) {
       console.log(error);
-      res.status(500).json(new BadRequestResponse());
     }
   };
 }

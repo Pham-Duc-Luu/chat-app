@@ -1,0 +1,49 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @unique 
+  email String  @unique
+  username String @unique
+  privateKey String @unique @default("privateKey")
+  publicKey String @unique  @default("publicKey")
+  accessTokenExpIn String @default("1h")
+  refreshTokenExpIn String @default("7d")
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  refreshTokens refresToken[]
+  devices device[]
+}
+
+model device {
+  id Int @unique @default(autoincrement())
+  browserName String?
+  osName String?
+  lastLogin DateTime @default(now())
+  ipAddress String?
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  refreshTokens refresToken[]
+}
+
+model refresToken {
+  id Int @unique @default(autoincrement())
+  token String
+  userId Int
+  user User @relation(fields: [userId], references: [id] )
+  forDeviceId Int @unique
+  forDevice device @relation(fields: [forDeviceId], references: [id])
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+ 

@@ -1,4 +1,8 @@
 import _ from "lodash";
+import { Tenv } from "../../config/app.config";
+import { config } from "dotenv";
+import Logger from "../../lib/logger";
+config();
 
 interface My {
   i: string;
@@ -25,22 +29,18 @@ class Util {
     return Object.keys(obj) as (keyof T)[];
   }
 
-  getEnvVariables(arr: string[]): Record<string, string | undefined> {
-    return arr.reduce(
-      (
-        total: Record<string, string | undefined>,
-        currentValue,
-        currentIndex
-      ) => {
-        // Assuming that each element in the array is a key-value pair separated by a colon
+  getEnvVariables<T extends X, X extends string>(arr: X[]): Record<T, string> {
+    for (let i = 0; i < arr.length; i++) {
+      if (!process.env[arr[i]]) {
+        Logger.error(
+          `Mising environment variable \n please add ${arr[i]} in app.config.ts `
+        );
+        throw new Error(`${arr[i]} is undefined`);
+      }
+    }
 
-        total[currentValue] = process.env[currentValue];
-        return total;
-      },
-      {}
-    );
+    return _.pick(process.env, arr) as Record<T, string>;
   }
-  checkEnvironments<T>(obj: T) {}
 }
 
 const util = new Util();

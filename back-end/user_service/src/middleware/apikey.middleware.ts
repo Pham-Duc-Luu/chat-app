@@ -11,20 +11,20 @@ import {
   BadRequestResponse,
   UnauthorizedResponse,
 } from "../util/response/clientError.response";
+import AppConfigEnv from "../config/app.config";
 
-export default function ApiKey(
+export default function verifyApiKey(
   req: Request,
   res: TypedResponse<ClientErrorResponse>,
   next: NextFunction
 ) {
   try {
     const api_key = req.headers["x-api-key"];
-    const apikey = process.env.API_Key || "api-key";
     if (!api_key) {
       throw new BadRequestResponse("Missing x-api-key");
     }
 
-    if (api_key !== apikey) {
+    if (api_key !== AppConfigEnv.SERVER_KEY) {
       throw new UnauthorizedResponse("No Access");
     }
     next();

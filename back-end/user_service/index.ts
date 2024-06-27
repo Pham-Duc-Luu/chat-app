@@ -5,10 +5,12 @@ import cors from "cors";
 import "reflect-metadata";
 import { config } from "dotenv";
 import appRouter from "./src/router/index.router";
-import { prisma } from "./src/database/postgresql/connect.postgresql";
 import app_config from "./src/config/app.config";
 import morganMiddleware from "./src/middleware/morgan.middleware";
 import swaggerDocs from "./src/util/swagger/swagger";
+import AppConfigEnv from "./src/config/app.config";
+import prisma from "./src/database/postgresql/connect.postgresql";
+import verifyApiKey from "./src/middleware/apikey.middleware";
 config();
 
 // * innitialization
@@ -20,27 +22,31 @@ app.use(compression());
 app.use(json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
-
-// * Connect to database
-
-// * api version
-app.use(app_config.app.baseUrl, appRouter);
-
-app.get("/", (_, res) => {
-  return res.send("Welcome to user service");
-});
+app.use(verifyApiKey);
 
 async function main() {
-  const server = app.listen(app_config.app.port, () => {
-    console.log(`user server is running on port ${app_config.app.port}`);
+  const server = app.listen(AppConfigEnv.APP_PORT, () => {
+    console.log(
+      `user server is running on http://localhost${AppConfigEnv.APP_PORT}`
+    );
   });
 
-  swaggerDocs(app, app_config.app.port);
+  app.use(AppConfigEnv.APP_BASE_URL, appRouter);
+
+  /**
+   * ! API DOCUMENTATION is can not be published
+   */
+  if (AppConfigEnv.ENV === "development") {
+    swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
+    app.get("/", (req, res) => {
+      res.send("webcome to user server");
+    });
+  }
+
   process.on("unhandledRejection", (error, promise) => {
     console.log(`Logged Error: ${error}`);
     server.close(() => process.exit(1));
   });
-  // ... you will write your Prisma Client queries here
 }
 
 main()

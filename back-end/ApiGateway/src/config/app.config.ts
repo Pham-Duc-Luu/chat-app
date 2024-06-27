@@ -19,9 +19,11 @@ const ENVVARIABLE = [
   "APP_BASE_URL",
   "ENV",
   "APP_PORT",
+  "API_KEY_USER_SERVICE",
+  "API_KEY_AUTHETICATION_SERVICE",
   "SERVER_KEY",
-  "POSTGRES_URL",
-  "SALTROUND",
+  "NGROK_AUTHTOKEN",
+  "TESTING_IP",
 ] as const;
 
 export type Tenv = (typeof ENVVARIABLE)[number];

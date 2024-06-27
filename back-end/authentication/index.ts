@@ -7,12 +7,12 @@ import { config } from "dotenv";
 import appRouter from "./src/router/index.router";
 import { connectDB } from "./src/database/mongodb/connect.mongo";
 import Logger from "./src/lib/logger";
-import app_config from "./src/config/app.config";
 import morganMiddleware from "./src/middleware/morgan.middleware";
 import session from "express-session";
 import swaggerDocs from "./src/util/swagger/swagger";
 import prisma from "./src/lib/prisma";
 import { redisStore } from "./src/database/redis/redis.connect";
+import AppConfigEnv from "./src/config/app.config";
 config();
 // * innitialization
 const app: Application = express();
@@ -40,18 +40,18 @@ app.use(
 );
 
 // * api version
-app.use(app_config.app.baseUrl, appRouter);
+app.use(AppConfigEnv.APP_BASE_URL, appRouter);
 
 app.get("/", (req, res) => {
   return res.send("Welcome to authetication service");
 });
 
 async function main() {
-  const server = app.listen(app_config.app.port, () => {
-    console.log(`user server is running on port ${app_config.app.port}`);
+  const server = app.listen(AppConfigEnv.APP_PORT, () => {
+    console.log(`user server is running on port ${AppConfigEnv.APP_PORT}`);
   });
 
-  swaggerDocs(app, app_config.app.port);
+  swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
   process.on("unhandledRejection", (error, promise) => {
     console.log(`Logged Error: ${error}`);
     server.close(() => process.exit(1));
