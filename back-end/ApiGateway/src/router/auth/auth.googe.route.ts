@@ -12,8 +12,7 @@ passport.use(
     {
       clientID: AppConfigEnv.GOOGLE_CLIENT_ID,
       clientSecret: AppConfigEnv.GOOGLE_CLIENT_SECRET,
-      callbackURL:
-        'http://localhost:5000/apigateway/api/v1/auth/google/callback',
+      callbackURL: `http://localhost:${AppConfigEnv.APP_PORT}${AppConfigEnv.APP_BASE_URL}/${AppConfigEnv.GOOGLE_CALLBACK_URL}`,
     },
     function (accessToken, refreshToken, profile, cb) {
       return cb(null, profile);
@@ -35,7 +34,7 @@ OAuhtRoute.get(
 );
 
 OAuhtRoute.get(
-  '/auth/google/callback',
+  AppConfigEnv.GOOGLE_CALLBACK_URL,
   passport.authenticate('google', { failureRedirect: '/error' }),
   function (req, res) {
     const { _json } = req.user as Profile;

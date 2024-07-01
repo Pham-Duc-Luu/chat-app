@@ -28,6 +28,7 @@ const ENVVARIABLE = [
   'GOOGLE_CLIENT_ID',
   'GOOGLE_CLIENT_SECRET',
   'TESTING_IP',
+  'GOOGLE_CALLBACK_URL',
 ] as const;
 
 export type Tenv = (typeof ENVVARIABLE)[number];
