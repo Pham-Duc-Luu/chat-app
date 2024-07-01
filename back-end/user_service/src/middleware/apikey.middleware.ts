@@ -1,17 +1,19 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from 'express';
 
-import { any } from "zod";
-import Logger from "../lib/logger";
-import { TypedResponse } from "../util/interface/express.interface";
+import { any } from 'zod';
+import Logger from '../lib/logger';
+import { TypedResponse } from '../util/interface/express.interface';
 import {
   ClientErrorResponse,
   HttpResponse,
-} from "../util/response/http.response";
+} from '../util/response/http.response';
 import {
   BadRequestResponse,
+  ForbiddenResponse,
   UnauthorizedResponse,
-} from "../util/response/clientError.response";
-import AppConfigEnv from "../config/app.config";
+} from '../util/response/clientError.response';
+import AppConfigEnv from '../config/app.config';
+import { ServiceUnavailableResponse } from '../util/response/serverError.response';
 
 export default function verifyApiKey(
   req: Request,
@@ -19,17 +21,17 @@ export default function verifyApiKey(
   next: NextFunction
 ) {
   try {
-    const api_key = req.headers["x-api-key"];
+    const api_key = req.headers['x-api-key'];
     if (!api_key) {
-      throw new BadRequestResponse("Missing x-api-key");
+      return res.json(new ForbiddenResponse('No api key'));
     }
 
     if (api_key !== AppConfigEnv.SERVER_KEY) {
-      throw new UnauthorizedResponse("No Access");
+      return res.json(new UnauthorizedResponse('No Access'));
     }
     next();
   } catch (error: any) {
-    console.log(error.stack);
-    Logger.error(error.stack);
+    Logger.error(error);
+    return res.json(new ServiceUnavailableResponse());
   }
 }

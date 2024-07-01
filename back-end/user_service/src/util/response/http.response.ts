@@ -1,7 +1,7 @@
-import { Send } from "express-serve-static-core";
-import { Query } from "express-serve-static-core";
+import { Send } from 'express-serve-static-core';
+import { Query } from 'express-serve-static-core';
 
-import Express, { Request, Response } from "express";
+import Express, { Request, Response } from 'express';
 
 export interface TypedRequestBody<T> extends Express.Request {
   body: Partial<T>;
@@ -22,7 +22,7 @@ export interface TypedResponse<ResBody> extends Express.Response {
   json: Send<ResBody, this>;
 }
 
-export class HttpResponse<T = undefined> {
+export class HttpResponse<T = any> {
   statusCode: number;
   message: string;
   data?: T;
@@ -37,7 +37,7 @@ export class InformationResponse<T> extends HttpResponse<T> {
   }
 }
 
-export class ClientErrorResponse<T = undefined> extends HttpResponse<T> {
+export class ClientErrorResponse<T = any> extends HttpResponse<T> {
   constructor(message: string, statusCode: number, data?: T) {
     super();
     this.message = message;
@@ -46,7 +46,7 @@ export class ClientErrorResponse<T = undefined> extends HttpResponse<T> {
   }
 }
 
-export class RedirectResponse<T = undefined> extends HttpResponse<T> {
+export class RedirectResponse<T = any> extends HttpResponse<T> {
   constructor(message: string, statusCode: number, data?: T) {
     super();
     this.message = message;
@@ -54,16 +54,7 @@ export class RedirectResponse<T = undefined> extends HttpResponse<T> {
     this.data = data;
   }
 }
-export class SuccessResponse<T = undefined> extends HttpResponse<T> {
-  constructor(message: string, statusCode: number, data?: T) {
-    super();
-    this.message = message;
-    this.statusCode = statusCode;
-    this.data = data;
-  }
-}
-
-export class ServerErrorResponse<T = undefined> extends HttpResponse<T> {
+export class SuccessResponse<T = any> extends HttpResponse<T> {
   constructor(message: string, statusCode: number, data?: T) {
     super();
     this.message = message;
@@ -72,13 +63,22 @@ export class ServerErrorResponse<T = undefined> extends HttpResponse<T> {
   }
 }
 
-import * as clientRes from "./clientError.response";
-import * as informationRes from "./information.response";
-import * as redirectRes from "./redirect.response";
+export class ServerErrorResponse<T = any> extends HttpResponse<T> {
+  constructor(message: string, statusCode: number, data?: T) {
+    super();
+    this.message = message;
+    this.statusCode = statusCode;
+    this.data = data;
+  }
+}
 
-import * as serverErrRes from "./serverError.response";
+import * as clientRes from './clientError.response';
+import * as informationRes from './information.response';
+import * as redirectRes from './redirect.response';
 
-import * as successfulRes from "./successful.response";
+import * as serverErrRes from './serverError.response';
+
+import * as successfulRes from './successful.response';
 
 export default {
   clientRes,

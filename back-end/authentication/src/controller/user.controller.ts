@@ -1,20 +1,24 @@
-import { Request, Response } from "express";
-import tokenService from "../service/token";
-import { any } from "zod";
-import UserModel from "../models/User.model";
+import { Request, Response } from 'express';
+import tokenService from '../service/token';
+import { any } from 'zod';
+import UserModel from '../models/User.model';
 import {
   TypedRequestBody,
   TypedResponse,
-} from "../util/interface/express.interface";
+} from '../util/interface/express.interface';
 import {
   ClientErrorResponse,
   HttpResponse,
   ServerErrorResponse,
   SuccessResponse,
-} from "../util/response/http.response";
-import { BadRequestResponse } from "../util/response/clientError.response";
-import prisma from "../lib/prisma";
-import jwt from "jsonwebtoken";
+} from '../util/response/http.response';
+import { BadRequestResponse } from '../util/response/clientError.response';
+import prisma from '../lib/prisma';
+import jwt from 'jsonwebtoken';
+import jwtService from '../service/jwt.service';
+import { OkResponse } from '../util/response/successful.response';
+import Logger from '../lib/logger';
+import { InternalServerErrorResponse } from '../util/response/serverError.response';
 
 interface ICreateToken {
   email: string;
@@ -51,71 +55,71 @@ class UserController {
       const { email, id, username, osName, browserName, ipAddress } = req.body;
 
       if (!email || !username || !id) {
-        return res.json(new BadRequestResponse("Missing email or username"));
+        return res.json(new BadRequestResponse('Missing email or username'));
+      }
+
+      if (!ipAddress) {
+        return res.json(new BadRequestResponse('IP address'));
       }
 
       // * check if the user has already exsist
-      let existUser = await prisma.user.findFirst({
-        where: {
-          OR: [
-            {
-              email,
-            },
-            {
-              id,
-            },
-            {
-              username,
-            },
-          ],
-        },
-      });
+      let existUser = await prisma.user.findFirst({ where: { email: email } });
       if (!existUser) {
         existUser = await prisma.user.create({
           data: {
             email,
-            id,
+            id: Number(id),
             username,
           },
         });
       }
 
-      const accessToken = jwt.sign(
-        {
-          id: existUser.id,
-          email: existUser.email,
-          username: existUser.username,
-        },
-        existUser.publicKey,
-        { expiresIn: existUser.accessTokenExpIn }
-      );
+      // * generate access token and refresh token
+      const tokens = await jwtService.generateTokenFromUser(existUser);
 
-      const refreshToken = jwt.sign(
-        {
-          id: existUser.id,
-          email: existUser.email,
-          username: existUser.username,
-        },
-        existUser.privateKey,
-        { expiresIn: existUser.refreshTokenExpIn }
-      );
+      // * create a record of device if it not already exists
+      if (
+        !(await prisma.device.findFirst({ where: { ipAddress: ipAddress } }))
+      ) {
+        await prisma.user.update({
+          where: { email },
+          data: {
+            devices: {
+              create: {
+                ipAddress,
+                osName,
+                browserName,
+              },
+            },
+          },
+        });
+      }
 
-      const newFreshToken = await prisma.user.update({
+      const newTokens = await prisma.device.update({
         where: {
-          id: existUser.id,
+          ipAddress,
         },
         data: {
-          devices: {
-            update: {
-              data: {
-                browserName: "c",
-              },
+          refreshTokens: {
+            create: {
+              token: tokens.refreshToken,
+              userId: existUser.id,
             },
           },
         },
       });
+
+      return res.json(
+        new OkResponse({
+          access_token: tokens.accessToken,
+          refresh_token: tokens.refreshToken,
+        })
+      );
     } catch (error: any) {
       console.log(error);
+      Logger.error(error);
+
+      return res.json(new InternalServerErrorResponse());
     }
   };
 }

@@ -682,3 +682,651 @@
 [35m[39m
 2024-06-19 13:53:47:5347 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 49 - 9.759 ms[39m
 [35m[39m
+2024-06-28 23:15:44:1544 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-28 23:23:42:2342 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-28 23:28:50:2850 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-29 09:46:22:4622 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-29 09:46:33:4633 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-29 09:46:41:4641 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-29 09:50:30:5030 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-29 09:52:35:5235 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:07:42:742 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:09:20:920 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:09:25:925 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:10:20:1020 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:10:36:1036 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:11:05:115 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:11:06:116 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:11:07:117 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:11:09:119 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:11:10:1110 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:12:11:1211 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:12:29:1229 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:13:34:1334 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:13:36:1336 [31merror[39m: [31m[31merror[31m[39m
+2024-06-30 14:13:47:1347 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user - - - - ms[39m
+[35m[39m
+2024-06-30 14:14:14:1414 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:14:20:1420 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:15:00:150 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:15:27:1527 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:15:43:1543 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:16:17:1617 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:16:18:1618 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 62 - 8.216 ms[39m
+[35m[39m
+2024-06-30 14:27:13:2713 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 48 - 1.532 ms[39m
+[35m[39m
+2024-06-30 14:31:53:3153 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:31:58:3158 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:32:01:321 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findFirst()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:72:27[39m
+
+[31m  69 [39m
+[31m  70 // * find if user is already existing[39m
+[31m  71 if ([39m
+[31m→ 72   await prisma.user.findFirst([39m
+[31mCan't reach database server at `localhost`:`5432`[39m
+
+[31mPlease make sure your database server is running at `localhost`:`5432`.[39m
+2024-06-30 14:32:01:321 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 52 - 146.554 ms[39m
+[35m[39m
+2024-06-30 14:33:23:3323 [31merror[39m: [31mInvalid salt. Salt must be in the form of: $Vers$log2(NumRounds)$saltvalue[39m
+2024-06-30 14:33:23:3323 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 52 - 160.245 ms[39m
+[35m[39m
+2024-06-30 14:34:04:344 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:34:06:346 [31merror[39m: [31mInvalid salt. Salt must be in the form of: $Vers$log2(NumRounds)$saltvalue[39m
+2024-06-30 14:34:06:346 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 52 - 76.706 ms[39m
+[35m[39m
+2024-06-30 14:34:52:3452 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:35:14:3514 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:35:16:3516 [31merror[39m: [31mInvalid salt. Salt must be in the form of: $Vers$log2(NumRounds)$saltvalue[39m
+2024-06-30 14:35:16:3516 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 52 - 67.929 ms[39m
+[35m[39m
+2024-06-30 14:36:46:3646 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:37:37:3737 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-06-30 14:37:39:3739 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 124 - 150.320 ms[39m
+[35m[39m
+2024-06-30 14:37:43:3743 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 68 - 2.751 ms[39m
+[35m[39m
+2024-06-30 14:37:50:3750 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 68 - 2.286 ms[39m
+[35m[39m
+2024-06-30 14:38:21:3821 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 09:52:13:5213 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 09:53:26:5326 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 68 - 83.434 ms[39m
+[35m[39m
+2024-07-01 09:53:57:5357 [35mhttp[39m: [35mPOST /authentication/api/v1/generate-token 200 60 - 0.953 ms[39m
+[35m[39m
+2024-07-01 10:05:43:543 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 60 - 0.720 ms[39m
+[35m[39m
+2024-07-01 10:08:53:853 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 60 - 0.739 ms[39m
+[35m[39m
+2024-07-01 10:10:57:1057 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 60 - 1.480 ms[39m
+[35m[39m
+2024-07-01 10:14:50:1450 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 47 - 2.515 ms[39m
+[35m[39m
+2024-07-01 10:14:53:1453 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 47 - 1.305 ms[39m
+[35m[39m
+2024-07-01 10:16:09:169 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 47 - 1.046 ms[39m
+[35m[39m
+2024-07-01 10:16:43:1643 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 47 - 1.193 ms[39m
+[35m[39m
+2024-07-01 10:18:01:181 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 47 - 1.608 ms[39m
+[35m[39m
+2024-07-01 10:20:10:2010 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:20:22:2022 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:23:01:231 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:43:51:4351 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:45:38:4538 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:46:14:4614 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:46:22:4622 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:47:45:4745 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:50:03:503 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:50:18:5018 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:51:55:5155 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:52:22:5222 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:52:28:5228 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:53:32:5332 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:54:24:5424 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:54:29:5429 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:54:32:5432 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:56:13:5613 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:56:50:5650 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:57:19:5719 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:58:18:5818 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:58:47:5847 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:59:27:5927 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:59:39:5939 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 10:59:53:5953 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 11:00:07:07 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 11:00:42:042 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 11:00:46:046 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 15.566 ms[39m
+[35m[39m
+2024-07-01 11:01:05:15 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.280 ms[39m
+[35m[39m
+2024-07-01 11:01:29:129 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.276 ms[39m
+[35m[39m
+2024-07-01 11:01:42:142 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.885 ms[39m
+[35m[39m
+2024-07-01 11:01:48:148 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.633 ms[39m
+[35m[39m
+2024-07-01 11:01:56:156 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.558 ms[39m
+[35m[39m
+2024-07-01 11:02:24:224 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.255 ms[39m
+[35m[39m
+2024-07-01 11:02:31:231 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.059 ms[39m
+[35m[39m
+2024-07-01 11:02:33:233 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.515 ms[39m
+[35m[39m
+2024-07-01 11:07:10:710 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.088 ms[39m
+[35m[39m
+2024-07-01 11:07:50:750 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.855 ms[39m
+[35m[39m
+2024-07-01 11:13:35:1335 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.005 ms[39m
+[35m[39m
+2024-07-01 11:13:45:1345 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.782 ms[39m
+[35m[39m
+2024-07-01 11:14:04:144 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.091 ms[39m
+[35m[39m
+2024-07-01 11:14:06:146 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.116 ms[39m
+[35m[39m
+2024-07-01 11:14:15:1415 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.769 ms[39m
+[35m[39m
+2024-07-01 11:14:16:1416 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.727 ms[39m
+[35m[39m
+2024-07-01 11:14:45:1445 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.348 ms[39m
+[35m[39m
+2024-07-01 11:16:39:1639 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.690 ms[39m
+[35m[39m
+2024-07-01 11:16:53:1653 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.853 ms[39m
+[35m[39m
+2024-07-01 11:17:13:1713 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.682 ms[39m
+[35m[39m
+2024-07-01 11:17:49:1749 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.376 ms[39m
+[35m[39m
+2024-07-01 11:17:58:1758 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.994 ms[39m
+[35m[39m
+2024-07-01 11:18:15:1815 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.601 ms[39m
+[35m[39m
+2024-07-01 11:52:15:5215 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.742 ms[39m
+[35m[39m
+2024-07-01 11:59:16:5916 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.187 ms[39m
+[35m[39m
+2024-07-01 11:59:32:5932 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.613 ms[39m
+[35m[39m
+2024-07-01 11:59:54:5954 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.484 ms[39m
+[35m[39m
+2024-07-01 12:00:37:037 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.610 ms[39m
+[35m[39m
+2024-07-01 12:01:24:124 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.228 ms[39m
+[35m[39m
+2024-07-01 12:03:00:30 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.116 ms[39m
+[35m[39m
+2024-07-01 12:03:19:319 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.654 ms[39m
+[35m[39m
+2024-07-01 12:03:44:344 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.722 ms[39m
+[35m[39m
+2024-07-01 12:04:00:40 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.694 ms[39m
+[35m[39m
+2024-07-01 12:04:29:429 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.611 ms[39m
+[35m[39m
+2024-07-01 12:04:31:431 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.554 ms[39m
+[35m[39m
+2024-07-01 12:05:15:515 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 111 - 152.678 ms[39m
+[35m[39m
+2024-07-01 12:07:52:752 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 107 - 84.954 ms[39m
+[35m[39m
+2024-07-01 12:13:01:131 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 12:20:57:2057 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 112 - 173.340 ms[39m
+[35m[39m
+2024-07-01 12:22:02:222 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 117 - 77.841 ms[39m
+[35m[39m
+2024-07-01 12:22:55:2255 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 121 - 73.496 ms[39m
+[35m[39m
+2024-07-01 12:22:56:2256 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 109 - 89.861 ms[39m
+[35m[39m
+2024-07-01 12:22:58:2258 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 111 - 72.751 ms[39m
+[35m[39m
+2024-07-01 12:22:59:2259 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 110 - 88.225 ms[39m
+[35m[39m
+2024-07-01 12:23:00:230 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 112 - 85.899 ms[39m
+[35m[39m
+2024-07-01 12:23:20:2320 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 103 - 96.563 ms[39m
+[35m[39m
+2024-07-01 12:24:17:2417 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 114 - 73.815 ms[39m
+[35m[39m
+2024-07-01 12:24:19:2419 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 100 - 77.392 ms[39m
+[35m[39m
+2024-07-01 12:24:21:2421 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 106 - 84.969 ms[39m
+[35m[39m
+2024-07-01 13:22:34:2234 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 13:24:26:2426 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 13:25:42:2542 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 13:27:23:2723 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 13:28:38:2838 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-01 14:00:35:035 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m

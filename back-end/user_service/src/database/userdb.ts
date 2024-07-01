@@ -1,11 +1,10 @@
-import { prisma } from "./postgresql/connect.postgresql";
-
+import prisma from "./postgresql/connect.postgresql";
 
 // * Find user in DB by email return true with no record
 export async function CheckUniqueEmail(email: string): Promise<Boolean> {
   const user = await prisma.user.findFirst({
-    where :{email},
-  })
+    where: { email },
+  });
 
   console.log(user);
 
@@ -33,12 +32,12 @@ export async function createUserDB(
   username: string,
   password: string
 ): Promise<Number> {
-const user = await prisma.user.create({
+  const user = await prisma.user.create({
     data: {
-    email,
-    username,
-    password,
-  },
-});
+      email,
+      username,
+      password,
+    },
+  });
   return user.id;
 }

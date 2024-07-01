@@ -1,6 +1,6 @@
-import { Handler, Router } from "express";
-import userController from "../../controller/user.controller";
-import { IRouter } from "../../util/interface/router.interface";
+import { Handler, Router } from 'express';
+import userController from '../../controller/user.controller';
+import { IRouter } from '../../util/interface/router.interface';
 
 const userRouter = Router();
 
@@ -33,6 +33,17 @@ const userRouter = Router();
  *                 format: password
  *                 example: SecureP@ssw0rd!
  *                 description: The password for the new user.
+ *               phoneNumber:
+ *                 type: string
+ *                 example: 0912354834
+ *               avatar:
+ *                 type: string
+ *               firstName:
+ *                 type: string
+ *                 example: john_doe
+ *               lastName:
+ *                 type: string
+ *                 example: john_doe
  *             required:
  *               - username
  *               - email
@@ -88,7 +99,7 @@ const userRouter = Router();
  *       name: X-API-Key
  */
 userRouter
-  .route("/users/create-new-user")
+  .route('/users/create-new-user')
   .post(userController.createUserService);
 
 export default userRouter;

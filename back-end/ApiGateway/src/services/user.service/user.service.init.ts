@@ -1,20 +1,24 @@
-import axios, { AxiosInstance } from "axios";
-import app_config from "../../config/server.config";
+import axios, { AxiosInstance } from 'axios';
+import AppConfigEnv from '../../config/app.config';
 
-const userServiceApi = axios.create({
-  baseURL: app_config.services.UserService.base_url,
-  timeout: 1000,
-  headers: {
-    "x-api-key": app_config.services.UserService.api_key,
-  },
-});
-
-class UserService {
-  private baseURL: string = app_config.services.UserService.base_url;
-  private api_key: string = app_config.services.UserService.api_key;
+export class UserServiceApiConfig {
+  private baseURL: string = AppConfigEnv.BASE_URL_USER_SERVICE;
+  private api_key: string = AppConfigEnv.API_KEY_USER_SERVICE;
   private timeout: number = 5000;
   private api: AxiosInstance = axios.create({
     baseURL: this.baseURL,
     timeout: this.timeout,
+    headers: {
+      'Content-Type ': 'application/x-www-form-urlencoded',
+      'x-api-key': this.api_key,
+    },
   });
+
+  public getApi(): AxiosInstance {
+    return this.api;
+  }
 }
+
+const userServiceApi = new UserServiceApiConfig().getApi();
+
+export default userServiceApi;

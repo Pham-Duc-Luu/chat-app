@@ -26,7 +26,7 @@ class Util {
     for (let i = 0; i < arr.length; i++) {
       if (!process.env[arr[i]]) {
         Logger.error(`Mising environment variable \n please add ${arr[i]}  `);
-        throw new Error(`${arr[i]} is undefined`);
+        process.exit(1);
       }
     }
 

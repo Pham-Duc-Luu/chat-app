@@ -1,6 +1,9 @@
-import { Express } from "express-serve-static-core";
-import { Send } from "express-serve-static-core";
-import { Query } from "express-serve-static-core";
+import { Response } from 'express';
+import { Express } from 'express-serve-static-core';
+import { Send } from 'express-serve-static-core';
+import { Query } from 'express-serve-static-core';
+import { number } from 'zod';
+import { HttpResponse } from '../response/http.response';
 
 export interface TypedRequestBody<T> extends Express.Request {
   body: T;
@@ -15,6 +18,7 @@ export interface TypedRequest<T extends Query = any, U = any>
   query: T;
 }
 
-export interface TypedResponse<ResBody> extends Express.Response {
+export interface TypedResponse<ResBody = HttpResponse> extends Response {
   json: Send<ResBody, this>;
+  status: (statusCode: number) => this;
 }

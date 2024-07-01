@@ -131,6 +131,16 @@ const osName = [
   "Zenwalk",
 ] as const;
 
+const DeviceType = [
+  "console",
+  "mobile",
+  "tablet",
+  "smarttv",
+  "wearable",
+  "embedded",
+] as const;
+
+type TDeviceType = (typeof DeviceType)[number];
 type TOS = (typeof osName)[number];
 
-export { TBrowser };
+export { TBrowser, TOS, TDeviceType };

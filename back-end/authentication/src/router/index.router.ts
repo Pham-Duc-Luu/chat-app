@@ -2,6 +2,7 @@ import { Request, Response, Router } from "express";
 import { config } from "dotenv";
 import userController from "../controller/user.controller";
 import userApiKeyMiddleware from "../middleware/apiKey.middleware";
+import geneTokenRouter from "./geneToken.router";
 
 declare module "express-session" {
   interface SessionData {
@@ -11,15 +12,6 @@ declare module "express-session" {
 }
 
 const appRouter = Router();
-
-/**
- * Middleware to check api-key (permission to use other services)
- */
-appRouter.use(userApiKeyMiddleware);
-/**
- * Generate a pair token
- */
-
-appRouter.post("/generate-jwt-token", userController.createRefreshToken);
+appRouter.use(geneTokenRouter);
 
 export default appRouter;

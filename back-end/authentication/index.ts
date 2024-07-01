@@ -13,6 +13,7 @@ import swaggerDocs from "./src/util/swagger/swagger";
 import prisma from "./src/lib/prisma";
 import { redisStore } from "./src/database/redis/redis.connect";
 import AppConfigEnv from "./src/config/app.config";
+import verifyApiKey from "./src/middleware/apiKey.middleware";
 config();
 // * innitialization
 const app: Application = express();
@@ -24,6 +25,7 @@ app.use(json());
 app.use(morganMiddleware);
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 app.set("trust proxy", 1);
+app.use(verifyApiKey);
 
 app.use(
   session({
@@ -48,10 +50,19 @@ app.get("/", (req, res) => {
 
 async function main() {
   const server = app.listen(AppConfigEnv.APP_PORT, () => {
-    console.log(`user server is running on port ${AppConfigEnv.APP_PORT}`);
+    console.log(
+      `user server is running at http://localhost:${AppConfigEnv.APP_PORT}`
+    );
   });
 
-  swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
+  // * For development and testing purposes
+  if (AppConfigEnv.ENV === "development") {
+    swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
+    Logger.info(
+      `api documentation is available at http://localhost:${AppConfigEnv.APP_PORT}/docs`
+    );
+  }
+
   process.on("unhandledRejection", (error, promise) => {
     console.log(`Logged Error: ${error}`);
     server.close(() => process.exit(1));

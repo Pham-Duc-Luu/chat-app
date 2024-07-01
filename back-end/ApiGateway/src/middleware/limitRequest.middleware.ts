@@ -1,6 +1,5 @@
-import express, { Request, Response, NextFunction } from "express";
-import RestrictRequestModel from "../model/request.model";
-import { TooManyRerquest } from "../util/response/client_error.response";
+import express, { Request, Response, NextFunction } from 'express';
+import RestrictRequestModel from '../model/request.model';
 
 /**
  * Function to create request limiter middleware
@@ -13,9 +12,9 @@ export default function createRequestLimiter(limit: number, interval: number) {
   setInterval(async () => {
     try {
       await RestrictRequestModel.updateMany({}, { countRequest: 0 });
-      console.log("Request counts have been reset.");
+      console.log('Request counts have been reset.');
     } catch (error) {
-      console.error("Error resetting request counts:", error);
+      console.error('Error resetting request counts:', error);
     }
   }, interval);
 
@@ -26,9 +25,9 @@ export default function createRequestLimiter(limit: number, interval: number) {
   ) {
     try {
       const clientIP =
-        (req.headers["x-forwarded-for"] as string) ||
+        (req.headers['x-forwarded-for'] as string) ||
         req.socket.remoteAddress ||
-        "";
+        '';
       const ip = clientIP as string;
 
       // Check request count from database
@@ -42,12 +41,11 @@ export default function createRequestLimiter(limit: number, interval: number) {
       count += 1;
       Req.countRequest = count;
       console.log(count);
-      
+
       if (count > limit) {
         // return res.status(429).json({
         //   message: "Too many requests, please try again later.",
         // });
-        throw new TooManyRerquest("Too many request");
       }
 
       await Req.save();

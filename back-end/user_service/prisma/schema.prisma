@@ -17,7 +17,7 @@ model User {
   status      String?
   email       String  @unique
   username    String  @unique
-  password    String
+  password    String  @default("password")
   Followed    Follow[]  @relation("Followed")
   Following   Follow[]  @relation("Following")
   Stories     Story[]

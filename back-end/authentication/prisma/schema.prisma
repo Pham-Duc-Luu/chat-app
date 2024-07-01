@@ -12,8 +12,8 @@ model User {
   id    Int     @unique 
   email String  @unique
   username String @unique
-  privateKey String @unique @default("privateKey")
-  publicKey String @unique  @default("publicKey")
+  privateKey String @default("privateKey")
+  publicKey String  @default("publicKey")
   accessTokenExpIn String @default("1h")
   refreshTokenExpIn String @default("7d")
   createAt DateTime @default(now())
@@ -27,7 +27,7 @@ model device {
   browserName String?
   osName String?
   lastLogin DateTime @default(now())
-  ipAddress String?
+  ipAddress String @unique
   userId Int
   user User @relation(fields: [userId], references: [id])
   createAt DateTime @default(now())
@@ -40,7 +40,7 @@ model refresToken {
   token String
   userId Int
   user User @relation(fields: [userId], references: [id] )
-  forDeviceId Int @unique
+  forDeviceId Int 
   forDevice device @relation(fields: [forDeviceId], references: [id])
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
