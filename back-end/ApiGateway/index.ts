@@ -8,13 +8,13 @@ import { connectDB } from './src/database/mongo/connect.mongo';
 import morganMiddleware from './src/middleware/morgan.middleware';
 import AppRouter from './src/router/index';
 import AppConfigEnv from './src/config/app.config';
-import swaggerDocs from './src/util/swagger/swagger';
 import authRouter from './src/router/auth/auth.route';
 import deviceDetectorMiddleware from './src/middleware/deviceDetecto.middleware';
 import ngrok from '@ngrok/ngrok';
 import QRCode from 'qrcode';
 import verifyApiKey from './src/middleware/apiKey.middleware';
 import session from 'express-session';
+import swaggerDocs from './swagger/swagger';
 dotenv.config();
 
 const app: Application = express();
@@ -47,7 +47,12 @@ async function main() {
 
   app.use(AppConfigEnv.APP_BASE_URL, appRouter);
 
-  swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
+  if (AppConfigEnv.ENV == 'development') {
+    swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
+    console.log(
+      `api documentation is available at http://localhost:${AppConfigEnv.APP_PORT}/docs`
+    );
+  }
 
   process.on('unhandledRejection', (error, promise) => {
     console.log(`Logged Error: ${error}`);

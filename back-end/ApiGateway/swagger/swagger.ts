@@ -2,6 +2,7 @@ import { config } from 'dotenv';
 import { Application, Express, Request, Response } from 'express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import AppConfigEnv from '../src/config/app.config';
 config();
 
 const options = {
@@ -18,10 +19,12 @@ const options = {
       },
       version: '1.0.0',
     },
-
     servers: [
       {
-        url: 'http://localhost:5002' + process.env.DEV_BASE_URL,
+        url:
+          'http://localhost:' +
+          AppConfigEnv.APP_PORT +
+          AppConfigEnv.APP_BASE_URL,
         description: 'Local server',
       },
       {
@@ -29,35 +32,6 @@ const options = {
         description: 'Live server',
       },
     ],
-    components: {
-      schemas: {
-        BadRequestResponse: {
-          type: 'object',
-          properties: {
-            message: {
-              type: 'string',
-            },
-          },
-        },
-        InternalServerErrorResponse: {
-          type: 'object',
-          properties: {
-            message: {
-              type: 'string',
-            },
-          },
-        },
-        User: {
-          type: 'object',
-          properties: {
-            id: { type: 'string' },
-            email: { type: 'string' },
-            username: { type: 'string' },
-            avatar: { type: 'string' },
-          },
-        },
-      },
-    },
   },
   // looks for configuration in specified directories
   apis: ['**/*.ts'],

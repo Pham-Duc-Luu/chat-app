@@ -45,6 +45,12 @@ coverage/
 .env.development.local
 .env.test.local
 .env.production.local
+back-end/ApiGateway/.env
+back-end/PhotoService/.env
+back-end/user_service/.env
+back-end/authentication/.env
+back-end/spring-boot/.env
+
 
 # npm
 npm-debug.log*
@@ -62,6 +68,8 @@ htmlcov/
 docs/_build/
 
 env
+*.env
+*.env/
 env/*
 env/
 .env

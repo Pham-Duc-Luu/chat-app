@@ -3,13 +3,16 @@ import { createUser, getID } from '../service/user.service';
 import bcrypt from 'bcrypt';
 import valid from '../service/valid.service';
 import { BadRequestResponse } from '../util/response/clientError.response';
-import { TypedResponse } from '../util/interface/express.interface';
+import {
+  TypedRequestBody,
+  TypedRequestQueryBody,
+  TypedResponse,
+} from '../util/interface/express.interface';
 import {
   ClientErrorResponse,
   HttpResponse,
   ServerErrorResponse,
   SuccessResponse,
-  TypedRequestBody,
 } from '../util/response/http.response';
 import { OkResponse } from '../util/response/successful.response';
 import { User } from '@prisma/client';
@@ -40,7 +43,7 @@ class Controller {
     res: TypedResponse<
       ClientErrorResponse | ServerErrorResponse | SuccessResponse<ICreateUser>
     >
-  ) => {
+  ): Promise<typeof res> => {
     try {
       const {
         username,
@@ -112,27 +115,33 @@ class Controller {
       return ApiResponse(res, new InternalServerErrorResponse());
     }
   };
-
-  getUserID = async (
-    req: Request<any, any, IUserID>,
-    res: TypedResponse<SuccessResponse<{ id: number } | ClientErrorResponse>>
-  ) => {
+  public async findUsers(
+    req: TypedRequestQueryBody<Pick<User, 'email' | 'username'>>,
+    res: TypedResponse<
+      | ClientErrorResponse
+      | ServerErrorResponse
+      | SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>[]>
+    >
+  ): Promise<typeof res> {
     try {
-      const { email } = req.body;
-
-      if (!email) {
-        throw new BadRequestResponse('Missing email');
-      }
-      if (valid.isValidEmail(email)) {
-        const id = await getID(email);
-        res.json(new OkResponse({ id }));
-      }
+      const { email, username } = req.query;
+      const users = await prisma.user.findMany({
+        where: {
+          OR: [{ email }, { username }],
+        },
+        select: {
+          email: true,
+          id: true,
+          username: true,
+          avatar: true,
+        },
+      });
+      return ApiResponse(res, new OkResponse(users));
     } catch (error) {
-      console.log(error);
-
-      res.json(new BadRequestResponse());
+      Logger.error(error);
+      return ApiResponse(res, new InternalServerErrorResponse());
     }
-  };
+  }
 }
 
 const userController = new Controller();

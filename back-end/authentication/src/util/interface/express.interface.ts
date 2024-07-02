@@ -1,6 +1,6 @@
-import { Express } from "express-serve-static-core";
-import { Send } from "express-serve-static-core";
-import { Query } from "express-serve-static-core";
+import { Express } from 'express-serve-static-core';
+import { Send } from 'express-serve-static-core';
+import { Query } from 'express-serve-static-core';
 
 export interface TypedRequestBody<T> extends Express.Request {
   body: Partial<T>;

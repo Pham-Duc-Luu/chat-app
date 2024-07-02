@@ -1,3 +1,4 @@
+import { URLSearchParams } from 'url';
 import {
   ClientErrorResponse,
   HttpResponse,
@@ -36,10 +37,15 @@ class UserService {
    * };
    *
    */
-  createUser(data: Pick<User, 'email' | 'password' | 'username'>) {
+  createUser(data: Partial<User>) {
     return userServiceApi.post<
       SuccessResponse<Pick<User, 'id' | 'email' | 'username'>>
     >('/users/create-new-user', data);
+  }
+  findUsers(data: Partial<Pick<User, 'email' | 'username'>>) {
+    return userServiceApi.get<
+      SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>[] | []>
+    >('/users/find-users?' + new URLSearchParams(data).toString());
   }
 }
 

@@ -16,7 +16,7 @@ export class AuthService {
    * @throws Will throw an error if the request fails or if the response does not contain a valid JWT token.
    */
 
-  createToken(data: ICreateToken) {
+  createToken(data: Partial<ICreateToken>) {
     return authServiceApi.post<SuccessResponse<IToken>>(
       '/generate-jwt-token',
       data
