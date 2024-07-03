@@ -1,4 +1,4 @@
-import passport from 'passport';
+import passport, { use } from 'passport';
 import { Strategy as GoogleStrategy, Profile } from 'passport-google-oauth20';
 import AppConfigEnv from '../../config/app.config';
 import { Response, Router } from 'express';
@@ -7,7 +7,17 @@ import { User } from '../../services/user.service/type';
 import userService from '../../services/user.service';
 import { ApiResponse } from '../../util/function/response';
 import Logger from '../../lib/logger';
-import { InternalServerErrorResponse } from '../../util/response/serverError.response';
+import {
+  BadGatewayResponse,
+  InternalServerErrorResponse,
+} from '../../util/response/serverError.response';
+import crypto from 'crypto';
+import { BadRequestResponse } from '../../util/response/clientError.response';
+import authService from '../../services/authentication.service';
+import { OkResponse } from '../../util/response/successful.response';
+import { ICreateToken } from '../../services/authentication.service/type';
+import { AxiosError } from 'axios';
+import { HttpResponse } from '../../util/response/http.response';
 
 const OAuhtRoute = Router();
 
@@ -55,41 +65,69 @@ OAuhtRoute.get(
   async function (req, res, next) {
     try {
       const { _json } = req.user as Profile;
-
+      const { Client } = req.body;
       const user: Partial<User> = {
         firstName: _json.given_name,
         lastName: _json.family_name,
         avatar: _json.picture,
         email: _json.email,
         username: _json.name,
+        password: '@Google#' + crypto.randomBytes(10),
       };
 
-      /**
-       * ! this type of google login api is only for testing
-       * ! purpose because it provider and password is fixed
-       *
-       *
-       * TODO: login by google or facebook have to be fixed later
-       */
-      if (AppConfigEnv.ENV === 'development') {
-        const googleLogin: {
-          type: 'google' | 'facebook';
-          provider_pass: string;
-        } = { type: 'google', provider_pass: 'Google@123' };
-        req.body = user;
-        const existUser = (await userService.findUsers(user)).data.data;
-
-        if (!existUser || !existUser[0]) {
-          return await authController.signUp(req, res, next, googleLogin);
+      let existUser = (
+        await userService.findUsers({
+          email: user.email,
+        })
+      ).data.data;
+      if (!existUser || existUser.length === 0 || !existUser[0]) {
+        let newUser = (await userService.createUser(user)).data.data;
+        if (!newUser) {
+          Logger.error('User service is not available');
+          return ApiResponse(res, new BadRequestResponse());
         }
 
-        return await authController.signIn(req, res, next, googleLogin);
+        let token = (
+          await authService.createToken({
+            ...newUser,
+            ipAddress: Client?.ip,
+            browserName: Client?.browser,
+            osName: Client?.device,
+          })
+        ).data.data;
+        if (!token) {
+          Logger.error('Authentication service is not available');
+          return ApiResponse(res, new BadRequestResponse());
+        }
+        return ApiResponse(res, new OkResponse(token));
       }
 
-      // Successful authentication, redirect success.
+      let token = (
+        await authService.createToken({
+          ...existUser[0],
+          ipAddress: Client?.ip,
+          browserName: Client?.browser,
+          osName: Client?.device,
+        })
+      ).data.data;
+      if (!token) {
+        Logger.error('Authentication service is not available');
+        return ApiResponse(res, new BadRequestResponse());
+      }
+      return ApiResponse(res, new OkResponse(token));
     } catch (error) {
       Logger.error(error);
-      return ApiResponse(res, new InternalServerErrorResponse());
+
+      if (error instanceof AxiosError) {
+        let response = error.response?.data as HttpResponse;
+        if (response.statusCode < 500) {
+          return ApiResponse(
+            res,
+            new BadRequestResponse(error.response?.data.message)
+          );
+        }
+      }
+      return res.json(new BadGatewayResponse());
     }
   }
 );

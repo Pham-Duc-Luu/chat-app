@@ -32,17 +32,13 @@ import { User } from '../services/user.service/type';
 
 class AuthController {
   public async signUp(
-    req: TypedRequestBody<User & IClientInfo>,
+    // req: TypedRequestBody<User & IClientInfo>,
+    req: Request<{ provider?: 'google' | string }, any, User & IClientInfo>,
     res: TypedResponse<
       ClientErrorResponse | ServerErrorResponse | SuccessResponse<IToken>
     >,
-    next: NextFunction,
-    provider?: { type: 'google' | 'facebook'; provider_pass: string }
+    next: NextFunction
   ): Promise<typeof res> {
-    if (provider?.type === 'google') {
-      req.body.password = provider.provider_pass;
-    }
-
     const { email, password, username, Client } = req.body;
 
     try {
@@ -90,7 +86,10 @@ class AuthController {
     } catch (error: any) {
       Logger.error(error);
 
-      if (error instanceof AxiosError) {
+      if (
+        error instanceof AxiosError &&
+        error.response?.data instanceof HttpResponse
+      ) {
         let response = error.response?.data as HttpResponse;
         if (response.statusCode < 500) {
           return ApiResponse(
@@ -108,13 +107,8 @@ class AuthController {
     res: TypedResponse<
       ClientErrorResponse | ServerErrorResponse | SuccessResponse<IToken>
     >,
-    next: NextFunction,
-    provider?: { type: 'google' | 'facebook'; provider_pass: string }
+    next: NextFunction
   ): Promise<typeof res> {
-    if (provider?.type === 'google') {
-      req.body.password = provider.provider_pass;
-    }
-
     const { email, password, Client } = req.body;
 
     try {

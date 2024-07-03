@@ -63,8 +63,8 @@ const authRouter = Router();
  *         description: Bad gateway due to server error.
  *
  */
-authRouter.post('/auth/sign-up', authController.signUp);
+authRouter.route('/auth/sign-up').all(authController.signUp);
 
-authRouter.route('/auth/sign-in').post(authController.signIn);
+authRouter.route('/auth/sign-in').all(authController.signIn);
 
 export default authRouter;

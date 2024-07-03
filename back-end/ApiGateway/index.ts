@@ -8,7 +8,6 @@ import { connectDB } from './src/database/mongo/connect.mongo';
 import morganMiddleware from './src/middleware/morgan.middleware';
 import AppRouter from './src/router/index';
 import AppConfigEnv from './src/config/app.config';
-import authRouter from './src/router/auth/auth.route';
 import deviceDetectorMiddleware from './src/middleware/deviceDetecto.middleware';
 import ngrok from '@ngrok/ngrok';
 import QRCode from 'qrcode';

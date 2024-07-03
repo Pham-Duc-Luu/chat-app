@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import authRouter from './auth/auth.route';
 import OAuhtRoute from './auth/auth.googe.route';
+import authRouter from './auth/auth.route';
 
 const appRouter = Router();
-
-appRouter.use(OAuhtRoute);
 appRouter.use(authRouter);
-
+appRouter.use(OAuhtRoute);
 export default appRouter;
