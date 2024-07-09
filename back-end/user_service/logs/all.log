@@ -2214,3 +2214,982 @@
 [35m[39m
 2024-07-04 00:11:38:1138 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 132 - 29.474 ms[39m
 [35m[39m
+2024-07-04 00:15:41:1541 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-04 15:07:11:711 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-04 16:13:47:1347 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-06 12:39:36:3936 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-06 12:43:14:4314 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=example%40gmail.com 200 43 - 106.040 ms[39m
+[35m[39m
+2024-07-06 12:44:47:4447 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 3.393 ms[39m
+[35m[39m
+2024-07-06 12:45:11:4511 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=aiminhkhoilhp182004%40gmail.com 200 43 - 2.243 ms[39m
+[35m[39m
+2024-07-06 12:47:03:473 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=aiminhkhoilhp182004%40gmail.com 200 43 - 2.532 ms[39m
+[35m[39m
+2024-07-06 12:47:11:4711 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=example%40gmail.com 200 43 - 2.601 ms[39m
+[35m[39m
+2024-07-06 12:53:30:5330 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 40.938 ms[39m
+[35m[39m
+2024-07-06 12:53:33:5333 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.132 ms[39m
+[35m[39m
+2024-07-06 13:00:48:048 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 18.814 ms[39m
+[35m[39m
+2024-07-06 13:17:49:1749 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 23.869 ms[39m
+[35m[39m
+2024-07-06 13:17:50:1750 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 4.409 ms[39m
+[35m[39m
+2024-07-06 13:17:53:1753 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.640 ms[39m
+[35m[39m
+2024-07-06 13:25:22:2522 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 31.891 ms[39m
+[35m[39m
+2024-07-06 13:25:28:2528 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 1.967 ms[39m
+[35m[39m
+2024-07-06 13:28:48:2848 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.859 ms[39m
+[35m[39m
+2024-07-06 13:28:52:2852 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.990 ms[39m
+[35m[39m
+2024-07-06 13:29:34:2934 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.236 ms[39m
+[35m[39m
+2024-07-06 13:29:37:2937 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.712 ms[39m
+[35m[39m
+2024-07-06 13:29:44:2944 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.681 ms[39m
+[35m[39m
+2024-07-06 13:30:35:3035 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.753 ms[39m
+[35m[39m
+2024-07-06 13:31:15:3115 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 1.485 ms[39m
+[35m[39m
+2024-07-06 13:31:18:3118 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.698 ms[39m
+[35m[39m
+2024-07-06 13:31:19:3119 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.988 ms[39m
+[35m[39m
+2024-07-06 13:31:33:3133 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.404 ms[39m
+[35m[39m
+2024-07-06 13:31:34:3134 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 2.795 ms[39m
+[35m[39m
+2024-07-06 13:34:10:3410 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.845 ms[39m
+[35m[39m
+2024-07-06 13:34:17:3417 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.069 ms[39m
+[35m[39m
+2024-07-06 13:35:13:3513 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.255 ms[39m
+[35m[39m
+2024-07-06 13:35:35:3535 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 1.679 ms[39m
+[35m[39m
+2024-07-06 13:35:37:3537 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 2.648 ms[39m
+[35m[39m
+2024-07-06 13:51:48:5148 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 15.409 ms[39m
+[35m[39m
+2024-07-06 13:55:14:5514 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.572 ms[39m
+[35m[39m
+2024-07-06 13:55:23:5523 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.437 ms[39m
+[35m[39m
+2024-07-06 14:01:53:153 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 24.130 ms[39m
+[35m[39m
+2024-07-06 14:22:18:2218 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 25.852 ms[39m
+[35m[39m
+2024-07-06 14:41:16:4116 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 18.934 ms[39m
+[35m[39m
+2024-07-06 14:44:18:4418 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.278 ms[39m
+[35m[39m
+2024-07-06 15:03:20:320 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 32.868 ms[39m
+[35m[39m
+2024-07-06 15:03:25:325 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 1.887 ms[39m
+[35m[39m
+2024-07-06 15:03:36:336 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.883 ms[39m
+[35m[39m
+2024-07-06 15:19:59:1959 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 22.901 ms[39m
+[35m[39m
+2024-07-06 15:20:10:2010 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 4.311 ms[39m
+[35m[39m
+2024-07-06 15:20:12:2012 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.030 ms[39m
+[35m[39m
+2024-07-06 15:20:13:2013 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.006 ms[39m
+[35m[39m
+2024-07-06 15:20:41:2041 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=aiminhkhoilhp182004%40gmail.com 200 43 - 2.669 ms[39m
+[35m[39m
+2024-07-06 15:20:50:2050 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.324 ms[39m
+[35m[39m
+2024-07-06 15:24:05:245 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.359 ms[39m
+[35m[39m
+2024-07-06 15:24:14:2414 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 1.630 ms[39m
+[35m[39m
+2024-07-06 15:27:10:2710 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.052 ms[39m
+[35m[39m
+2024-07-06 15:27:14:2714 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.411 ms[39m
+[35m[39m
+2024-07-06 15:31:52:3152 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.155 ms[39m
+[35m[39m
+2024-07-06 15:34:16:3416 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.427 ms[39m
+[35m[39m
+2024-07-06 15:39:14:3914 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.345 ms[39m
+[35m[39m
+2024-07-06 15:44:17:4417 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 15.615 ms[39m
+[35m[39m
+2024-07-06 15:45:05:455 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.505 ms[39m
+[35m[39m
+2024-07-06 15:45:42:4542 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.co 200 43 - 3.942 ms[39m
+[35m[39m
+2024-07-06 15:48:10:4810 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.497 ms[39m
+[35m[39m
+2024-07-06 15:51:09:519 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 2.029 ms[39m
+[35m[39m
+2024-07-06 16:09:27:927 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 40.116 ms[39m
+[35m[39m
+2024-07-06 17:08:40:840 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 43 - 75.839 ms[39m
+[35m[39m
+2024-07-06 17:08:40:840 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 26.989 ms[39m
+[35m[39m
+2024-07-06 17:09:43:943 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 43 - 1.477 ms[39m
+[35m[39m
+2024-07-06 17:09:43:943 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 200 116 - 78.439 ms[39m
+[35m[39m
+2024-07-07 17:00:26:026 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:04:19:419 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 100.000 ms[39m
+[35m[39m
+2024-07-07 17:04:34:434 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 4.499 ms[39m
+[35m[39m
+2024-07-07 17:05:30:530 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=exmapel%40gmail.com 200 43 - 3.598 ms[39m
+[35m[39m
+2024-07-07 17:06:11:611 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 5.741 ms[39m
+[35m[39m
+2024-07-07 17:06:29:629 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 4.253 ms[39m
+[35m[39m
+2024-07-07 17:06:57:657 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 3.984 ms[39m
+[35m[39m
+2024-07-07 17:07:09:79 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=maiminhkhoilhp182004%40gmail.com 200 140 - 4.193 ms[39m
+[35m[39m
+2024-07-07 17:12:27:1227 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:15:39:1539 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:16:41:1641 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:17:19:1719 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:19:02:192 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:19:16:1916 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:19:39:1939 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:20:01:201 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:20:22:2022 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:21:01:211 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:22:41:2241 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:22:58:2258 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:23:23:2323 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:23:35:2335 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:24:56:2456 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:25:08:258 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:25:20:2520 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:29:20:2920 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:29:38:2938 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:30:52:3052 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:30:56:3056 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:31:20:3120 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:34:36:3436 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:35:01:351 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:36:25:3625 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 47 - 198.558 ms[39m
+[35m[39m
+2024-07-07 17:36:31:3631 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 47 - 99.730 ms[39m
+[35m[39m
+2024-07-07 17:36:41:3641 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 47 - 94.891 ms[39m
+[35m[39m
+2024-07-07 17:36:44:3644 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 47 - 107.551 ms[39m
+[35m[39m
+2024-07-07 17:37:04:374 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:37:09:379 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-07 17:37:13:3713 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 157.211 ms[39m
+[35m[39m
+2024-07-07 17:37:20:3720 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 108.639 ms[39m
+[35m[39m
+2024-07-07 17:38:56:3856 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 75.061 ms[39m
+[35m[39m
+2024-07-07 17:39:31:3931 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 105.510 ms[39m
+[35m[39m
+2024-07-07 17:44:38:4438 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 144.607 ms[39m
+[35m[39m
+2024-07-07 17:47:13:4713 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 108.344 ms[39m
+[35m[39m
+2024-07-07 17:47:22:4722 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 88.966 ms[39m
+[35m[39m
+2024-07-07 17:48:48:4848 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.160 ms[39m
+[35m[39m
+2024-07-07 22:47:31:4731 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 142.481 ms[39m
+[35m[39m
+2024-07-07 22:52:54:5254 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 197.636 ms[39m
+[35m[39m
+2024-07-07 22:54:17:5417 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 80.552 ms[39m
+[35m[39m
+2024-07-07 22:55:09:559 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 133.819 ms[39m
+[35m[39m
+2024-07-07 22:55:10:5510 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 103.579 ms[39m
+[35m[39m
+2024-07-07 23:03:31:331 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 124.475 ms[39m
+[35m[39m
+2024-07-07 23:04:53:453 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 138.291 ms[39m
+[35m[39m
+2024-07-07 23:05:17:517 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 46 - 2.688 ms[39m
+[35m[39m
+2024-07-07 23:05:21:521 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 46 - 4.222 ms[39m
+[35m[39m
+2024-07-07 23:05:46:546 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 126.888 ms[39m
+[35m[39m
+2024-07-07 23:07:26:726 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 97.911 ms[39m
+[35m[39m
+2024-07-07 23:09:35:935 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 107.979 ms[39m
+[35m[39m
+2024-07-07 23:12:05:125 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 109.267 ms[39m
+[35m[39m
+2024-07-08 08:52:30:5230 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-08 09:12:23:1223 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 184.618 ms[39m
+[35m[39m
+2024-07-08 09:18:05:185 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 98.601 ms[39m
+[35m[39m
+2024-07-08 11:47:20:4720 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 94.497 ms[39m
+[35m[39m
+2024-07-08 11:47:36:4736 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.441 ms[39m
+[35m[39m
+2024-07-08 11:47:52:4752 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.925 ms[39m
+[35m[39m
+2024-07-08 11:55:52:5552 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 101.612 ms[39m
+[35m[39m
+2024-07-08 11:57:45:5745 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 75.470 ms[39m
+[35m[39m
+2024-07-08 11:59:05:595 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 74.775 ms[39m
+[35m[39m
+2024-07-08 12:00:47:047 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.953 ms[39m
+[35m[39m
+2024-07-08 12:01:47:147 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 73.910 ms[39m
+[35m[39m
+2024-07-08 12:03:19:319 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.696 ms[39m
+[35m[39m
+2024-07-08 12:05:20:520 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.006 ms[39m
+[35m[39m
+2024-07-08 12:05:32:532 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.155 ms[39m
+[35m[39m
+2024-07-08 12:06:07:67 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.921 ms[39m
+[35m[39m
+2024-07-08 12:06:53:653 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 85.031 ms[39m
+[35m[39m
+2024-07-08 12:07:05:75 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.820 ms[39m
+[35m[39m
+2024-07-08 12:11:14:1114 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 74.671 ms[39m
+[35m[39m
+2024-07-08 12:12:24:1224 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.114 ms[39m
+[35m[39m
+2024-07-08 12:13:17:1317 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.516 ms[39m
+[35m[39m
+2024-07-08 12:33:10:3310 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 97.918 ms[39m
+[35m[39m
+2024-07-08 12:34:38:3438 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.333 ms[39m
+[35m[39m
+2024-07-08 12:36:28:3628 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.950 ms[39m
+[35m[39m
+2024-07-08 12:37:02:372 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.708 ms[39m
+[35m[39m
+2024-07-08 12:38:31:3831 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 73.770 ms[39m
+[35m[39m
+2024-07-08 12:42:54:4254 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 75.622 ms[39m
+[35m[39m
+2024-07-08 12:43:41:4341 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 74.333 ms[39m
+[35m[39m
+2024-07-08 12:46:37:4637 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.359 ms[39m
+[35m[39m
+2024-07-08 12:47:13:4713 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 78.205 ms[39m
+[35m[39m
+2024-07-08 12:47:17:4717 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 73.616 ms[39m
+[35m[39m
+2024-07-08 12:47:32:4732 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.667 ms[39m
+[35m[39m
+2024-07-08 12:48:11:4811 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.445 ms[39m
+[35m[39m
+2024-07-08 12:49:15:4915 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.190 ms[39m
+[35m[39m
+2024-07-08 12:49:19:4919 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.848 ms[39m
+[35m[39m
+2024-07-08 12:49:38:4938 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.695 ms[39m
+[35m[39m
+2024-07-08 12:49:39:4939 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.204 ms[39m
+[35m[39m
+2024-07-08 12:50:16:5016 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 78.536 ms[39m
+[35m[39m
+2024-07-08 12:50:22:5022 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 77.189 ms[39m
+[35m[39m
+2024-07-08 12:53:58:5358 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 75.232 ms[39m
+[35m[39m
+2024-07-08 12:54:25:5425 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 69.766 ms[39m
+[35m[39m
+2024-07-08 12:55:21:5521 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.744 ms[39m
+[35m[39m
+2024-07-08 12:56:28:5628 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.461 ms[39m
+[35m[39m
+2024-07-08 12:56:29:5629 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.361 ms[39m
+[35m[39m
+2024-07-08 12:56:30:5630 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.061 ms[39m
+[35m[39m
+2024-07-08 12:56:31:5631 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 75.820 ms[39m
+[35m[39m
+2024-07-08 12:58:49:5849 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.176 ms[39m
+[35m[39m
+2024-07-08 13:00:14:014 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.060 ms[39m
+[35m[39m
+2024-07-08 13:00:26:026 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.684 ms[39m
+[35m[39m
+2024-07-08 13:01:19:119 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.373 ms[39m
+[35m[39m
+2024-07-08 13:14:26:1426 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 96.583 ms[39m
+[35m[39m
+2024-07-08 13:16:50:1650 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.872 ms[39m
+[35m[39m
+2024-07-08 13:17:28:1728 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 78.252 ms[39m
+[35m[39m
+2024-07-08 13:18:22:1822 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.186 ms[39m
+[35m[39m
+2024-07-08 13:18:36:1836 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 70.876 ms[39m
+[35m[39m
+2024-07-08 13:22:02:222 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 78.967 ms[39m
+[35m[39m
+2024-07-08 13:23:59:2359 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 105.088 ms[39m
+[35m[39m
+2024-07-08 13:26:01:261 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 74.461 ms[39m
+[35m[39m
+2024-07-08 13:28:09:289 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 71.023 ms[39m
+[35m[39m
+2024-07-08 13:30:02:302 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 71.731 ms[39m
+[35m[39m
+2024-07-08 13:48:13:4813 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 93.012 ms[39m
+[35m[39m
+2024-07-08 13:48:48:4848 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 71.324 ms[39m
+[35m[39m
+2024-07-08 13:49:32:4932 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 71.185 ms[39m
+[35m[39m
+2024-07-08 13:49:51:4951 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 92.640 ms[39m
+[35m[39m
+2024-07-08 13:50:00:500 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 46 - 2.310 ms[39m
+[35m[39m
+2024-07-08 13:50:12:5012 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.208 ms[39m
+[35m[39m
+2024-07-08 17:14:42:1442 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-08 17:22:32:2232 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 166.268 ms[39m
+[35m[39m
+2024-07-08 17:24:06:246 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.273 ms[39m
+[35m[39m
+2024-07-08 17:24:25:2425 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.453 ms[39m
+[35m[39m
+2024-07-08 17:26:55:2655 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 77.639 ms[39m
+[35m[39m
+2024-07-08 17:27:27:2727 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.398 ms[39m
+[35m[39m
+2024-07-08 17:28:39:2839 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.240 ms[39m
+[35m[39m
+2024-07-08 17:28:42:2842 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.834 ms[39m
+[35m[39m
+2024-07-08 17:29:24:2924 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 69.812 ms[39m
+[35m[39m
+2024-07-08 17:30:03:303 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.444 ms[39m
+[35m[39m
+2024-07-08 17:30:35:3035 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.041 ms[39m
+[35m[39m
+2024-07-08 17:31:13:3113 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.968 ms[39m
+[35m[39m
+2024-07-08 17:39:01:391 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 95.934 ms[39m
+[35m[39m
+2024-07-08 18:10:21:1021 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 96.388 ms[39m
+[35m[39m
+2024-07-08 18:11:34:1134 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 74.881 ms[39m
+[35m[39m
+2024-07-08 18:37:04:374 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 89.708 ms[39m
+[35m[39m
+2024-07-08 18:37:59:3759 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.580 ms[39m
+[35m[39m
+2024-07-08 18:38:41:3841 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 73.006 ms[39m
+[35m[39m
+2024-07-08 18:39:36:3936 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 72.380 ms[39m
+[35m[39m
+2024-07-08 18:41:24:4124 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 71.342 ms[39m
+[35m[39m
+2024-07-08 19:03:50:350 [35mhttp[39m: [35mGET /user/api/v1/verify-account 200 138 - 139.075 ms[39m
+[35m[39m
+2024-07-09 00:24:42:2442 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-09 00:25:05:255 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-09 10:14:38:1438 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-09 11:28:26:2826 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 28.259 ms[39m
+[35m[39m
+2024-07-09 11:30:34:3034 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 1.249 ms[39m
+[35m[39m
+2024-07-09 11:54:02:542 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.885 ms[39m
+[35m[39m
+2024-07-09 11:55:27:5527 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.762 ms[39m
+[35m[39m
+2024-07-09 12:02:19:219 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 47 - 0.995 ms[39m
+[35m[39m
+2024-07-09 12:03:38:338 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 68 - 75.257 ms[39m
+[35m[39m
+2024-07-09 12:54:15:5415 [35mhttp[39m: [35mPOST /user/api/v1/users/create-new-user 400 68 - 44.655 ms[39m
+[35m[39m
+2024-07-09 13:21:25:2125 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 35.542 ms[39m
+[35m[39m
+2024-07-09 13:25:23:2523 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 4.735 ms[39m
+[35m[39m
+2024-07-09 13:25:32:2532 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.557 ms[39m
+[35m[39m
+2024-07-09 13:27:53:2753 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 4.587 ms[39m
+[35m[39m
+2024-07-09 13:28:03:283 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.118 ms[39m
+[35m[39m
+2024-07-09 21:46:52:4652 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-09 22:04:44:444 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:04:44:444 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 88.864 ms[39m
+[35m[39m
+2024-07-09 22:11:27:1127 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:11:27:1127 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 38.438 ms[39m
+[35m[39m
+2024-07-09 22:14:59:1459 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:14:59:1459 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 36.753 ms[39m
+[35m[39m
+2024-07-09 22:15:14:1514 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:15:14:1514 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 40.993 ms[39m
+[35m[39m
+2024-07-09 22:15:22:1522 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:15:22:1522 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 37.503 ms[39m
+[35m[39m
+2024-07-09 22:19:02:192 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:19:02:192 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 42.399 ms[39m
+[35m[39m
+2024-07-09 22:19:38:1938 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:19:38:1938 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 39.729 ms[39m
+[35m[39m
+2024-07-09 22:20:04:204 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:20:04:204 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 38.928 ms[39m
+[35m[39m
+2024-07-09 22:20:29:2029 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:20:29:2029 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 43.289 ms[39m
+[35m[39m
+2024-07-09 22:21:37:2137 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:21:37:2137 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 38.085 ms[39m
+[35m[39m
+2024-07-09 22:22:24:2224 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:22:24:2224 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 36.210 ms[39m
+[35m[39m
+2024-07-09 22:23:42:2342 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:23:42:2342 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 33.834 ms[39m
+[35m[39m
+2024-07-09 22:24:03:243 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:24:03:243 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 37.904 ms[39m
+[35m[39m
+2024-07-09 22:25:16:2516 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:25:16:2516 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 37.178 ms[39m
+[35m[39m
+2024-07-09 22:25:52:2552 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:25:52:2552 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 35.003 ms[39m
+[35m[39m
+2024-07-09 22:28:21:2821 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:28:21:2821 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 38.155 ms[39m
+[35m[39m
+2024-07-09 22:31:14:3114 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:31:14:3114 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 35.414 ms[39m
+[35m[39m
+2024-07-09 22:32:55:3255 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:32:55:3255 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 37.551 ms[39m
+[35m[39m
+2024-07-09 22:41:05:415 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:41:05:415 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 34.897 ms[39m
+[35m[39m
+2024-07-09 22:43:19:4319 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:43:19:4319 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 25.166 ms[39m
+[35m[39m
+2024-07-09 22:58:36:5836 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 22:58:36:5836 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 36.780 ms[39m
+[35m[39m
+2024-07-09 23:01:06:16 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 23:01:06:16 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 40.346 ms[39m
+[35m[39m
+2024-07-09 23:02:08:28 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findMany()` invocation in[39m
+[31m/mnt/pdluu/myuserhome/project/web-app-project/chat-app/back-end/user_service/src/controller/user.controller.ts:128:39[39m
+
+[31m  125 ): Promise<typeof res> {[39m
+[31m  126   try {[39m
+[31m  127     const { email, username } = req.query;[39m
+[31m→ 128     const users = await prisma.user.findMany([39m
+[31mCan't reach database server at `localhost:5432`[39m
+
+[31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-09 23:02:08:28 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 500 52 - 36.286 ms[39m
+[35m[39m
+2024-07-09 23:04:31:431 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 77.193 ms[39m
+[35m[39m
+2024-07-09 23:53:36:5336 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 35.909 ms[39m
+[35m[39m

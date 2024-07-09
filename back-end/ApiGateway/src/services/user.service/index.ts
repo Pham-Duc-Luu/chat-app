@@ -39,13 +39,19 @@ class UserService {
    */
   createUser(data: Partial<User>) {
     return userServiceApi.post<
-      SuccessResponse<Pick<User, 'id' | 'email' | 'username'>>
+      SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>>
     >('/users/create-new-user', data);
   }
   findUsers(data: Partial<Pick<User, 'email' | 'username'>>) {
     return userServiceApi.get<
       SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>[] | []>
     >('/users/find-users?' + new URLSearchParams(data).toString());
+  }
+
+  verifyAccout(data: Pick<User, 'email' | 'password'>) {
+    return userServiceApi.get<
+      SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>>
+    >('/verify-account', { data: data });
   }
 }
 

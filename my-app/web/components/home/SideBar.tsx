@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   Home,
   Search,
@@ -9,43 +9,44 @@ import {
   Settings,
   SquareUser,
   LucideProps,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
-} from "@/components/ui/tooltip";
-import React from "react";
-import { motion } from "framer-motion";
+} from '@/components/ui/tooltip';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Logo from '../Logo';
 
 interface ISideBarElement {
   title: string;
   icon: React.ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+    Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
   >;
 }
 
 const SideBarElement: ISideBarElement[] = [
   {
-    title: "Home",
+    title: 'Home',
     icon: Home,
   },
   {
-    title: "Search",
+    title: 'Search',
     icon: Search,
   },
   {
-    title: "For you",
+    title: 'For you',
     icon: Sparkles,
   },
   {
-    title: "Notifications",
+    title: 'Notifications',
     icon: Bell,
   },
   {
-    title: "Create",
+    title: 'Create',
     icon: CirclePlus,
   },
 ];
@@ -57,17 +58,14 @@ const SideBar = () => {
     <TooltipProvider>
       <div className="grid h-screen ">
         <motion.aside
-          initial={{ width: "auto" }}
-          animate={{ width: isExpanded ? "12rem" : "auto" }}
+          initial={{ width: 'auto' }}
+          animate={{ width: isExpanded ? '12rem' : 'auto' }}
           transition={{ duration: 0.3 }}
-          className="inset-y fixed left-0 z-20 flex h-full flex-col border-r"
+          className="inset-y  left-0 z-20 flex h-full flex-col border-r"
           onMouseEnter={() => setIsExpanded(true)}
-          onMouseLeave={() => setIsExpanded(false)}
-        >
-          <div className="border-b p-2">
-            <Button variant="outline" size="icon" aria-label="Home">
-              <Origami />
-            </Button>
+          onMouseLeave={() => setIsExpanded(false)}>
+          <div className="border-b p-2 flex justify-center ">
+            <Logo width={40} height={40}></Logo>
           </div>
           <nav className="grid gap-1 p-2">
             {SideBarElement.map((item, index) => {
@@ -76,18 +74,16 @@ const SideBar = () => {
                 <Button
                   key={index}
                   variant="outline"
-                  className="flex justify-start items-center"
-                >
+                  className="flex justify-start items-center">
                   <Icon className="" />
                   <motion.span
                     initial={{ opacity: 1, marginLeft: 0 }}
                     animate={{
-                      width: isExpanded ? "auto" : 0,
-                      marginLeft: isExpanded ? "10px" : 0,
+                      width: isExpanded ? 'auto' : 0,
+                      marginLeft: isExpanded ? '10px' : 0,
                     }}
                     transition={{ duration: 0.3 }}
-                    className="whitespace-nowrap overflow-hidden"
-                  >
+                    className="whitespace-nowrap overflow-hidden">
                     {item.title}
                   </motion.span>
                 </Button>
@@ -101,8 +97,7 @@ const SideBar = () => {
                   variant="ghost"
                   size="icon"
                   className="mt-auto rounded-lg"
-                  aria-label="Help"
-                >
+                  aria-label="Help">
                   <Settings className="size-10" />
                 </Button>
               </TooltipTrigger>
@@ -116,8 +111,7 @@ const SideBar = () => {
                   variant="ghost"
                   size="icon"
                   className="mt-auto rounded-lg"
-                  aria-label="Account"
-                >
+                  aria-label="Account">
                   <SquareUser className="size-10" />
                 </Button>
               </TooltipTrigger>

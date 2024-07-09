@@ -1,12 +1,12 @@
-import React from "react";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import { Roboto_Mono } from "next/font/google";
+import React from 'react';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { Roboto_Mono } from 'next/font/google';
+import { Metadata } from 'next';
+import logo from '@/public/social-slack-svgrepo-com.svg';
+import { ToastContainer } from 'react-toastify';
+import ReduxProvider from '@/lib/store/redux-provider';
 
-const fontSans = Roboto_Mono({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 export default async function Layout({
   children,
   params: { locale },
@@ -17,7 +17,8 @@ export default async function Layout({
   const messages = await getMessages();
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
+      <ReduxProvider>{children}</ReduxProvider>
+      <ToastContainer />
     </NextIntlClientProvider>
   );
 }

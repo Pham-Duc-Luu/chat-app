@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
-export type ITheme = "dark" | "light";
-export type ILanguage = "en" | "vi";
+export type ITheme = 'dark' | 'light' | 'system';
+export type ILanguage = 'en' | 'vi';
 
 export interface IConfigState {
   theme: ITheme;
@@ -10,12 +10,12 @@ export interface IConfigState {
 }
 
 const initialState: IConfigState = {
-  theme: "light",
-  language: "en",
+  theme: 'light',
+  language: 'en',
 };
 
 export const configSlice = createSlice({
-  name: "config",
+  name: 'config',
   initialState,
   reducers: {
     setTheme: (state, action: PayloadAction<ITheme>) => {

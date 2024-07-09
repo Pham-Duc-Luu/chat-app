@@ -17,6 +17,7 @@ model User {
   status      String?
   email       String  @unique
   username    String  @unique
+  provider   Provider?
   password    String  @default("password")
   Followed    Follow[]  @relation("Followed")
   Following   Follow[]  @relation("Following")
@@ -28,6 +29,12 @@ model User {
   Reactions   Reaction[]
   Comments    Comment[]
   Posts       Post[]
+}
+
+enum Provider {
+  github
+  google
+  facebook
 }
 
 model Follow {

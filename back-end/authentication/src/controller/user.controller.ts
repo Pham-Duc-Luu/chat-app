@@ -23,6 +23,7 @@ import { InternalServerErrorResponse } from '../util/response/serverError.respon
 interface ICreateToken {
   email: string;
   id: number;
+  avatar: string;
   username: string;
   osName: string;
   browserName: string;
@@ -52,7 +53,8 @@ class UserController {
     >
   ) => {
     try {
-      const { email, id, username, osName, browserName, ipAddress } = req.body;
+      const { email, id, username, osName, browserName, ipAddress, avatar } =
+        req.body;
 
       if (!email || !username || !id) {
         return res.json(new BadRequestResponse('Missing email or username'));

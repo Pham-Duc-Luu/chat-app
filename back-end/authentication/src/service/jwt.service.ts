@@ -1,6 +1,6 @@
-import { User } from "@prisma/client";
-import prisma from "../lib/prisma";
-import jwt from "jsonwebtoken";
+import { User } from '@prisma/client';
+import prisma from '../lib/prisma';
+import jwt from 'jsonwebtoken';
 
 class JwtService {
   /**
@@ -19,12 +19,13 @@ class JwtService {
    *
    * @throws Will throw an error if the user's public or private key is not provided.
    */
-  async generateTokenFromUser(existUser: User) {
+  async generateTokenFromUser(existUser: User, options?: { avatar: string }) {
     const accessToken = jwt.sign(
       {
         id: existUser.id,
         email: existUser.email,
         username: existUser.username,
+        avatar: options?.avatar,
       },
       existUser.publicKey,
       { expiresIn: existUser.accessTokenExpIn }

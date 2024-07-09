@@ -83,6 +83,26 @@
           }
         ]
       }
+    },
+    "navbar": {
+      "setting": {
+        "theme": {
+          "title": "Theme",
+          "value": {
+            "light": "light",
+            "dark": "dark",
+            "system": "system"
+          }
+        },
+
+        "language": {
+          "vi": "vi",
+          "en": "en"
+        },
+        "log-out": {
+          "title": "Log out"
+        }
+      }
     }
   }
 }

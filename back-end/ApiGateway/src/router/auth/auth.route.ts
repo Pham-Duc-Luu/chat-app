@@ -51,7 +51,10 @@ const authRouter = Router();
  *             schema:
  *               type: object
  *               properties:
- *                 token:
+ *                 accessToken:
+ *                   type: string
+ *                   description: Authentication token
+ *                 refreshToken:
  *                   type: string
  *                   description: Authentication token
  *       400:

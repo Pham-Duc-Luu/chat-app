@@ -1,7 +1,7 @@
-import { Provider } from "react-redux";
-import { store } from "../store";
-import { persistStore } from "redux-persist";
-persistStore(store);
+'use client';
+import { useRef } from 'react';
+import { Provider } from 'react-redux';
+import { AppStore, makeStore, store } from '../store';
 export default function ReduxProvider({
   children,
 }: {

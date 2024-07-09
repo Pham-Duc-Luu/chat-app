@@ -1,33 +1,21 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-import { authReducer } from "./store/authSlice";
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
+import { authReducer } from './store/authSlice';
+import { userInfoReducer } from './store/userInfoSlice';
+import { configReducer } from './store/configSlice';
 
-const authPersistConfig = {
-  key: "auth",
-  storage: storage,
-  whitelist: ["authState"],
+export const makeStore = () => {
+  return configureStore({
+    reducer: {
+      user: userInfoReducer,
+      config: configReducer,
+    },
+  });
 };
 
-const configPersist = {
-  key: "config",
-  storage: storage,
-  whitelist: ["authState"],
-};
-
-const rootReducer = combineReducers({
-  auth: persistReducer(authPersistConfig, authReducer),
-});
-
-export const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }),
-});
-
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const store = makeStore();
+// Infer the type of makeStore
+export type AppStore = ReturnType<typeof makeStore>;
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];
