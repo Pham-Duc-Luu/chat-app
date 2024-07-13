@@ -33,7 +33,7 @@ export const userInfoSlice = createSlice({
     name: 'userInfo',
     initialState,
     reducers: {
-        setUserInfo: ({entities}, action) => {
+        setUserInfo: ({entities}, action: PayloadAction<IUserInfo>) => {
             entities.userinfo = action.payload;
         },
         removeUserInfo: (state) => {

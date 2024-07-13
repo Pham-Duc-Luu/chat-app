@@ -21,15 +21,18 @@ import {
 } from '../../services/authentication.service/type';
 import {AxiosError} from 'axios';
 import {HttpResponse} from '../../util/response/http.response';
+import {OAuth2Client} from "google-auth-library";
 
-const OAuhtRoute = Router();
+
+const OAuthGoogle = Router();
 
 passport.use(
     new GoogleStrategy(
         {
             clientID: AppConfigEnv.GOOGLE_CLIENT_ID,
             clientSecret: AppConfigEnv.GOOGLE_CLIENT_SECRET,
-            callbackURL: `http://localhost:${AppConfigEnv.APP_PORT}${AppConfigEnv.APP_BASE_URL}${AppConfigEnv.GOOGLE_CALLBACK_URL}`,
+            callbackURL: AppConfigEnv.APP_BASE_URL + AppConfigEnv.GOOGLE_CALLBACK_URL,
+
         },
         function (accessToken, refreshToken, profile, cb) {
             return cb(null, profile);
@@ -57,30 +60,61 @@ passport.deserializeUser(function (obj: any, cb) {
  *       302:
  *         description: Redirects to Google for authentication.
  */
-OAuhtRoute.get(
+OAuthGoogle.all(
     '/auth/google',
     passport.authenticate('google', {scope: ['profile', 'email']})
 );
+OAuthGoogle.get('/auth/google/status', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.status(200).json({authenticated: true, user: req.user});
+    } else {
+        res.status(200).json({authenticated: false});
+    }
+});
 
-OAuhtRoute.get(
+OAuthGoogle.all(
     AppConfigEnv.GOOGLE_CALLBACK_URL,
-    passport.authenticate('google', {failureRedirect: '/error', successRedirect: AppConfigEnv.CLIENT_HOME_URL}),
+    passport.authenticate('google', {
+        failureRedirect: '/error',
+        session: true
+    }),
+    (req, res) => {
+        res.redirect(AppConfigEnv.CLIENT_HOME_URL)
+    }
 );
 
-OAuhtRoute.get('/auth/google/login/success',
+//
+// OAuthGoogle.get("/logout", (req, res) => {
+//     req.logout();
+//     res.redirect(AppConfigEnv.CLIENT_HOME_URL);
+// });
+
+OAuthGoogle.get
+('/auth/google/login/success',
     async function (req, res, next) {
         try {
-
-            // * take the user profile in google oauth2
-
-            const {_json} = req.user as Profile;
+            const id_token = req.headers?.authorization?.split(' ')[1]
+            const client = new OAuth2Client(AppConfigEnv.GOOGLE_CLIENT_ID);
+            if (!id_token) {
+                return ApiResponse(res, new BadRequestResponse('Missing token!'))
+            }
             const {Client} = req.body;
+            // * take the user profile in google oauth2
+            const ticket = await client.verifyIdToken({
+                idToken: id_token,
+                audience: AppConfigEnv.GOOGLE_CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
+                // Or, if multiple clients access the backend:
+                //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+            });
+            const payload = ticket.getPayload();
+
+
             const user: Partial<User> = {
-                firstName: _json.given_name,
-                lastName: _json.family_name,
-                avatar: _json.picture,
-                email: _json.email,
-                username: _json.name,
+                firstName: payload?.given_name,
+                lastName: payload?.family_name,
+                avatar: payload?.picture,
+                email: payload?.email,
+                username: payload?.name,
                 password: '@Google1#' + crypto.randomBytes(4),
             };
 
@@ -157,6 +191,24 @@ OAuhtRoute.get('/auth/google/login/success',
         }
     }
 )
-OAuhtRoute.get('/error', (req, res) => res.send('error logging in'));
+OAuthGoogle.get('/error', (req, res) => res.send('error logging in'));
 
-export default OAuhtRoute;
+OAuthGoogle.get('/auth/google/verify', async (req, res) => {
+    const token = req.headers?.authorization?.split(' ')[1]
+    const client = new OAuth2Client(AppConfigEnv.GOOGLE_CLIENT_ID);
+    try {
+        const ticket = await client.verifyIdToken({
+            idToken: token as string,
+            audience: AppConfigEnv.GOOGLE_CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
+            // Or, if multiple clients access the backend:
+            //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+        });
+        const payload = ticket.getPayload();
+
+        console.log(payload)
+    } catch (error) {
+        console.log(error)
+    }
+    return 1
+})
+export default OAuthGoogle;

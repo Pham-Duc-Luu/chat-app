@@ -3193,3 +3193,73 @@
 [35m[39m
 2024-07-09 23:53:36:5336 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 35.909 ms[39m
 [35m[39m
+2024-07-11 18:47:04:474 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-12 09:07:15:715 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-12 09:26:24:2624 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 107.377 ms[39m
+[35m[39m
+2024-07-12 11:00:38:038 [35mhttp[39m: [35mGET /user/api/v1/verify-account 400 52 - 278.447 ms[39m
+[35m[39m
+2024-07-13 09:35:26:3526 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/social_media?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-13 10:22:51:2251 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 80.776 ms[39m
+[35m[39m
+2024-07-13 12:03:10:310 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 24.414 ms[39m
+[35m[39m
+2024-07-13 12:03:13:313 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.845 ms[39m
+[35m[39m
+2024-07-13 12:05:36:536 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 4.561 ms[39m
+[35m[39m
+2024-07-13 12:06:48:648 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 4.318 ms[39m
+[35m[39m
+2024-07-13 12:16:24:1624 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 28.729 ms[39m
+[35m[39m
+2024-07-13 12:16:25:1625 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 1.814 ms[39m
+[35m[39m
+2024-07-13 12:17:42:1742 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 2.553 ms[39m
+[35m[39m
+2024-07-13 12:17:44:1744 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.910 ms[39m
+[35m[39m
+2024-07-13 12:17:45:1745 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.867 ms[39m
+[35m[39m
+2024-07-13 12:17:53:1753 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.710 ms[39m
+[35m[39m
+2024-07-13 12:17:54:1754 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 1.969 ms[39m
+[35m[39m
+2024-07-13 12:30:54:3054 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 32.328 ms[39m
+[35m[39m
+2024-07-13 12:30:55:3055 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.573 ms[39m
+[35m[39m
+2024-07-13 12:33:08:338 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 4.050 ms[39m
+[35m[39m
+2024-07-13 12:33:09:339 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 2.157 ms[39m
+[35m[39m
+2024-07-13 12:33:43:3343 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.934 ms[39m
+[35m[39m
+2024-07-13 12:33:45:3345 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.737 ms[39m
+[35m[39m
+2024-07-13 12:34:39:3439 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.553 ms[39m
+[35m[39m
+2024-07-13 12:34:40:3440 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 3.103 ms[39m
+[35m[39m
+2024-07-13 12:55:25:5525 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 38.833 ms[39m
+[35m[39m

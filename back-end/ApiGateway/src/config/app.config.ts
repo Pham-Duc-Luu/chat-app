@@ -31,6 +31,7 @@ const ENVVARIABLE = [
     'TESTING_IP',
     'CLIENT_HOME_URL',
     'GOOGLE_CALLBACK_URL',
+    "COOKIE_KEYS"
 ] as const;
 
 export type Tenv = (typeof ENVVARIABLE)[number];

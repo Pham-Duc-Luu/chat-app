@@ -55,11 +55,19 @@ class Auth {
                 token: IToken;
                 user: Partial<Pick<IUserInfo, 'id' | 'email' | 'avatar' | 'username'>>;
             }>
-        >('/auth/google/login/success');
+        >('/auth/google/login/success', {withCredentials: true});
     }
     public getPublicKey = () => {
         return process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
     };
+    public verifyGoogleToken = (token: string) => {
+        return api.get<HttpResponse<{
+            token: IToken;
+            user: Partial<Pick<IUserInfo, 'id' | 'email' | 'avatar' | 'username'>>;
+        }>>('/auth/google/login/success', {
+            headers: {Authorization: `Bearer ${token}`}
+        })
+    }
 }
 
 const auth = new Auth();

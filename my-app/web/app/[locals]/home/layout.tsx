@@ -5,7 +5,9 @@ import ReduxProvider from '@/lib/store/redux-provider';
 import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
 import {useAppDispatch} from "@/lib/hooks";
-import {googleoauth} from "@/lib/store/userInfoSlice";
+import {googleoauth, setUserInfo} from "@/lib/store/userInfoSlice";
+import {useSession, signIn, signOut} from "next-auth/react"
+import {User} from "next-auth";
 
 export default function Layout({
                                    children,
@@ -17,9 +19,6 @@ export default function Layout({
 
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(googleoauth())
-    }, [])
     return (
         <ReduxProvider>
 

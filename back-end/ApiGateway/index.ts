@@ -17,39 +17,34 @@ import swaggerDocs from
         './swagger/swagger';
 import cors from 'cors';
 import delayMiddleware from './src/middleware/delay.middleware';
+import cookieParser from "cookie-parser"
+import cookieSession from 'cookie-session'
+import OAuthGoogle from "./src/router/auth/auth.googe.route";
+import passport from "passport";
+import AppConfig from "./src/config/app.config";
+
 
 dotenv.config();
-import cookieParser from "cookie-parser"
-
-
 const app: Application = express();
 
-app.enable('trust proxy')
+app.set("trust proxy", true)
 
 // * middleware
 app.use(delayMiddleware({delay: 1000}));
+app.use(session({secret: AppConfig.COOKIE_KEYS, resave: true, saveUninitialized: true}));
 
 // app.use(verifyApiKey);
 app.use(helmet());
 app.use(compression());
 app.use(cookieParser())
+// initalize passport
+app.use(passport.initialize());
+// deserialize cookie from the browser
+app.use(passport.session());
 
 app.use(json());
 app.use(morganMiddleware);
-app.use(
-    session({
-        resave: false,
-        saveUninitialized: false,
-        secret: 'SECRET',
-
-        cookie: {
-            sameSite: 'none',
-            secure: true
-        }
-    })
-);
 app.use(cors(
-    // {origin: "http://localhost:3000", optionsSuccessStatus: 200}
 ));
 // app.options('*', cors())
 app.use(express.urlencoded({extended: true})); // support encoded bodies
@@ -70,6 +65,7 @@ async function main() {
 
     // * this is for testing purposes
     if (AppConfigEnv.ENV == 'development') {
+
         swaggerDocs(app, Number(AppConfigEnv.APP_PORT));
         console.log(
             `api documentation is available at http://localhost:${AppConfigEnv.APP_PORT}/docs`
