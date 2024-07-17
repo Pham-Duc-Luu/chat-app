@@ -80,6 +80,7 @@ async function main() {
   process.on('unhandledRejection', (error, promise) => {
     console.log(`Logged Error: ${error}`);
     server.close(() => process.exit(1));
+    process.exit();
   });
   // ... you will write your Prisma Client queries here
 }

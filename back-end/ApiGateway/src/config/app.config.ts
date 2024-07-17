@@ -1,4 +1,4 @@
-import {config} from 'dotenv';
+import { config } from 'dotenv';
 import _ from 'lodash';
 import util from '../util/function';
 import Logger from '../lib/logger';
@@ -17,21 +17,21 @@ type environmentType = 'production' | 'development';
  */
 
 const ENVVARIABLE = [
-    'APP_BASE_URL',
-    'ENV',
-    'APP_PORT',
-    'API_KEY_USER_SERVICE',
-    'BASE_URL_USER_SERVICE',
-    'API_KEY_AUTHETICATION_SERVICE',
-    'BASE_URL_AUTHENTICATION_SERVICE',
-    'SERVER_KEY',
-    'NGROK_AUTHTOKEN',
-    'GOOGLE_CLIENT_ID',
-    'GOOGLE_CLIENT_SECRET',
-    'TESTING_IP',
-    'CLIENT_HOME_URL',
-    'GOOGLE_CALLBACK_URL',
-    "COOKIE_KEYS"
+  'APP_BASE_URL',
+  'ENV',
+  'APP_PORT',
+  'API_KEY_USER_SERVICE',
+  'BASE_URL_USER_SERVICE',
+  'API_KEY_AUTHETICATION_SERVICE',
+  'BASE_URL_AUTHENTICATION_SERVICE',
+  'SERVER_KEY',
+  'NGROK_AUTHTOKEN',
+  'GOOGLE_CLIENT_ID',
+  'GOOGLE_CLIENT_SECRET',
+  'TESTING_IP',
+  'CLIENT_HOME_URL',
+  'GOOGLE_CALLBACK_URL',
+  'COOKIE_KEYS',
 ] as const;
 
 export type Tenv = (typeof ENVVARIABLE)[number];
@@ -42,10 +42,10 @@ const AppConfigEnv = util.getEnvVariables(Array.from(ENVVARIABLE));
  * type of environment variables
  */
 if (AppConfigEnv.ENV !== 'production' && AppConfigEnv.ENV !== 'development') {
-    throw new Error('environment must be production or development');
+  throw new Error('environment must be production or development');
 }
 
 if (AppConfigEnv.ENV === 'development') {
-    Logger.info(AppConfigEnv);
+  Logger.info(AppConfigEnv);
 }
 export default AppConfigEnv;
