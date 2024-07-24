@@ -3263,3 +3263,11 @@
 [35m[39m
 2024-07-13 12:55:25:5525 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 38.833 ms[39m
 [35m[39m
+2024-07-18 16:08:39:839 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
