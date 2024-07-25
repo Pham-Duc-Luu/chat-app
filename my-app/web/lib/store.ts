@@ -9,6 +9,7 @@ export const makeStore = () => {
     reducer: {
       user: userInfoReducer,
       config: configReducer,
+      auth: authReducer,
     },
   });
 };

@@ -3287,3 +3287,11 @@
 [32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
 [32m  SALTROUND: '10'[39m
 [32m}[39m
+2024-07-25 10:19:08:198 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m

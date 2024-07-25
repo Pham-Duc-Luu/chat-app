@@ -21,8 +21,6 @@ export default function Navbar() {
   const user = useAppSelector((state) => state.user.entities.userinfo);
   const router = useRouter();
 
-  console.log(user);
-
   return (
     <div className=" sticky  shadow-md flex justify-center items-center">
       <div className=" flex w-full p-4">

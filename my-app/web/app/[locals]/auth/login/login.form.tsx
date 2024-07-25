@@ -20,7 +20,6 @@ import { Bounce, Id, toast, ToastContainer } from 'react-toastify';
 import { z } from 'zod';
 import { Spin } from 'antd';
 import { useTranslations } from 'next-intl';
-import { setAuthState } from '@/lib/store/authSlice';
 import { signIn } from '@/lib/store/userInfoSlice';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { useRouter, useParams } from 'next/navigation';
@@ -53,8 +52,6 @@ export default function LoginForm() {
 
   const router = useRouter();
   useEffect(() => {
-    console.log(user);
-
     if (user.status !== 'loading') {
       setIsDisabled(false);
       toast.dismiss();

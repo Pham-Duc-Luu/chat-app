@@ -46,6 +46,21 @@
         "forgot_password": "forgot password",
         "continue": "or continue with"
       }
+    },
+    "forgot_password": {
+      "title": "Forgot password",
+      "form": {
+        "description": "Enter your user account's verified email address",
+        "email": {
+          "lable": "Email",
+          "placeholder": "example@gmail.com"
+        },
+        "submit": "Send reset otp code",
+        "otp": {
+          "description": "Please enter the otp code we just sent to your email",
+          "verified": "Verify otp code"
+        }
+      }
     }
   },
   "home": {

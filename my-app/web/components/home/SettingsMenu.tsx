@@ -57,7 +57,6 @@ import { home } from '@/messages/en.json';
 export default function SettingsMenu() {
   const t = useTranslations('home.navbar.setting');
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
   const [themeTitle, setThemeTitle] = useState<string>();
 

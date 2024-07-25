@@ -61,7 +61,6 @@ export default function AccountsMenu() {
   const dispatch = useAppDispatch();
 
   const { username } = useAppSelector((state) => state.user.entities.userinfo);
-  console.log(username);
 
   return (
     <DropdownMenuGroup>
