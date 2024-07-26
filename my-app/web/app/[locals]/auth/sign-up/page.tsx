@@ -24,8 +24,7 @@ import { SignUpSchema } from '@/lib/api/auth.api';
 import SignUpForm from './signUp.form';
 import { Bounce, ToastContainer } from 'react-toastify';
 
-export default function Page()  {
-
+export default function Page() {
   const params = useParams<{ locals: string }>();
   // ...
 

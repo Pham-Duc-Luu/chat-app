@@ -57,9 +57,21 @@
         },
         "submit": "Send reset otp code",
         "otp": {
-          "description": "Please enter the otp code we just sent to your email",
+          "description": "Please enter the otp code we just sent to your email, OTP will be disable in ",
           "verified": "Verify otp code"
         }
+      }
+    },
+    "reset_password": {
+      "title": "Reset password",
+      "form": {
+        "password": {
+          "lable": "New Password"
+        },
+        "repassword": {
+          "lable": "Re-type password"
+        },
+        "submit": "Reset password"
       }
     }
   },

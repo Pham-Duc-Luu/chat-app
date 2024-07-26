@@ -16,6 +16,7 @@ export default function Layout({
   return (
     <div className=" flex justify-center items-center h-screen w-screen">
       {children}
+      <Toaster />
     </div>
   );
 }

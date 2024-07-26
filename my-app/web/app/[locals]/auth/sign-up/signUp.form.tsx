@@ -148,7 +148,7 @@ export default function SignUpForm() {
             </label>
           </div>
           <Link
-            href={'/forgot-password'}
+            href={`/${params.locals}/auth/forgotpassword`}
             className="font-medium underline underline-offset-4">
             {t('form.forgot_password')}
           </Link>

@@ -131,7 +131,7 @@ export default function LoginForm() {
               </label>
             </div>
             <Link
-              href={'/forgot-password'}
+              href={`/${params.locals}/auth/forgotpassword`}
               className="font-medium underline underline-offset-4">
               Forgot password
             </Link>

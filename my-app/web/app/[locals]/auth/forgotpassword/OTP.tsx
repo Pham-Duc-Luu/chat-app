@@ -5,14 +5,15 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from '@/components/ui/input-otp';
+import { useAppSelector } from '@/lib/hooks';
 import { useTranslations } from 'next-intl';
 
 export default function OTP() {
   const t = useTranslations('authentication.forgot_password');
-
+  const { counter } = useAppSelector((state) => state.auth);
   return (
     <div className=" flex justify-center items-center flex-col gap-4">
-      <div className=" mb-4">{t('form.otp.description')}</div>
+      <div className=" mb-4">{t('form.otp.description') + counter}</div>
 
       <InputOTP maxLength={6}>
         <InputOTPGroup>

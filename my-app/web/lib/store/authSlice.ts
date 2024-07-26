@@ -6,7 +6,7 @@ export interface IAuthState {
 }
 
 const initialState: IAuthState = {
-  isOPTCreated: true,
+  isOPTCreated: false,
   counter: 0,
 };
 
