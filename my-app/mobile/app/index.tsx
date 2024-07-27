@@ -1,28 +1,17 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import 'react-native-reanimated';
+import { Button, StatusBar, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Link } from 'expo-router';
 
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-export default function Index() {
+const Index = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-black">
-      <Text>mo</Text>
+    <View className=" p-20">
+      <Text className=" font-pblack">Indexxx</Text>
+      <StatusBar></StatusBar>
+      <Link href="/home">go to home</Link>
     </View>
   );
-}
+};
+
+export default Index;
+
+const styles = StyleSheet.create({});
