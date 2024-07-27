@@ -12,8 +12,8 @@
 // export class UploadModule {}
 import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
-import { UploadController } from './upload.controller';
-import { UploadService } from './upload.service';
+import { UploadController } from './local-upload.controller';
+import { UploadService } from './local-upload.service';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
 
