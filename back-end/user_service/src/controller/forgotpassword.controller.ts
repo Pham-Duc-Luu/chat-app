@@ -64,7 +64,8 @@ class ForgotPassword {
 
       // * use email to add reset code for user
       let user = await userService.getUserByEmail(email);
-
+      console.log(user);
+      
       if (!user) {
         throw new BadRequestResponse("User not found");
       }
