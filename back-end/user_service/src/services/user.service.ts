@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
-import { prisma } from "../database/postgresql/connect.postgresql";
+import prisma  from "../database/postgresql/connect.postgresql";
 import Logger from "../lib/logger";
-import { BadRequest } from "../util/response/clientError.response";
+import { BadRequestResponse } from "../util/response/clientError.response";
 import _ from "lodash";
 import utilService from "./util.service";
 import sendMailService from "./sendMail.service";
@@ -22,7 +22,7 @@ class UserService {
       return util.pickerOptions(user, options);
     } catch (error) {
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 
@@ -52,7 +52,7 @@ class UserService {
       console.log(error.stack);
 
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 
@@ -74,7 +74,7 @@ class UserService {
       console.log(error.stack);
 
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 }

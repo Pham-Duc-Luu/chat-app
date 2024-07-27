@@ -142,6 +142,7 @@ class Controller {
       return ApiResponse(res, new InternalServerErrorResponse());
     }
   }
+
 }
 
 const userController = new Controller();

@@ -5,14 +5,15 @@ import userService from "../services/user.service";
 import utilService from "../services/util.service";
 import validateService from "../services/validate.service";
 import Logger from "../lib/logger";
-import { table } from "console";
+import { log, table } from "console";
 import { BadRequestResponse } from "../util/response/clientError.response";
 import { ClientErrorResponse } from "../util/response/http.response";
 class ForgotPassword {
   async sendCode(req: Request<any, any, { email: string }>, res: Response) {
     try {
       const { email } = req.body;
-
+      console.log(email);
+      
       // * Check the email is exist
       if (!email) {
         throw new BadRequestResponse();
@@ -26,7 +27,7 @@ class ForgotPassword {
       }
 
       await userService.updateResetCode(email, utilService.randomDigital(6));
-
+      
       return res.status(200).json({
         message: "Email sent",
       });

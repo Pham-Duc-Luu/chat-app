@@ -8,6 +8,8 @@ class UtilService {
                 Math.floor(Math.random() * charactersLength)
             );
         }
+        console.log(result);
+        
         return result;
     }
 }

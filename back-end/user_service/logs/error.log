@@ -421,3 +421,7 @@
 [31mCan't reach database server at `localhost:5432`[39m
 
 [31mPlease make sure your database server is running at `localhost:5432`.[39m
+2024-07-27 23:52:50:5250 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:53:26:5326 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:54:08:548 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:55:37:5537 [31merror[39m: [31mExpired reset code[39m

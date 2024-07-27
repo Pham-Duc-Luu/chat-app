@@ -3263,3 +3263,107 @@
 [35m[39m
 2024-07-13 12:55:25:5525 [35mhttp[39m: [35mGET /user/api/v1/users/find-users?email=phamducluu2003%40gmail.com 200 226 - 38.833 ms[39m
 [35m[39m
+2024-07-27 16:21:55:2155 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 17:00:05:05 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 17:11:30:1130 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 22:08:06:86 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 23:01:48:148 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 23:01:52:152 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 60 - 50.041 ms[39m
+[35m[39m
+2024-07-27 23:03:42:342 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 60 - 1.709 ms[39m
+[35m[39m
+2024-07-27 23:05:11:511 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 60 - 1.220 ms[39m
+[35m[39m
+2024-07-27 23:16:41:1641 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 23:22:30:2230 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 62 - 16.607 ms[39m
+[35m[39m
+2024-07-27 23:23:17:2317 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 3035.047 ms[39m
+[35m[39m
+2024-07-27 23:33:25:3325 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2466.397 ms[39m
+[35m[39m
+2024-07-27 23:35:56:3556 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2532.125 ms[39m
+[35m[39m
+2024-07-27 23:36:15:3615 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 23:36:25:3625 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 3500.495 ms[39m
+[35m[39m
+2024-07-27 23:47:48:4748 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 16 - 39.511 ms[39m
+[35m[39m
+2024-07-27 23:48:07:487 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 3059.318 ms[39m
+[35m[39m
+2024-07-27 23:51:26:5126 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2990.074 ms[39m
+[35m[39m
+2024-07-27 23:52:10:5210 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-07-27 23:52:50:5250 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:52:50:5250 [35mhttp[39m: [35mPOST /user/api/v1/users/forgot-password 200 50 - 15.312 ms[39m
+[35m[39m
+2024-07-27 23:53:26:5326 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:53:26:5326 [35mhttp[39m: [35mPOST /user/api/v1/users/forgot-password 200 50 - 4.500 ms[39m
+[35m[39m
+2024-07-27 23:53:56:5356 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2730.796 ms[39m
+[35m[39m
+2024-07-27 23:54:08:548 [31merror[39m: [31mInvalid password[39m
+2024-07-27 23:54:08:548 [35mhttp[39m: [35mPOST /user/api/v1/users/forgot-password 200 50 - 2.644 ms[39m
+[35m[39m
+2024-07-27 23:55:37:5537 [31merror[39m: [31mExpired reset code[39m
+2024-07-27 23:55:37:5537 [35mhttp[39m: [35mPOST /user/api/v1/users/forgot-password 200 52 - 3.974 ms[39m
+[35m[39m
+2024-07-27 23:55:47:5547 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2593.607 ms[39m
+[35m[39m
+2024-07-27 23:55:57:5557 [35mhttp[39m: [35mPOST /user/api/v1/users/forgot-password 200 42 - 8.320 ms[39m
+[35m[39m
