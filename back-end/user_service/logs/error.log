@@ -425,3 +425,24 @@
 2024-07-27 23:53:26:5326 [31merror[39m: [31mInvalid password[39m
 2024-07-27 23:54:08:548 [31merror[39m: [31mInvalid password[39m
 2024-07-27 23:55:37:5537 [31merror[39m: [31mExpired reset code[39m
+2024-07-29 23:07:28:728 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findFirst()` invocation in[39m
+[31m/home/mailinh/code/chat-app/back-end/user_service/src/services/user.service.ts:13:38[39m
+
+[31m  10 class UserService {[39m
+[31m  11   async getUserByEmail(email: string, options: (keyof User)[] = []) {[39m
+[31m  12     try {[39m
+[31m→ 13       const user = await prisma.user.findFirst([39m
+[31mThe column `User.resetCodeCreatedAt` does not exist in the current database.[39m
+2024-07-29 23:10:29:1029 [31merror[39m: [31m[39m
+[31mInvalid `prisma.user.findFirst()` invocation in[39m
+[31m/home/mailinh/code/chat-app/back-end/user_service/src/services/user.service.ts:13:38[39m
+
+[31m  10 class UserService {[39m
+[31m  11   async getUserByEmail(email: string, options: (keyof User)[] = []) {[39m
+[31m  12     try {[39m
+[31m→ 13       const user = await prisma.user.findFirst([39m
+[31mThe column `User.resetCodeCreatedAt` does not exist in the current database.[39m
+2024-07-29 23:17:28:1728 [31merror[39m: [31mInvalid reset code[39m
+2024-07-29 23:34:42:3442 [31merror[39m: [31mInvalid reset code[39m
+2024-07-29 23:46:04:464 [31merror[39m: [31mExpired reset code[39m

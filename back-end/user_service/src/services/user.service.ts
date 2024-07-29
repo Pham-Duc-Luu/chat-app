@@ -28,7 +28,8 @@ class UserService {
 
   async updateResetCode(
     email: string,
-    resetCode: string,
+    otp: string,
+    timeStep: number,
     options: (keyof User)[] = []
   ): Promise<Partial<User> | undefined> {
     try {
@@ -37,12 +38,12 @@ class UserService {
           email,
         },
         data: {
-          resetCode,
-          resetCodeCreatedAt: String(Date.now()),
+          resetCode: otp,
+          resetCodeCreatedAt: timeStep,
         },
       });
 
-      await sendMailService.sendMailTo(email, resetCode);
+      await sendMailService.sendMailTo(email, otp);
 
       if (!user) {
         return undefined;

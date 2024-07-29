@@ -5,7 +5,7 @@ CREATE TABLE "User" (
     "username" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "resetCode" TEXT,
-    "resetCodeCreatedAt" TEXT,
+    "resetCodeCreatedAt" INTEGER,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
