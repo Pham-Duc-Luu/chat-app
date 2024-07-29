@@ -58,7 +58,8 @@
         "submit": "Send reset otp code",
         "otp": {
           "description": "Please enter the otp code we just sent to your email, OTP will be disable in ",
-          "verified": "Verify otp code"
+          "verified": "Verify otp code",
+          "verifying": "We are try to verify you"
         }
       }
     },

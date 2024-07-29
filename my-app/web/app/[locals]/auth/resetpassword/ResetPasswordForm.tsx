@@ -49,7 +49,7 @@ export default function ResetPasswordForm() {
   const lowerCase = /(?=.*?[a-z])/;
   const digit = /(?=.*?[0-9])/;
   const specialChar = /(?=.*?[.#?!@$%^&*-])/;
-  const resetPasswordFormSchema = z.object({
+  const passwordSchema = z.object({
     password: z
       .string()
       .min(8, { message: 'Password must be at least 8 characters long' })
@@ -76,8 +76,8 @@ export default function ResetPasswordForm() {
     ),
   });
 
-  const form = useForm<z.infer<typeof resetPasswordFormSchema>>({
-    resolver: zodResolver(resetPasswordFormSchema),
+  const form = useForm<z.infer<typeof passwordSchema>>({
+    resolver: zodResolver(passwordSchema),
   });
 
   const dispatch = useAppDispatch();
@@ -89,12 +89,13 @@ export default function ResetPasswordForm() {
   const [viewPassword, setviewPassword] = useState(false);
   const [viewRePassword, setviewRePassword] = useState(false);
 
-  function onSubmit(values: z.infer<typeof resetPasswordFormSchema>) {
+  function onSubmit(values: z.infer<typeof passwordSchema>) {
     setpassword(values.password);
     toast({
-      title: 'Scheduled: Catch up',
-      description: 'Friday, February 10, 2023 at 5:57 PM',
+      title: 'Reset Password',
     });
+
+    router.push(`/${params.locals}/home`);
   }
   const { toast } = useToast();
   const router = useRouter();
