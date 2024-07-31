@@ -79,6 +79,9 @@ class User {
   async getAllUsers() {
     return this.user.get<{ users: (typeof exampleUser)[] }>('/');
   }
+  async getUserById(id: number = 1) {
+    return this.user.get<typeof exampleUser>(`/${id}`);
+  }
 }
 
 class DummyJSON {

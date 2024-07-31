@@ -9,6 +9,7 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 import { useAppSelector } from '@/lib/hooks';
 import { MenuButton } from './Menu';
 import Avatar, { genConfig } from 'react-nice-avatar';
+import SearchInput from '../SearchInput.navbar';
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const params = useParams<{ locals: string }>();
@@ -24,7 +25,7 @@ export default function Navbar() {
   return (
     <div className=" sticky  shadow-md flex justify-center items-center">
       <div className=" flex w-full p-4">
-        <CommandSearch commands={commands} />
+        <SearchInput></SearchInput>
       </div>
       <div className="p-4">
         {user.username ? (
