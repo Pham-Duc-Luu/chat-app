@@ -1,5 +1,5 @@
-import en from "./messages/en.json";
-import vi from "./messages/vi.json";
+import en from './messages/en.json';
+import vi from './messages/vi.json';
 type English = typeof en;
 type VietNamese = typeof vi;
 declare global {

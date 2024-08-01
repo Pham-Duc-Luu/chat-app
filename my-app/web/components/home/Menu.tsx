@@ -55,17 +55,23 @@ import _ from 'lodash';
 import { home } from '@/messages/en.json';
 import SettingsMenu from './SettingsMenu';
 import AccountsMenu from './AccountMenu';
+import { useParams, useRouter } from 'next/navigation';
 
 export function MenuButton({ children }: { children: React.ReactNode }) {
   const user = useAppSelector((state) => state.user.entities.userinfo);
   const { setTheme, theme } = useTheme();
   const t = useTranslations('home.navbar.setting');
-
+  const params = useParams<{ locals: string }>();
+  const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>
+        <DropdownMenuLabel
+          className=" cursor-pointer"
+          onClick={() => {
+            router.push(`/${params.locals}/profile`);
+          }}>
           <>@{user.username}</>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

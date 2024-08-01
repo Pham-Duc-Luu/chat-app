@@ -3,10 +3,6 @@
 import * as React from 'react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { type ThemeProviderProps } from 'next-themes/dist/types';
-import {
-  createTheme,
-  ThemeProvider as MUIThemeProvier,
-} from '@mui/material/styles';
 
 import { NextUIProvider } from '@nextui-org/react';
 

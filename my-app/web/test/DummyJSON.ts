@@ -71,16 +71,58 @@ const exampleUser = {
   },
   role: 'admin', // or "moderator", or "user"
 };
+
+export type ExampleUser = typeof exampleUser;
+
+const examplePost = {
+  id: 1,
+  title: 'His mother had always taught him',
+  body: "His mother had always taught him not to ever think of himself as better than others. He'd tried to live by this motto. He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.",
+  tags: ['history', 'american', 'crime'],
+  reactions: {
+    likes: 192,
+    dislikes: 25,
+  },
+  views: 305,
+  userId: 121,
+};
+
+export type ExamplePost = typeof examplePost;
 class User {
   private user;
   constructor(url: string) {
     this.user = axios.create({ baseURL: url + '/users' });
   }
   async getAllUsers() {
-    return this.user.get<{ users: (typeof exampleUser)[] }>('/');
+    return this.user.get<{
+      users: (typeof exampleUser)[];
+      total: number;
+      skip: number;
+      limit: number;
+    }>('/');
   }
   async getUserById(id: number = 1) {
     return this.user.get<typeof exampleUser>(`/${id}`);
+  }
+}
+
+class Post {
+  private post;
+  constructor(url: string) {
+    this.post = axios.create({ baseURL: url + '/posts' });
+  }
+
+  async getAllPosts() {
+    return this.post.get<{
+      posts: (typeof examplePost)[];
+      total: number;
+      skip: number;
+      limit: number;
+    }>('/');
+  }
+
+  async getPostById(id: number = 1) {
+    return this.post.get<typeof examplePost>(`/${id}`);
   }
 }
 
@@ -88,6 +130,7 @@ class DummyJSON {
   private baseURL = 'https://dummyjson.com';
   public api = axios.create({ baseURL: this.baseURL });
   public user = new User(this.baseURL);
+  public post = new Post(this.baseURL);
 }
 
 const dummyjson = new DummyJSON();

@@ -9,6 +9,7 @@ import ReduxProvider from '@/lib/store/redux-provider';
 import { SessionProvider } from 'next-auth/react';
 import SessionWrapper from '@/components/SessionWrapper';
 import AppConfigEnv from '@/config/app.config';
+import { NextUIProvider } from '@nextui-org/system';
 
 export default async function Layout({
   children,

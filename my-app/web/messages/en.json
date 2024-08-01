@@ -130,6 +130,19 @@
         "log-out": {
           "title": "Log out"
         }
+      },
+      "searching": {
+        "placeholder": "Search for all you need"
+      }
+    }
+  },
+  "profile": {
+    "functions": {
+      "edit": {
+        "title": "Edit Profile"
+      },
+      "share": {
+        "title": "Share"
       }
     }
   }
