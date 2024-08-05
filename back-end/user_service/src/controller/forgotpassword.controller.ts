@@ -9,13 +9,13 @@ import validateService from "../services/validate.service";
 import Logger from "../lib/logger";
 import { log, table } from "console";
 import { BadRequestResponse } from "../util/response/clientError.response";
-import { ClientErrorResponse } from "../util/response/http.response";
+import { ClientErrorResponse, SuccessResponse } from "../util/response/http.response";
 config();
 class ForgotPassword {
   //send Otp to email
-  async sendCode(req: Request<any, any, { email: string }>, res: Response) {
+  async sendCode(req: Request, res: Response) {
     try {
-      const { email } = req.body;
+      const email = req.body.email;
       console.log(email);
       
       // * Check the email is exist
@@ -30,9 +30,12 @@ class ForgotPassword {
         throw new BadRequestResponse("User not found");
       }
       if(process.env.KEY_OTP){
-        let result = utilService.generateOTP((process.env.KEY_OTP), 30);
+        let result = utilService.generateOTP((process.env.KEY_OTP), 300);
         await userService.updateResetCode(email, result.otp, result.timeStep);
+        console.log(result.otp);
+        console.log(result.timeStep);
       }
+      
       return res.status(200).json({
         message: "Email sent",
       });
@@ -85,7 +88,7 @@ class ForgotPassword {
       
       if (
         user.resetCodeCreatedAt &&
-        utilService.isOTPExpired((user.resetCodeCreatedAt), 30)
+        utilService.isOTPExpired((user.resetCodeCreatedAt), 300)
       ) {        
         // * check reset code is expired
         throw new BadRequestResponse("Expired reset code");
