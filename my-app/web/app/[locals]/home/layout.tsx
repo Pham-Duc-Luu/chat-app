@@ -26,7 +26,7 @@ export default function Layout({
           <Navbar></Navbar>
           <div className="flex flex-1 overflow-y-auto">
             <Sidebar />
-            <div>{children}</div>
+            <>{children}</>
           </div>
         </div>
       </TooltipProvider>

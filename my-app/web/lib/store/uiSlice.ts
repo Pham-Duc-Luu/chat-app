@@ -44,7 +44,12 @@ export const UISlice = createSlice({
       state,
       action: PayloadAction<Partial<IUIState['layoutType']>>
     ) => {
-      state.layoutType = { ...action.payload, ...state.layoutType };
+      if (action.payload.layout) {
+        state.layoutType.layout = action.payload.layout;
+      }
+      if (action.payload.density) {
+        state.layoutType.density = action.payload.density;
+      }
     },
   },
 });

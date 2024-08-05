@@ -8,7 +8,7 @@ import Masonry from 'react-masonry-css';
 
 // * for example
 
-function Collection() {
+function Collection({ className }: { className?: string }) {
   const items = [
     { content: 'Item 1' },
     { content: 'Item 2' },
@@ -40,11 +40,28 @@ function Collection() {
     });
   }, [userinfo]);
 
+  const state = useAppSelector((state) => state.ui);
+  if (state.layoutType.layout === 'list') {
+    return (
+      <div className={className}>
+        <div className="flex-1 grid-cols-1 gap-2">
+          {posts?.map((post, index) => {
+            return (
+              <PostCard post={post} key={index} className=" mb-8"></PostCard>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className=" flex-1 grid-cols-1  lg:grid-cols-2 grid 2xl:grid-cols-4 lg:gap-8 gap-4 xl:grid-cols-3">
-      {posts?.map((post, index) => {
-        return <PostCard post={post} key={index}></PostCard>;
-      })}
+    <div className={className}>
+      <div className="flex-1 grid-cols-1  lg:grid-cols-2 grid 2xl:grid-cols-4 lg:gap-8 gap-4 xl:grid-cols-3">
+        {posts?.map((post, index) => {
+          return <PostCard post={post} key={index}></PostCard>;
+        })}
+      </div>
     </div>
   );
 }

@@ -10,9 +10,9 @@ const Page = () => {
 
   return (
     <ReduxProvider>
-      <div className=" grid place-items-center p-4">
-        <Collection></Collection>
-      </div>
+      <>
+        <Collection className=" w-full grid flex-1 place-items-center p-4"></Collection>
+      </>
     </ReduxProvider>
   );
 };
