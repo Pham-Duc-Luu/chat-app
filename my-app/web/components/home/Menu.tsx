@@ -1,72 +1,43 @@
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from '@/components/ui/menubar';
-import React, { Children, useState } from 'react';
-
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
+'use client';
+import { useAppSelector } from '@/lib/hooks';
+import { useParams, useRouter } from 'next/navigation';
+import ThemeSettingSubMenu from './ThemeSettingSubMenu';
+import LayoutSettingSubMenu from './LayoutSettingSubMenu';
+import LogOutSubMenu from './LogOutSubMenu';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useAppSelector } from '@/lib/hooks';
-import { useTheme } from 'next-themes';
-import { Moon, Sun } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import _ from 'lodash';
-import { home } from '@/messages/en.json';
-import SettingsMenu from './SettingsMenu';
-import AccountsMenu from './AccountMenu';
-import { useParams, useRouter } from 'next/navigation';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '../ui/dialog';
+import { DialogMenu } from './DialogMenu';
 
-export function MenuButton({ children }: { children: React.ReactNode }) {
+export interface MenuItem {
+  item: React.JSX.Element;
+}
+
+// This is the main menu button
+export default function MenuButton({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const user = useAppSelector((state) => state.user.entities.userinfo);
-  const { setTheme, theme } = useTheme();
-  const t = useTranslations('home.navbar.setting');
   const params = useParams<{ locals: string }>();
   const router = useRouter();
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+
+  const menu: MenuItem[] = [
+    {
+      item: (
         <DropdownMenuLabel
           className=" cursor-pointer"
           onClick={() => {
@@ -74,12 +45,27 @@ export function MenuButton({ children }: { children: React.ReactNode }) {
           }}>
           <>@{user.username}</>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <AccountsMenu></AccountsMenu>
-        <DropdownMenuSeparator />
-        <SettingsMenu></SettingsMenu>
-        <DropdownMenuSeparator />
-      </DropdownMenuContent>
-    </DropdownMenu>
+      ),
+    },
+    { item: <ThemeSettingSubMenu></ThemeSettingSubMenu> },
+    {
+      item: <LayoutSettingSubMenu></LayoutSettingSubMenu>,
+    },
+    {
+      item: <LogOutSubMenu></LogOutSubMenu>,
+    },
+  ];
+
+  return (
+    <DialogMenu>
+      <DropdownMenu>
+        <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
+        <DropdownMenuContent className="w-56 flex  flex-col">
+          {menu.map((item, index) => {
+            return item.item;
+          })}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </DialogMenu>
   );
 }

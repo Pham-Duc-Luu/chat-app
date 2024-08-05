@@ -3,7 +3,6 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 import { Avatar as CdAvatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import Avatar, { genConfig } from 'react-nice-avatar';
-import { MenuButton } from './Menu';
 import { signIn } from '@/lib/store/userInfoSlice';
 import RoundShineBorder from '../magicui/round-shine-border';
 import { Bell, Plus } from 'lucide-react';
@@ -14,6 +13,7 @@ import ShinyButton from '../magicui/shiny-button';
 import ShineBorder from '../magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { cn } from '@/lib/utils';
+import MenuButton from './Menu';
 
 export function BorderBeamDemo({
   children,
@@ -41,6 +41,7 @@ function UserNavbarOptions() {
       <Button>
         <Bell className=" cursor-pointer" />
       </Button>
+
       <BorderBeamDemo className=" cursor-pointer">
         <div className=" flex ml-2 p-2">
           <Plus />

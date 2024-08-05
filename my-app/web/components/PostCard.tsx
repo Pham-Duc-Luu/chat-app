@@ -11,13 +11,22 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { ExamplePost } from '@/test/DummyJSON';
 import { Avatar, AvatarImage } from './ui/avatar';
-import { EllipsisVertical } from 'lucide-react';
+import {
+  Bookmark,
+  EllipsisVertical,
+  Eye,
+  Heart,
+  MessageSquareText,
+  Share2,
+} from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import useSize from '@/hook/useSize';
+import TagsDisplay from './TagsDisplay';
 const notifications = [
   {
     title: 'Your call has been confirmed.',
@@ -32,9 +41,13 @@ const notifications = [
     description: '2 hours ago',
   },
 ];
+import date from 'date-and-time';
+import Image from 'next/image';
+import img from '@/public/thumnail.webp';
 
 export interface Post extends ExamplePost {
-  avatar: string;
+  avatar?: string;
+  thumnail?: string;
 }
 
 interface CardProps extends React.ComponentProps<typeof Card> {
@@ -42,10 +55,12 @@ interface CardProps extends React.ComponentProps<typeof Card> {
 }
 
 export default function PostCard({ className, post, ...props }: CardProps) {
+  const now = new Date();
+  date.format(now, 'YYYY/MM/DD HH:mm:ss'); // => '2015/01/02 23:14:05'
   return (
     <Card
       className={cn(
-        'dark:bg-zinc-900 text-secondary-foreground hover:bg-secondary/80',
+        'dark:bg-zinc-900 bg-zinc-100 drop-shadow group text-secondary-foreground hover:bg-secondary/80 flex flex-col justify-between',
         className
       )}
       {...props}>
@@ -58,8 +73,12 @@ export default function PostCard({ className, post, ...props }: CardProps) {
               <AvatarImage src={post.avatar} />
             </Avatar>
           </Button>
+          <div className=" flex justify-center">
+            <Button className=" invisible group-hover:visible">
+              Read the post
+              <Eye className="ml-2" />
+            </Button>
 
-          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button className=" w-10 h-10 p-1" variant={'ghost'}>
@@ -70,44 +89,58 @@ export default function PostCard({ className, post, ...props }: CardProps) {
                 <p>Options</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
+          </div>
         </CardTitle>
-        <CardDescription className=" w-full overflow-hidden whitespace-nowrap text-ellipsis">
+        <CardDescription className=" text-primary font-semibold text-xl w-full overflow-hidden  text-ellipsis">
           {post.title}
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
-          </div>
-          <Switch />
-        </div>
-        <div>
-          {notifications.map((notification, index) => (
-            <div
-              key={index}
-              className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0">
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-              <div className="space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {notification.title}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {notification.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* this component is for rendering the hastags */}
+        <TagsDisplay tags={post.tags}></TagsDisplay>
+        {/* this is for rendering the time */}
+        <div> {date.format(now, 'MMM DD')}</div>
+        <Image
+          alt="thumnail"
+          className=" h-44 object-cover rounded-lg"
+          src={img}></Image>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full">Mark all as read</Button>
+      <CardFooter className="font-light flex justify-between text-zinc-500 dark:text-zinc-400">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant={'ghost'} className=" text-xs gap-2">
+              <Heart />
+              <span>{post.reactions.likes}</span>
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent className="">like</TooltipContent>
+        </Tooltip>
+        <div>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant={'ghost'} className=" text-xs gap-2">
+                <MessageSquareText />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="">Comments</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant={'ghost'} className=" text-xs gap-2">
+                <Bookmark />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="">Save</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant={'ghost'} className=" text-xs gap-2">
+                <Share2 />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="">Share</TooltipContent>
+          </Tooltip>
+        </div>
       </CardFooter>
     </Card>
   );

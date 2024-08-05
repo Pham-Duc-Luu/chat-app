@@ -8,13 +8,13 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { MenuButton } from './Menu';
 import Avatar, { genConfig } from 'react-nice-avatar';
 import SearchInput from '../SearchInput.navbar';
 import UserNavbarOptions from './UserNavbarOptions';
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
+import Logo from '../Logo';
 import { signIn } from '@/lib/store/userInfoSlice';
-export default function Navbar() {
+export default function Navbar({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
   const params = useParams<{ locals: string }>();
   const commands = [
@@ -28,8 +28,14 @@ export default function Navbar() {
   useEffect(() => {
     dispatch(signIn({ email: 'email', password: 'password' }));
   }, []);
+
   return (
-    <div className=" sticky  shadow-md flex justify-center items-center">
+    <div className=" sticky border top-0 dark:border-b-zinc-700  shadow-md flex justify-center items-center">
+      <div className="p-2 flex justify-center m-3">
+        <Link href={`/${params.locals}/home`}>
+          <Logo width={100} height={100}></Logo>
+        </Link>
+      </div>
       <div className=" flex w-full p-4">
         <SearchInput></SearchInput>
       </div>

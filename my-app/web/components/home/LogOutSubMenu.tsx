@@ -55,7 +55,7 @@ import _ from 'lodash';
 import { home } from '@/messages/en.json';
 import { removeUserInfo } from '@/lib/store/userInfoSlice';
 
-export default function AccountsMenu() {
+export default function LogOutSubMenu() {
   const t = useTranslations('home.navbar');
 
   const dispatch = useAppDispatch();

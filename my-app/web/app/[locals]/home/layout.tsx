@@ -8,6 +8,7 @@ import { useAppDispatch } from '@/lib/hooks';
 import { googleoauth, setUserInfo } from '@/lib/store/userInfoSlice';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { User } from 'next-auth';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 export default function Layout({
   children,
@@ -20,13 +21,15 @@ export default function Layout({
 
   return (
     <ReduxProvider>
-      <div className="flex">
-        <Sidebar />
-        <div className=" flex-1">
+      <TooltipProvider>
+        <div className="flex flex-col h-screen">
           <Navbar></Navbar>
-          <>{children}</>
+          <div className="flex flex-1 overflow-y-auto">
+            <Sidebar />
+            <div>{children}</div>
+          </div>
         </div>
-      </div>
+      </TooltipProvider>
     </ReduxProvider>
   );
 }

@@ -127,6 +127,19 @@
           "vi": "vi",
           "en": "en"
         },
+        "layout": {
+          "title": "Layout",
+          "description": "Customize your layout",
+          "type": {
+            "grid": "Grid layout",
+            "list": "List"
+          },
+          "density": {
+            "eco": "Eco",
+            "roomy": "Roomy",
+            "cozy": "Cozy"
+          }
+        },
         "log-out": {
           "title": "Log out"
         }

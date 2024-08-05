@@ -54,7 +54,7 @@ import { useTranslations } from 'next-intl';
 import _ from 'lodash';
 import { home } from '@/messages/en.json';
 
-export default function SettingsMenu() {
+export default function ThemeSettingSubMenu() {
   const t = useTranslations('home.navbar.setting');
   const { theme, setTheme } = useTheme();
 

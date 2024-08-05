@@ -1,4 +1,5 @@
 import Navbar from '@/components/home/Navbar';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 export default async function Layout({
   children,
@@ -10,7 +11,7 @@ export default async function Layout({
   return (
     <div>
       <Navbar></Navbar>
-      {children}
+      <TooltipProvider>{children}</TooltipProvider>
     </div>
   );
 }

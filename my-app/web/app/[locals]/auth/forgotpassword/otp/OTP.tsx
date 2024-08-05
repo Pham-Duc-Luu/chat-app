@@ -51,7 +51,6 @@ export default function InputOTPForm() {
   const [loading, setloading] = useState(false);
   const { counter } = useAppSelector((state) => state.auth);
   const params = useParams<{ locals: string }>();
-  console.log(params);
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     setloading(true);

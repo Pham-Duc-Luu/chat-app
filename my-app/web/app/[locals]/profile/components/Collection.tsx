@@ -1,9 +1,13 @@
 'use client';
 import PostCard, { Post } from '@/components/PostCard';
+import useResponsiveLayout from '@/hook/useResponsiveLayout';
 import { useAppSelector } from '@/lib/hooks';
 import dummyjson from '@/test/DummyJSON';
 import React, { useEffect, useState } from 'react';
 import Masonry from 'react-masonry-css';
+
+// * for example
+
 function Collection() {
   const items = [
     { content: 'Item 1' },
@@ -24,6 +28,7 @@ function Collection() {
   const { userinfo } = useAppSelector((state) => state.user.entities);
 
   const [posts, setposts] = useState<Post[]>();
+  const layout = useResponsiveLayout();
 
   useEffect(() => {
     dummyjson.post.getAllPosts().then((res) => {
@@ -36,15 +41,10 @@ function Collection() {
   }, [userinfo]);
 
   return (
-    <div className=" flex-1">
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column">
-        {posts?.map((item, index) => (
-          <PostCard key={index} post={item}></PostCard>
-        ))}
-      </Masonry>
+    <div className=" flex-1 grid-cols-1  lg:grid-cols-2 grid 2xl:grid-cols-4 lg:gap-8 gap-4 xl:grid-cols-3">
+      {posts?.map((post, index) => {
+        return <PostCard post={post} key={index}></PostCard>;
+      })}
     </div>
   );
 }
