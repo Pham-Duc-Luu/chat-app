@@ -35,15 +35,14 @@ class UtilService {
       
         const fullcode = codeData.readUInt32BE(0) & 0x7fffffff;
         const code = fullcode % 1000000;
-        console.log(code.toString().padStart(6, '0'), timeStep);
+        //console.log(code.toString().padStart(6, '0'), timeStep);
         return { otp: code.toString().padStart(6, '0'), timeStep: timeStep };
     }
 
     // Check expried OTP timing conditions
     isOTPExpired(timeStep: number, window: number): boolean {
         const currentTimeStep = Math.floor(Math.round(Date.now() / 1000) / window);
-        console.log(currentTimeStep !== timeStep);
-        
+        //console.log(currentTimeStep !== timeStep);
         return currentTimeStep !== timeStep;
     }
 }

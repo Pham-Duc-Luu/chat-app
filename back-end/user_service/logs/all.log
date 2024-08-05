@@ -3742,3 +3742,135 @@
 [32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
 [32m  SALTROUND: '10'[39m
 [32m}[39m
+2024-07-31 09:17:04:174 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-01 23:07:25:725 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-01 23:14:52:1452 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 21:53:12:5312 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 22:02:29:229 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 18.962 ms[39m
+[35m[39m
+2024-08-04 22:02:46:246 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 2.178 ms[39m
+[35m[39m
+2024-08-04 22:04:35:435 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 2.546 ms[39m
+[35m[39m
+2024-08-04 22:04:59:459 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 0.856 ms[39m
+[35m[39m
+2024-08-04 22:07:53:753 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 2.770 ms[39m
+[35m[39m
+2024-08-04 22:09:33:933 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 200 13 - 2.243 ms[39m
+[35m[39m
+2024-08-04 22:12:15:1215 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 404 165 - 2.090 ms[39m
+[35m[39m
+2024-08-04 22:12:51:1251 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 22:13:03:133 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 4128.455 ms[39m
+[35m[39m
+2024-08-04 22:13:48:1348 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 22:13:53:1353 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 3188.015 ms[39m
+[35m[39m
+2024-08-04 22:14:48:1448 [35mhttp[39m: [35mPOST /user/api/v1/users/sendCode 404 166 - 9.178 ms[39m
+[35m[39m
+2024-08-04 22:15:58:1558 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 3.681 ms[39m
+[35m[39m
+2024-08-04 22:18:38:1838 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 24 - 2346.264 ms[39m
+[35m[39m
+2024-08-04 22:24:37:2437 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 1.071 ms[39m
+[35m[39m
+2024-08-04 22:25:25:2525 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 2.620 ms[39m
+[35m[39m
+2024-08-04 22:28:37:2837 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 22:28:47:2847 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 37.564 ms[39m
+[35m[39m
+2024-08-04 22:31:35:3135 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 3.208 ms[39m
+[35m[39m
+2024-08-04 22:32:12:3212 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 1.104 ms[39m
+[35m[39m
+2024-08-04 22:34:28:3428 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-04 23:04:19:419 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-05 08:28:56:2856 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-05 08:31:34:3134 [35mhttp[39m: [35mPOST /user/api/v1/user/sendCode 200 13 - 27.425 ms[39m
+[35m[39m
+2024-08-05 08:34:08:348 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-05 08:35:11:3511 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:150303.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m

@@ -8,4 +8,6 @@ export interface User {
   email: string;
   username: string;
   password: string;
+  resetCode: string | null;
+  resetCodeCreatedAt: number | null;
 }

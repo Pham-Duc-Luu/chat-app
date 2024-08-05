@@ -11,6 +11,7 @@ interface IReqLogin {
   id: number;
 }
 
+
 interface IUserBaseInfo {
   username: string;
   password: string;
@@ -52,6 +53,20 @@ class UserService {
     return userServiceApi.get<
       SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>>
     >('/verify-account', { data: data });
+  }
+
+  sendCode(data: Pick<User, 'email'>){
+    console.log('Data before sending:', data); 
+    return userServiceApi.post<
+    SuccessResponse<Pick<User, 'resetCode'>>
+    >('/user/sendCode', data);
+
+  }
+
+  changePass(data: Pick<User, 'email' | 'resetCode' | 'password'>){
+    return userServiceApi.post<
+    SuccessResponse<Pick<User, 'email' | 'password'>>
+    >('/user/forgot-password', data);
   }
 }
 

@@ -49,7 +49,6 @@ app.use(passport.session());
 
 app.use(json());
 app.use(morganMiddleware);
-
 // *
 app.use(cors());
 // app.options('*', cors())
@@ -83,6 +82,8 @@ async function main() {
   });
   // ... you will write your Prisma Client queries here
 }
+
+app.use(AppRouter);
 
 main().then(async () => {
   /**

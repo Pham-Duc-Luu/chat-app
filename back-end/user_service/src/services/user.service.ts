@@ -48,7 +48,9 @@ class UserService {
       if (!user) {
         return undefined;
       }
-      return util.pickerOptions(user, options);
+      if(user.resetCode){
+        return util.pickerOptions(user, options);
+      }
     } catch (error: any) {
       console.log(error.stack);
 

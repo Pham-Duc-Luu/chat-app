@@ -14,7 +14,7 @@ const forgotPassword = Router();
 */
 
 forgotPassword
-  .route("/users/forgot-password")
+  .route("/user/forgot-password")
   .post(forgotPasswordController.resetPassword);
 
 // send OTP to email
