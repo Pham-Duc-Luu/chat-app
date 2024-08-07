@@ -3,12 +3,15 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 import { authReducer } from './store/authSlice';
 import { userInfoReducer } from './store/userInfoSlice';
 import { configReducer } from './store/configSlice';
+import { UIReduce } from './store/uiSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       user: userInfoReducer,
       config: configReducer,
+      auth: authReducer,
+      ui: UIReduce,
     },
   });
 };

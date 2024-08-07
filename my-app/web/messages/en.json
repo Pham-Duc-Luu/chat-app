@@ -46,6 +46,34 @@
         "forgot_password": "forgot password",
         "continue": "or continue with"
       }
+    },
+    "forgot_password": {
+      "title": "Forgot password",
+      "form": {
+        "description": "Enter your user account's verified email address",
+        "email": {
+          "lable": "Email",
+          "placeholder": "example@gmail.com"
+        },
+        "submit": "Send reset otp code",
+        "otp": {
+          "description": "Please enter the otp code we just sent to your email, OTP will be disable in ",
+          "verified": "Verify otp code",
+          "verifying": "We are try to verify you"
+        }
+      }
+    },
+    "reset_password": {
+      "title": "Reset password",
+      "form": {
+        "password": {
+          "lable": "New Password"
+        },
+        "repassword": {
+          "lable": "Re-type password"
+        },
+        "submit": "Reset password"
+      }
     }
   },
   "home": {
@@ -99,9 +127,39 @@
           "vi": "vi",
           "en": "en"
         },
+        "layout": {
+          "title": "Layout",
+          "description": "Customize your layout",
+          "type": {
+            "grid": "Grid layout",
+            "list": "List"
+          },
+
+          "density": {
+            "title": "density",
+            "options": {
+              "eco": "Eco",
+              "roomy": "Roomy",
+              "cozy": "Cozy"
+            }
+          }
+        },
         "log-out": {
           "title": "Log out"
         }
+      },
+      "searching": {
+        "placeholder": "Search for all you need"
+      }
+    }
+  },
+  "profile": {
+    "functions": {
+      "edit": {
+        "title": "Edit Profile"
+      },
+      "share": {
+        "title": "Share"
       }
     }
   }

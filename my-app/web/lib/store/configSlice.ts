@@ -3,15 +3,20 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 export type ITheme = 'dark' | 'light' | 'system';
 export type ILanguage = 'en' | 'vi';
-
+export type ILayoutOptions = 'Grid Layout' | 'Single Layout';
+export type IDensity = 'eco' | 'roomy' | 'cozy';
 export interface IConfigState {
   theme: ITheme;
   language: ILanguage;
+  layout: ILayoutOptions;
+  density: IDensity;
 }
 
 const initialState: IConfigState = {
   theme: 'light',
   language: 'en',
+  layout: 'Grid Layout',
+  density: 'eco',
 };
 
 export const configSlice = createSlice({
@@ -23,6 +28,9 @@ export const configSlice = createSlice({
     },
     setLanguage: (state, action: PayloadAction<ILanguage>) => {
       state.language = action.payload;
+    },
+    setState: (state, { payload }: PayloadAction<Partial<IConfigState>>) => {
+      state = { ...state, ...payload };
     },
   },
 });
