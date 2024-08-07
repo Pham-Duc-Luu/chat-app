@@ -14,6 +14,15 @@ import ShineBorder from '../magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { cn } from '@/lib/utils';
 import MenuButton from './Menu';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import Editor from '../Editor';
 
 export function BorderBeamDemo({
   children,
@@ -36,18 +45,27 @@ export function BorderBeamDemo({
 
 function UserNavbarOptions() {
   const user = useAppSelector((state) => state.user.entities.userinfo);
+
   return (
     <div className=" flex justify-center items-center gap-3">
       <Button>
         <Bell className=" cursor-pointer" />
       </Button>
 
-      <BorderBeamDemo className=" cursor-pointer">
-        <div className=" flex ml-2 p-2">
-          <Plus />
-          <span className="w-48  text-center">Share your feeling</span>
-        </div>
-      </BorderBeamDemo>
+      {/* <Dialog>
+        <DialogTrigger>
+          <BorderBeamDemo className=" cursor-pointer">
+            <div className=" flex ml-2 p-2">
+              <Plus />
+              <span className="w-48  text-center">Share your feeling</span>
+            </div>
+          </BorderBeamDemo>
+        </DialogTrigger>
+        <DialogContent>
+          <Editor></Editor>
+        </DialogContent>
+      </Dialog> */}
+
       {/**
        * this is the user options
        */}
