@@ -143,6 +143,10 @@ class Controller {
     }
   }
 
+  /*public async updateInfo(
+    req: Request,
+    res: 
+  )*/
 }
 
 const userController = new Controller();

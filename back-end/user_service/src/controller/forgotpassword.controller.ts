@@ -72,7 +72,7 @@ class ForgotPassword {
       }
 
       // * use email to add reset code for user
-      let user = await userService.getUserByEmail(email);
+      let user = await userService.getUserByEmail(email, ['email', 'password', 'resetCode', 'resetCodeCreatedAt']);
       console.log(user);
       
       if (!user) {
@@ -97,6 +97,8 @@ class ForgotPassword {
       console.log(newPassword);
       
       if (user.password === newPassword) {
+        console.log("bbbbb");
+        
         // * check password is diffrent
         throw new BadRequestResponse("Password is same");
       }
@@ -107,6 +109,7 @@ class ForgotPassword {
       ]);
 
       return res.status(200).json({
+        message: "Success",
         data: resetPassword,
       });
     } catch (error: any) {

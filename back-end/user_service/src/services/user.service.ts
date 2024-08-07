@@ -15,9 +15,24 @@ class UserService {
           email,
         },
       });
+      const password = await prisma.user.findFirst({
+        where:{
+          email,
+        },
+        select: {
+          password: true,
+        }
+      })
 
       if (!user) {
         return null;
+      }
+      for(var i = 0; i < options.length; i++){
+        if(options[i]=== 'password'){
+          if(password?.password){
+            user.password = password?.password;
+          }
+        }
       }
       return util.pickerOptions(user, options);
     } catch (error) {
