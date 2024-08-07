@@ -162,5 +162,10 @@
         "title": "Share"
       }
     }
+  },
+  "create": {
+    "post": {
+      "title": "asd"
+    }
   }
 }

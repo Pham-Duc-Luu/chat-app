@@ -1,13 +1,13 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import userService from "../services/user.service";
+import userService from '../services/user.service';
 
-import utilService from "../services/util.service";
-import validateService from "../services/validate.service";
-import Logger from "../lib/logger";
-import { table } from "console";
-import { BadRequestResponse } from "../util/response/clientError.response";
-import { ClientErrorResponse } from "../util/response/http.response";
+import utilService from '../services/util.service';
+import validateService from '../services/validate.service';
+import Logger from '../lib/logger';
+import { table } from 'console';
+import { BadRequestResponse } from '../util/response/clientError.response';
+import { ClientErrorResponse } from '../util/response/http.response';
 class ForgotPassword {
   async sendCode(req: Request<any, any, { email: string }>, res: Response) {
     try {
@@ -22,13 +22,13 @@ class ForgotPassword {
       let user = await userService.getUserByEmail(email);
 
       if (!user) {
-        throw new BadRequestResponse("User not found");
+        throw new BadRequestResponse('User not found');
       }
 
       await userService.updateResetCode(email, utilService.randomDigital(6));
 
       return res.status(200).json({
-        message: "Email sent",
+        message: 'Email sent',
       });
     } catch (error: any) {
       const err = new ClientErrorResponse(error.message, error.statuCode);
@@ -53,23 +53,23 @@ class ForgotPassword {
       }
       // * check email is right format
       if (!validateService.validateEmail(email)) {
-        throw new BadRequestResponse("Invalid email");
+        throw new BadRequestResponse('Invalid email');
       }
 
       // * check password is right format
       if (!validateService.validatePassword(newPassword)) {
-        throw new BadRequestResponse("Invalid password");
+        throw new BadRequestResponse('Invalid password');
       }
 
       // * use email to add reset code for user
       let user = await userService.getUserByEmail(email);
 
       if (!user) {
-        throw new BadRequestResponse("User not found");
+        throw new BadRequestResponse('User not found');
       }
 
       if (user.resetCode !== resetCode) {
-        throw new BadRequestResponse("Invalid reset code");
+        throw new BadRequestResponse('Invalid reset code');
       }
 
       if (
@@ -77,16 +77,16 @@ class ForgotPassword {
         validateService.validateExpired(user.resetCodeCreatedAt)
       ) {
         // * check reset code is expired
-        throw new BadRequestResponse("Expired reset code");
+        throw new BadRequestResponse('Expired reset code');
       }
 
       if (user.password === newPassword) {
         // * check password is diffrent
-        throw new BadRequestResponse("Password is same");
+        throw new BadRequestResponse('Password is same');
       }
 
       let resetPassword = await userService.updatePassword(email, newPassword, [
-        "email",
+        'email',
       ]);
 
       return res.status(200).json({

@@ -3295,3 +3295,33 @@
 [32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
 [32m  SALTROUND: '10'[39m
 [32m}[39m
+2024-08-07 09:50:28:5028 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs 301 175 - 6.430 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/ 200 - - 9.379 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/swagger-ui-init.js 200 - - 1.100 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/swagger-ui.css 200 - - 12.467 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/swagger-ui-standalone-preset.js 200 - - 10.157 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/swagger-ui-bundle.js 200 - - 10.044 ms[39m
+[35m[39m
+2024-08-07 09:50:31:5031 [35mhttp[39m: [35mGET /docs/favicon-32x32.png 200 628 - 1.561 ms[39m
+[35m[39m
+2024-08-07 11:00:10:010 [32minfo[39m: [32m{[39m
+[32m  APP_BASE_URL: '/user/api/v1',[39m
+[32m  ENV: 'development',[39m
+[32m  APP_PORT: '5002',[39m
+[32m  SERVER_KEY: 'userServiceKey',[39m
+[32m  POSTGRES_URL: 'postgresql://postgres:Phamluu2003.@localhost:5432/postgres?schema=public',[39m
+[32m  SALTROUND: '10'[39m
+[32m}[39m

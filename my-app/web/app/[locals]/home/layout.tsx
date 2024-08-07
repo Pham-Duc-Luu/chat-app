@@ -17,8 +17,6 @@ export default function Layout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const dispatch = useAppDispatch();
-
   return (
     <ReduxProvider>
       <TooltipProvider>

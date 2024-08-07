@@ -1,6 +1,6 @@
-'use client';
-import Editor from '@/components/Editor';
-import React, { useId, useState } from 'react';
+import dynamic from 'next/dynamic';
+import CreatePost from './CreatePost';
+
 // Initial Data
 const INITIAL_DATA = {
   time: new Date().getTime(),
@@ -15,18 +15,17 @@ const INITIAL_DATA = {
   ],
 };
 function Page() {
-  const [data, setData] = useState();
-  const editorId = useId();
   return (
     <div className="editor w-full">
-      <Editor data={data} onChange={setData} editorblock={editorId} />
+      {/* {editorId && <Editor data={data} editorblock={editorId} />}
       <button
         className="savebtn"
         onClick={() => {
           alert(JSON.stringify(data));
         }}>
         Save
-      </button>
+      </button> */}
+      <CreatePost></CreatePost>
     </div>
   );
 }

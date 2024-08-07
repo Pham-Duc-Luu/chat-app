@@ -52,7 +52,7 @@ function UserNavbarOptions() {
         <Bell className=" cursor-pointer" />
       </Button>
 
-      {/* <Dialog>
+      <Dialog>
         <DialogTrigger>
           <BorderBeamDemo className=" cursor-pointer">
             <div className=" flex ml-2 p-2">
@@ -64,7 +64,7 @@ function UserNavbarOptions() {
         <DialogContent>
           <Editor></Editor>
         </DialogContent>
-      </Dialog> */}
+      </Dialog>
 
       {/**
        * this is the user options
