@@ -33,9 +33,11 @@ import { UploadService } from './local-upload.service';
 @Controller('/upload')
 export class UploadController {
   constructor(private readonly uploadService: UploadService) {}
-
+  // sử dụng endpoint POST tại đường dẫn góc của controller
   @Post()
+  // Sử dụng FileInterceptor để xử lý file được upload, với tên trường là 'file'
   @UseInterceptors(FileInterceptor('file'))
+  // Định nghĩa phương thức uploadFile để xử lý file upload
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     console.log(file);
     return this.uploadService.handleFileUpload(file);

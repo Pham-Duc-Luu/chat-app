@@ -26,6 +26,7 @@ import { Injectable } from '@nestjs/common';
 export class UploadService {
   handleFileUpload(file: Express.Multer.File) {
     return {
+      // Trả về thông tin về file đã upload, bao gồm tên gốc và tên file sau khi được lưu trữ
       originalname: file.originalname,
       filename: file.filename,
     };

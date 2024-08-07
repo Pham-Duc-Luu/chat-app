@@ -18,13 +18,19 @@ import { diskStorage } from 'multer';
 import { extname } from 'path';
 
 @Module({
+  // Đăng ký module 
   imports: [
     MulterModule.register({
+      // cấu hình file lưu trữ 
       storage: diskStorage({
+        // chỉ định đường dẫn 
         destination: './uploads',
+        // chọn tên 
         filename: (req, file, cb) => {
+          // Tạo tên file duy nhất bằng cách kết hợp thời gian hiện tại và một số ngẫu nhiên
           const uniqueSuffix =
             Date.now() + '-' + Math.round(Math.random() * 1e9);
+          // Gọi callback để đặt tên file với phần mở rộng gốc
           cb(null, `${uniqueSuffix}${extname(file.originalname)}`);
         },
       }),
