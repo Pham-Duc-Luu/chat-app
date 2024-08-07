@@ -164,8 +164,8 @@
     }
   },
   "create": {
-    "post": {
-      "title": "asd"
+    "blog": {
+      "title": "New post blog"
     }
   }
 }

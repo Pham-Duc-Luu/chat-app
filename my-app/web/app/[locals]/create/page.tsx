@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import CreatePost from './CreatePost';
+import CreatePost from './CreateBlog';
 
 // Initial Data
 const INITIAL_DATA = {

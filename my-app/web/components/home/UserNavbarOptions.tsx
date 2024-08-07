@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { useRouter } from 'next/navigation';
-import React, { useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import React, { ComponentProps, useEffect } from 'react';
 import { Avatar as CdAvatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import Avatar, { genConfig } from 'react-nice-avatar';
 import { signIn } from '@/lib/store/userInfoSlice';
@@ -34,7 +34,7 @@ export function BorderBeamDemo({
   return (
     <div
       className={cn(
-        'relative flex   items-center justify-center overflow-hidden rounded-lg border bg-background ',
+        'relative flex items-center justify-center overflow-hidden rounded-lg border bg-background ',
         className
       )}>
       <div>{children}</div>
@@ -45,26 +45,24 @@ export function BorderBeamDemo({
 
 function UserNavbarOptions() {
   const user = useAppSelector((state) => state.user.entities.userinfo);
-
+  const params = useParams<{ locals: string }>();
+  const router = useRouter();
   return (
     <div className=" flex justify-center items-center gap-3">
       <Button>
         <Bell className=" cursor-pointer" />
       </Button>
 
-      <Dialog>
-        <DialogTrigger>
-          <BorderBeamDemo className=" cursor-pointer">
-            <div className=" flex ml-2 p-2">
-              <Plus />
-              <span className="w-48  text-center">Share your feeling</span>
-            </div>
-          </BorderBeamDemo>
-        </DialogTrigger>
-        <DialogContent>
-          <Editor></Editor>
-        </DialogContent>
-      </Dialog>
+      <BorderBeamDemo className=" cursor-pointer">
+        <div
+          onClick={() => {
+            router.push(`/${params.locals}/create`);
+          }}
+          className=" flex ml-2 p-2">
+          <Plus />
+          <span className="w-48  text-center">Share your feeling</span>
+        </div>
+      </BorderBeamDemo>
 
       {/**
        * this is the user options
