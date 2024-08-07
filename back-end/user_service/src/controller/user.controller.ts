@@ -142,6 +142,11 @@ class Controller {
       return ApiResponse(res, new InternalServerErrorResponse());
     }
   }
+
+  /*public async updateInfo(
+    req: Request,
+    res: 
+  )*/
 }
 
 const userController = new Controller();

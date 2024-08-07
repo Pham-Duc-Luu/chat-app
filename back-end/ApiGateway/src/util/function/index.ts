@@ -1,6 +1,7 @@
 import _ from "lodash";
 import Logger from "../../lib/logger";
-
+import { config } from "dotenv";
+config()
 class Util {
   pickerOptions<T>(obj: T, options: (keyof T)[]): Partial<T> {
     if (options.length === 0) {

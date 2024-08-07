@@ -20,6 +20,7 @@ const app: Application = express();
 app.use(morganMiddleware);
 app.use(compression());
 app.use(json());
+app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true })); // support encoded bodies
 

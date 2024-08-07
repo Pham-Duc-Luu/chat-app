@@ -10,6 +10,7 @@ config();
  * development or production
  */
 
+
 type environmentType = 'production' | 'development';
 
 /**

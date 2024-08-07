@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 import Logger from "../lib/logger";
-import { BadRequest } from "../util/response/clientError.response";
+import { BadRequestResponse } from "../util/response/clientError.response";
 
 const nodemailer = require("nodemailer");
 
@@ -27,7 +27,7 @@ class SendMailService {
       });
     } catch (error) {
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 }

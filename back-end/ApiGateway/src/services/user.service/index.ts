@@ -6,10 +6,13 @@ import {
 } from '../../util/response/http.response';
 import { User } from './type';
 import userServiceApi from './user.service.init';
+import { Request, Response } from "express";
+
 interface IReqLogin {
   email: string;
   id: number;
 }
+
 
 interface IUserBaseInfo {
   username: string;
@@ -52,6 +55,27 @@ class UserService {
     return userServiceApi.get<
       SuccessResponse<Pick<User, 'id' | 'email' | 'username' | 'avatar'>>
     >('/verify-account', { data: data });
+  }
+
+  async sendCode(req:Request, res: Response){
+    //console.log('Data before sending:', data); 
+    console.log(req.body);
+    console.log("-------------------------------");
+    const response = await userServiceApi.post<Response>('/user/sendCode', req.body);
+    console.log(response.data);
+    
+    return res.status(response.status).json(response.data);
+}
+
+  async changePass(req:Request, res: Response){
+    console.log(req.body);
+    
+    const response =await userServiceApi.post<
+    Response
+    >('/user/forgot-password', req.body);
+    console.log(response.data);
+    return res.status(response.status).json(response.data);
+    
   }
 }
 

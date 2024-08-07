@@ -1,3 +1,5 @@
+import { config } from 'dotenv';
+
 import { Request, Response } from 'express';
 
 import userService from '../services/user.service';
@@ -5,13 +7,19 @@ import userService from '../services/user.service';
 import utilService from '../services/util.service';
 import validateService from '../services/validate.service';
 import Logger from '../lib/logger';
-import { table } from 'console';
+import { log, table } from 'console';
 import { BadRequestResponse } from '../util/response/clientError.response';
-import { ClientErrorResponse } from '../util/response/http.response';
+import {
+  ClientErrorResponse,
+  SuccessResponse,
+} from '../util/response/http.response';
+config();
 class ForgotPassword {
-  async sendCode(req: Request<any, any, { email: string }>, res: Response) {
+  //send Otp to email
+  async sendCode(req: Request, res: Response) {
     try {
-      const { email } = req.body;
+      const email = req.body.email;
+      console.log(email);
 
       // * Check the email is exist
       if (!email) {
@@ -24,8 +32,12 @@ class ForgotPassword {
       if (!user) {
         throw new BadRequestResponse('User not found');
       }
-
-      await userService.updateResetCode(email, utilService.randomDigital(6));
+      if (process.env.KEY_OTP) {
+        let result = utilService.generateOTP(process.env.KEY_OTP, 300);
+        await userService.updateResetCode(email, result.otp, result.timeStep);
+        console.log(result.otp);
+        console.log(result.timeStep);
+      }
 
       return res.status(200).json({
         message: 'Email sent',
@@ -36,6 +48,7 @@ class ForgotPassword {
     }
   }
 
+  // receive email, otp, newpassword => set password = new Password
   async resetPassword(
     req: Request<
       any,
@@ -62,7 +75,13 @@ class ForgotPassword {
       }
 
       // * use email to add reset code for user
-      let user = await userService.getUserByEmail(email);
+      let user = await userService.getUserByEmail(email, [
+        'email',
+        'password',
+        'resetCode',
+        'resetCodeCreatedAt',
+      ]);
+      console.log(user);
 
       if (!user) {
         throw new BadRequestResponse('User not found');
@@ -71,25 +90,34 @@ class ForgotPassword {
       if (user.resetCode !== resetCode) {
         throw new BadRequestResponse('Invalid reset code');
       }
+      /*if(user.resetCodeCreatedAt){
+        console.log(utilService.isOTPExpired((user.resetCodeCreatedAt), 30));
+      }*/
 
       if (
-        user?.resetCodeCreatedAt &&
-        validateService.validateExpired(user.resetCodeCreatedAt)
+        user.resetCodeCreatedAt &&
+        utilService.isOTPExpired(user.resetCodeCreatedAt, 300)
       ) {
         // * check reset code is expired
         throw new BadRequestResponse('Expired reset code');
       }
+      console.log('aaaa');
+      console.log(newPassword);
 
       if (user.password === newPassword) {
+        console.log('bbbbb');
+
         // * check password is diffrent
         throw new BadRequestResponse('Password is same');
       }
 
       let resetPassword = await userService.updatePassword(email, newPassword, [
         'email',
+        'password',
       ]);
 
       return res.status(200).json({
+        message: 'Success',
         data: resetPassword,
       });
     } catch (error: any) {

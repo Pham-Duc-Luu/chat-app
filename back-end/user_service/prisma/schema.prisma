@@ -19,6 +19,8 @@ model User {
   username    String  @unique
   provider   Provider?
   password    String  @default("password")
+  resetCode   String? 
+  resetCodeCreatedAt  Int?
   Followed    Follow[]  @relation("Followed")
   Following   Follow[]  @relation("Following")
   Stories     Story[]

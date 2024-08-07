@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
-import { prisma } from "../database/postgresql/connect.postgresql";
+import prisma  from "../database/postgresql/connect.postgresql";
 import Logger from "../lib/logger";
-import { BadRequest } from "../util/response/clientError.response";
+import { BadRequestResponse } from "../util/response/clientError.response";
 import _ from "lodash";
 import utilService from "./util.service";
 import sendMailService from "./sendMail.service";
@@ -15,20 +15,36 @@ class UserService {
           email,
         },
       });
+      const password = await prisma.user.findFirst({
+        where:{
+          email,
+        },
+        select: {
+          password: true,
+        }
+      })
 
       if (!user) {
         return null;
       }
+      for(var i = 0; i < options.length; i++){
+        if(options[i]=== 'password'){
+          if(password?.password){
+            user.password = password?.password;
+          }
+        }
+      }
       return util.pickerOptions(user, options);
     } catch (error) {
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 
   async updateResetCode(
     email: string,
-    resetCode: string,
+    otp: string,
+    timeStep: number,
     options: (keyof User)[] = []
   ): Promise<Partial<User> | undefined> {
     try {
@@ -37,22 +53,24 @@ class UserService {
           email,
         },
         data: {
-          resetCode,
-          resetCodeCreatedAt: String(Date.now()),
+          resetCode: otp,
+          resetCodeCreatedAt: timeStep,
         },
       });
 
-      await sendMailService.sendMailTo(email, resetCode);
+      await sendMailService.sendMailTo(email, otp);
 
       if (!user) {
         return undefined;
       }
-      return util.pickerOptions(user, options);
+      if(user.resetCode){
+        return util.pickerOptions(user, options);
+      }
     } catch (error: any) {
       console.log(error.stack);
 
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 
@@ -74,7 +92,7 @@ class UserService {
       console.log(error.stack);
 
       Logger.error(error);
-      throw new BadRequest();
+      throw new BadRequestResponse();
     }
   }
 }
