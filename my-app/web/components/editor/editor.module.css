@@ -1,0 +1,30 @@
+/*
+
+---block---
+
+Base class for Block Tool wrapper. Provides common margins and paddings between Blocks.
+
+*/
+.cdx-block {
+  width: 100%;
+}
+
+/*
+inlineToolButton
+
+Style of buttons for the Inline Toolbar.
+
+*/
+
+.ce-inline-tool {
+}
+
+/*
+input
+
+A common style for text inputs.
+
+*/
+
+.cdx-input {
+}

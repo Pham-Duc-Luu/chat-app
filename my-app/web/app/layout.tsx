@@ -8,6 +8,7 @@ import logo from '@/components/home/icon';
 import { Metadata } from 'next';
 import { ReactQueryProvider } from './react-query-provider';
 import 'react-toastify/dist/ReactToastify.css';
+import './CKEditor.css';
 
 const fontSans = Roboto_Mono({
   subsets: ['latin'],

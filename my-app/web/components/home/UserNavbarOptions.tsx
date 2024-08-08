@@ -22,7 +22,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import Editor from '../Editor';
+import Editor from '../editor/Editor';
 
 export function BorderBeamDemo({
   children,
