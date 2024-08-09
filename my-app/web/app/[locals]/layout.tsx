@@ -10,6 +10,7 @@ import { SessionProvider } from 'next-auth/react';
 import SessionWrapper from '@/components/SessionWrapper';
 import AppConfigEnv from '@/config/app.config';
 import { NextUIProvider } from '@nextui-org/system';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 export default async function Layout({
   children,
@@ -22,7 +23,9 @@ export default async function Layout({
   return (
     <NextIntlClientProvider messages={messages}>
       <SessionWrapper>
-        <ReduxProvider>{children}</ReduxProvider>
+        <TooltipProvider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </TooltipProvider>
       </SessionWrapper>
       <ToastContainer />
     </NextIntlClientProvider>

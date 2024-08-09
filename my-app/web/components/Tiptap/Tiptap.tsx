@@ -1,32 +1,49 @@
 'use client';
 
-import { useEditor, EditorContent } from '@tiptap/react';
+import {
+  useEditor,
+  EditorContent,
+  FloatingMenu,
+  BubbleMenu,
+  EditorProvider,
+  useEditorState,
+} from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import Text from '@tiptap/extension-text';
 import { Editor } from '@tiptap/core';
-const Tiptap = () => {
-  new Editor({
-    // bind Tiptap to `.element`
-    //     element: document.querySelector('.element'),
-    // register extensions
-    extensions: [Document, Paragraph, Text],
-    // set the initial content
-    content: '<p>Example Text</p>',
-    // place the cursor in the editor after initialization
-    autofocus: true,
-    // make the text editable (but that’s the default anyway)
-    editable: true,
-    // disable the loading of the default CSS (which is not much anyway)
-    injectCSS: false,
-  });
-  const editor = useEditor({
-    extensions: [StarterKit, Document, Paragraph, Text],
-    content: '<p>Hello World! 🌎️</p>',
-  });
+import Controlbar from './Controlbar';
+import Underline from '@tiptap/extension-underline';
+import TextStyle from '@tiptap/extension-text-style';
+import { Color } from '@tiptap/extension-color';
+import Highlight from '@tiptap/extension-highlight';
+const MyEditorToolbar = () => {
+  return <div>MyEditorToolbar</div>;
+};
 
-  return <EditorContent editor={editor} />;
+const Tiptap = () => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Document,
+      Paragraph,
+      Text,
+      Underline,
+      TextStyle,
+      Color,
+      Highlight.configure({ multicolor: true }),
+    ],
+    content: '<p>Hello World! 🌎️</p>',
+    immediatelyRender: false,
+  });
+  return (
+    <>
+      <Controlbar editor={editor} />
+      <EditorContent editor={editor} />
+      {/* Other components that depend on the editor instance */}
+    </>
+  );
 };
 
 export default Tiptap;

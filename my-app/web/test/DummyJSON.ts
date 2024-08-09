@@ -126,11 +126,41 @@ class Post {
   }
 }
 
+class Image {
+  private image;
+  constructor(url: string) {
+    this.image = axios.create({ baseURL: url + '/image' });
+  }
+
+  async generateImage(props: {
+    width: number;
+    height: number;
+    background?: string;
+    color?: string;
+    text?: string;
+    type?: 'webp' | 'png' | 'gif' | 'jpg' | 'jpeg';
+  }) {
+    let url = `/${props.width}x${props.height}`;
+    if (props.background) {
+      url += `/${props.background}`;
+    }
+    if (props.color) {
+      url += `/${props.color}`;
+    }
+    if (props.text) {
+      url += `?text=${props.text}`;
+    }
+    return this.image.get(url, {
+      responseType: 'blob', // Ensure the response is treated as binary data (blob)
+    });
+  }
+}
 class DummyJSON {
   private baseURL = 'https://dummyjson.com';
   public api = axios.create({ baseURL: this.baseURL });
   public user = new User(this.baseURL);
   public post = new Post(this.baseURL);
+  public image = new Image(this.baseURL);
 }
 
 const dummyjson = new DummyJSON();

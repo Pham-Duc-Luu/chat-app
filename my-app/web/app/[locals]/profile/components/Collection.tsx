@@ -5,7 +5,7 @@ import { useAppSelector } from '@/lib/hooks';
 import dummyjson from '@/test/DummyJSON';
 import React, { useEffect, useState } from 'react';
 import Masonry from 'react-masonry-css';
-
+import dynamic from 'next/dynamic';
 // * for example
 
 function Collection({ className }: { className?: string }) {

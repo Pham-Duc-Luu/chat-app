@@ -1,3 +1,4 @@
+'use client';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -9,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
-import { ExamplePost } from '@/test/DummyJSON';
+import dummyjson, { ExamplePost } from '@/test/DummyJSON';
 import { Avatar, AvatarImage } from './ui/avatar';
 import {
   Bookmark,
@@ -44,6 +45,8 @@ const notifications = [
 import date from 'date-and-time';
 import Image from 'next/image';
 import img from '@/public/thumnail.webp';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useEffect, useState } from 'react';
 
 export interface Post extends ExamplePost {
   avatar?: string;
@@ -56,7 +59,30 @@ interface CardProps extends React.ComponentProps<typeof Card> {
 
 export default function PostCard({ className, post, ...props }: CardProps) {
   const now = new Date();
+  const [imageURL, setimageURL] = useState<string>();
   date.format(now, 'YYYY/MM/DD HH:mm:ss'); // => '2015/01/02 23:14:05'
+  useEffect(() => {
+    dummyjson.image
+      .generateImage({
+        width: 100,
+        height: 100,
+        background: Math.floor(Math.random() * 0xffffff)
+          .toString(16)
+          .padStart(6, '0'),
+        text: Math.floor(Math.random() * 0xffffff)
+          .toString(16)
+          .padStart(6, '0'),
+        color: Math.floor(Math.random() * 0xffffff)
+          .toString(16)
+          .padStart(6, '0'),
+      })
+      .then((res) => {
+        const objectURL = URL.createObjectURL(res.data);
+        console.log(objectURL);
+
+        setimageURL(objectURL);
+      });
+  }, []);
   return (
     <Card
       className={cn(
@@ -100,10 +126,16 @@ export default function PostCard({ className, post, ...props }: CardProps) {
         <TagsDisplay tags={post.tags}></TagsDisplay>
         {/* this is for rendering the time */}
         <div> {date.format(now, 'MMM DD')}</div>
-        <Image
-          alt="thumnail"
-          className=" h-44 object-cover rounded-lg"
-          src={img}></Image>
+        {!imageURL ? (
+          <Skeleton className="h-44 w-full rounded-xl" />
+        ) : (
+          <Image
+            alt="thumnail"
+            width={40}
+            height={40}
+            className=" h-44 w-full object-cover rounded-lg"
+            src={imageURL}></Image>
+        )}
       </CardContent>
       <CardFooter className="font-light flex justify-between text-zinc-500 dark:text-zinc-400">
         <Tooltip>
